@@ -1,0 +1,48 @@
+<!--pages/moneyManagement/moneyManagement.wxml-->
+<view class='container'>
+  <view class='moneay_all'>
+   
+    <view class='today_money' >
+      <view class='today_money_text' bindtap='goToday' data-incomeTime="1">
+        今日收入(元)
+        <image class='goright' src='../../images/symbols-turn-left.png'></image>
+      </view>
+      {{dayAmount}}
+    </view>
+    <view class='other_money'>
+      <view class='month' bindtap='goToday' data-incomeTime="2">
+        <view class='today_money_text'>
+          本月收入(元)
+          <image class='goright' src='../../images/symbols-turn-left.png'></image>
+        </view>
+        {{moonAmount}}
+      </view>
+      <view class='allMoney' bindtap='goToday' data-incomeTime="3">
+        <view class='today_money_text'>
+          累计收入(元)
+          <image class='goright' src='../../images/symbols-turn-left.png'></image>
+        </view>
+        {{allAmount}}
+      </view>
+    </view>
+     <image class='allImage' src='../../images/symbols-bg-jifen.png'></image>
+  </view>
+  <view class='finish_pay' bindtap='gohasSet'>
+    <view class='pay_text'>
+      已结算
+      <view class='pay_num'>
+        {{settlementAmount}}元
+      </view>
+    </view>
+    <image class='goright' src='../../images/symbols-turn-left.png'></image>
+  </view>
+  <view class='finish_pay' bindtap='gowaiteSet'>
+    <view class='pay_text'>
+      待结算
+      <view class='pay_num'>
+        {{waitAmount}}元
+      </view>
+    </view>
+    <image class='goright' src='../../images/symbols-turn-left.png'></image>
+  </view>
+</view>

@@ -1,0 +1,70 @@
+/* pages/integralCenter/integralCenter.wxss */
+page {
+  background: #f8f8f8;
+}
+
+.description{
+   padding-left: 30rpx;
+  padding-right: 30rpx;
+  background: #fff;
+}
+.description_title{
+  padding-top: 28rpx;
+  padding-bottom: 20rpx;
+  font-size:30rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(51,51,51,1);
+border-bottom: 1rpx solid #F1F1F1;
+}
+.description_content{
+  padding-top: 28rpx;
+  padding-bottom: 32rpx;
+  font-size:24rpx;
+font-family:PingFangSC-Light;
+font-weight:300;
+color:rgba(102,102,102,1);
+}
+.tasks_title{
+  margin-top: 20rpx;
+  padding-left: 30rpx;
+  padding-top: 28rpx;
+  padding-bottom: 20rpx;
+  background: #fff;
+  font-size:30rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+}
+.tasks_tap{
+  padding:20rpx 30rpx 20rpx 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.tasks{
+  padding:20rpx 70rpx 20rpx 30rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size:24rpx;
+font-family:PingFangSC-Light;
+font-weight:300;
+color:rgba(102,102,102,1);
+}
+.tasks_content{
+width: 144rpx;
+}
+.points{
+  margin-right: 70rpx;
+}
+.ifFinsh{
+  height: 32rpx;
+  width: 32rpx;
+}
+.kong{
+   height: 32rpx;
+  width: 32rpx;
+  background: #fff;
+}

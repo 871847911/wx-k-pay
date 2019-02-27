@@ -1,0 +1,74 @@
+<view class="my">
+  <view class='my-header'>
+    <view class='name'>
+      <view class='username'>{{ userInfo.nickName }}</view>
+    </view>
+    <view class='img'>
+      <image mode="aspectFill" src="{{ userInfo.avatarUrl }}"></image>
+    </view>
+  </view>
+
+  <view class="myset-item2">
+    <view class='des'>用户账号</view>
+    <view class='img'>
+      {{ userInfo.code }}
+    </view>
+  </view>
+  <view class="myset-item2">
+    <view class='des'>生日</view>
+    <view class='img'>
+      <picker-view mode="date" value="{{date}}" start="1949-09-01" end="2025-09-01" bindchange="bindDateChange" indicator-class="pickerView" indicator-style="color: red;background: red" mask-style="color: red;background: red">
+        <view class="picker">
+          {{date ==null ? '去设置': date}}
+          <icon class="iconfont2 icon-arrow-right" style='color:#D8D8D8'></icon>
+        </view>
+      </picker-view>
+    </view>
+  </view>
+  <view class="myset-item2">
+    <view class='des'>性别</view>
+    <view class='img'>
+      {{ userInfo.gender == 1 ? '男' : '女' }}
+      <!-- <icon class="iconfont2 icon-arrow-right" style='color:#D8D8D8'></icon> -->
+    </view>
+  </view>
+  <view class="myset-item2" bindtap="bindPhone">
+    <view class='des'>手机号</view>
+    <view class='img'>
+      <view class="picker">
+        {{phoneNumber== null ?'去绑定':phoneNumber}}
+        <icon class="iconfont2 icon-arrow-right" style='color:#D8D8D8'></icon>
+      </view>
+    </view>
+  </view>
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" indicator-class="pickerView" indicator-style="color: red;background: red" mask-style="color: red;background: red">
+          <view class="myset-item2" bindtap='onClick'>
+            <view class='des'>所在区域</view>
+            <view class='img'>
+                <view class="picker" wx:if="{{region[0] != ''}}">
+                  {{region[0] ==null ? '': region[0]}} {{region[1] ==null ? '': region[1]}} {{region[2] ==null ? '': region[2]}}
+                  <icon class="iconfont2 icon-arrow-right" style='color:#D8D8D8'></icon>
+                </view>
+                <view wx:else></view>    
+            </view>
+          </view>
+    </picker>      
+</view>
+
+<view class='popupBackground' wx:if="{{ifShow}}"></view>
+<view class='popup' wx:if="{{ifShow}}">
+  <view class='popupTitle'>绑定手机</view>
+  <view class='inputBox'>
+    <input class='phoneInput' placeholder='请输入手机号码' type='tel' maxlength="11" bindinput="getPhone"></input>
+  </view>
+  <view class='codeBox'>
+    <input class='codeInput' type='tel' placeholder='请输入验证码' maxlength='6' bindinput='getCode'></input>
+    <view class="codeBtn {{isSend == true? 'active' :''}}" bindtap='check'>
+      <block wx:if="{{isSend}}">{{t}}</block>
+      {{ !isSend ? "获取验证码" : "s" }}</view>
+  </view>
+  <view class='popupBtn'>
+    <view class='popupCancel' bindtap='cancel'>取消</view>
+    <view class='popupDetermine' bindtap='sureBind'>确定</view>
+  </view>
+</view>

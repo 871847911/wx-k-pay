@@ -1,0 +1,82 @@
+/* pages/myColumn/myColumn.wxss */
+.myColumn{
+  padding:32rpx 30rpx;
+}
+.shenHeBox{
+  display: flex;
+  justify-content: space-between;
+}
+.shenHeBox view{
+  width:334rpx;
+  height:162rpx;
+  background:rgba(248,248,248,1);
+  border-radius:8rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size:30rpx;
+  font-family:PingFangSC-Medium;
+  font-weight:500;
+  color:rgba(72,72,72,1);
+}
+.shenHeBox view image{
+  width:48rpx;
+  height: 48rpx;
+  display: block;
+  margin-bottom: 16rpx;
+}
+/* 专栏列表 */
+.pay-list-item{
+  display: flex;
+  margin-top:32rpx;
+}
+.item-left{
+  margin-right:32rpx;
+}
+.item-left image{
+  width:256rpx;
+  height:162rpx;
+  display:block;
+  border-radius: 8rpx;
+}
+.item-right{
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.top-title{
+  width:400rpx;
+  font-size:30rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(17,17,17,1);
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.top-des{
+  display: flex;
+  justify-content: space-between;
+  font-size:24rpx;
+  font-family:PingFangSC-Light;
+  font-weight:300;
+  color:rgba(102,102,102,1);
+  margin-top:20rpx;
+}
+.bottom-des{
+  display: flex;
+  justify-content: space-between;
+  font-family:PingFangSC-Regular;
+}
+.bottom-des .item-money{
+  font-size:28rpx;
+  font-weight:400;
+  color:rgba(254,128,96,1);
+}
+.bottom-des .item-num{
+  font-size:24rpx;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+}

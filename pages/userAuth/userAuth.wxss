@@ -1,0 +1,48 @@
+.text {
+  margin-top: 22rpx;
+  height: 50rpx;
+  font-size: 36rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  line-height: 50rpx;
+  display: flex;
+  align-items: center;
+  margin-left: 270rpx;
+}
+
+.img {
+  margin-top: 288rpx;
+  height: 220rpx;
+  width: 220rpx;
+  margin-left: 265rpx;
+}
+
+.getUser {
+  width: 400rpx;
+  margin: 0 auto;
+}
+
+.getUser button {
+  margin-top: 60rpx;
+  height: 98rpx;
+  width: 400rpx;
+  background: #6cddc7;
+  border-radius: 4rpx;
+  line-height: 98rpx;
+  display: inline-block;
+  color: white;
+}
+
+.tips {
+  width: 436rpx;
+  height: 88rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  line-height: 44rpx;
+  margin-left: 157rpx;
+  position: absolute;
+  bottom: 40rpx;
+}

@@ -1,0 +1,212 @@
+/* pages/payPage/payPage.wxss */
+
+.pay-page {
+  padding: 48rpx 0 30rpx 0;
+  margin-left: 31rpx;
+  margin-right: 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pay-page .order-info {
+  width: 404rpx;
+  height: 160rpx;
+  margin-right: 29rpx;
+}
+
+.pay-page .order-info .title {
+  height: 85rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(72, 72, 72, 1);
+  line-height: 42rpx;
+  font-weight: 900;
+  margin-bottom: 41rpx;
+}
+
+.pay-page .order-info .price {
+  height: 42rpx;
+  font-weight: 900;
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(254, 128, 96, 1);
+  line-height: 42rpx;
+}
+
+.pay-page .order-pic {
+  width: 256rpx;
+  height: 160rpx;
+}
+
+.pay-page .order-pic image {
+  width: 100%;
+  height: 100%;
+}
+
+.order-style {
+  width: 100%;
+  padding: 37rpx 0;
+  margin-top: 49rpx;
+  border-bottom: 2rpx solid #f1f1f1;
+  border-top: 2rpx solid #f1f1f1;
+  justify-content: space-between;
+  display: flex;
+}
+
+.order-style .pay {
+  height: 44rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(72, 72, 72, 1);
+  line-height: 44rpx;
+  font-weight: 900;
+}
+
+.order-style .sty {
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(102, 102, 102, 1);
+  line-height: 40rpx;
+}
+
+.points {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+
+.points_box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  height: 60rpx;
+}
+
+.points_text {
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+.points_text_text {
+  width: 460rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.chose_points {
+  width: 140rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  height: 60rpx;
+  border-radius: 8rpx;
+  border: 2rpx solid rgba(241, 241, 241, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.chose_points_text {
+  
+  width: 68rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.down {
+  height: 20rpx;
+  width: 20rpx;
+  margin-right: 20rpx;
+}
+
+.dikou {
+  display: flex;
+  flex-direction: row;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+.saveMoney{
+  color: #FE8060
+}
+.point_picker{
+   margin-left: 88rpx;
+}
+.points_block{
+ 
+ display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.dikou{
+  margin-left: 40rpx;
+}
+.what{
+  margin-left: 12rpx;
+  height: 20rpx;
+  width: 20rpx;
+}
+
+/* bottom */
+
+.course-bottom {
+  height: 100rpx;
+  border-top: 1px #eee solid;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.course-bottom .course-bottom-item {
+  width: 375rpx;
+  height: 100rpx;
+  display: flex;
+  padding: 28rpx 32rpx;
+}
+
+.course-bottom .course-bottom-item view {
+  height: 50rpx;
+  font-size: 36rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(72, 72, 72, 1);
+  font-weight: 900;
+  line-height: 50rpx;
+}
+
+.course-bottom .course-bottom-item text {
+  color: #fe8060;
+  font-weight: 500;
+}
+
+.course-bottom button {
+  width: 364rpx;
+  height: 98rpx;
+  display: flex;
+  background: rgba(254, 128, 96, 1);
+  border-radius: 4rpx;
+  font-size: 38rpx;
+  font-family: PingFangSC-Medium;
+  text-align: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 1);
+  margin-right: 0rpx;
+}
+
+.buy-succeed {
+  font-size: 36rpx;
+  font-family: PingFangSC-Regular;
+  color: #000;
+}

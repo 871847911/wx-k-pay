@@ -1,0 +1,13 @@
+<view class='lecturer-list'>
+  <view class='lecturer' wx:for='{{lecturerList}}' data-index='{{index}}' wx:key='*this' bindtap='toAddQuestionTitle'>
+    <image src='{{ item.photoUrl }}'></image>
+    <view class='lecturerInfo'>
+      <view class='lecturer-name'>{{ item.realName }}</view>
+      <view class='lecturer'>
+        <text>课程：{{ item.courseNum }}</text>
+        <text>购买：{{ item.courseSaleNum }}</text>
+        <text>订阅：{{ item.subscribedNum }}</text>
+      </view>
+    </view>
+  </view>
+</view>

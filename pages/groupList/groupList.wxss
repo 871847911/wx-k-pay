@@ -1,0 +1,105 @@
+/* pages/groupList/groupList.wxss */
+
+.bigTitle {
+  font-size: 36rpx;
+  font-weight: 400;
+  color: rgba(72, 72, 72, 1);
+  margin: 24rpx 0 32rpx 0;
+  padding-left: 32rpx;
+  border-left: 4rpx solid #00b4b9;
+}
+
+.groupListBox {
+  padding: 16rpx 0;
+  border-bottom: 1rpx #f1f1f1 solid;
+}
+
+.groupList {
+  /* display: flex; */
+  padding: 16rpx 32rpx;
+  overflow: hidden;
+}
+
+.grouprBtn {
+  width: 140rpx;
+  height: 64rpx;
+  background: rgba(254, 128, 96, 1);
+  border-radius: 4px;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  line-height: 64rpx;
+  text-align: center;
+  float: right;
+}
+
+.groupList .grouprImg {
+  width: 64rpx;
+  height: 64rpx;
+  float: left;
+}
+
+.groupList .grouprImg image {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+}
+
+.groupthisRightIcon {
+  float: right;
+  padding-right: 32rpx;
+}
+
+.groupthisRightIcon image {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.grouprName {
+  line-height: 64rpx;
+  width: 194rpx;
+  padding-left: 24rpx;
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(72, 72, 72, 1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  float: left;
+}
+
+.grouprtime {
+  width: 258rpx;
+  font-size: 26rpx;
+  font-weight: 400;
+  text-align: right;
+  color: rgba(72, 72, 72, 1);
+  float: left;
+}
+.grouprtime .cha text{
+  color:rgba(254, 128, 96, 1);
+}
+.courseName {
+  padding: 0 32rpx 8rpx 32rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.price {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: rgba(254, 128, 96, 1);
+}
+.ngrouprBtn {
+  width: 140rpx;
+  height: 64rpx;
+  background: rgba(254, 128, 96, 0.5);
+  border-radius: 4px;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  line-height: 64rpx;
+  text-align: center;
+  float: right;
+}

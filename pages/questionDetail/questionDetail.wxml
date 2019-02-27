@@ -1,0 +1,50 @@
+<view class='question'>
+
+  <view class='course' wx:if='{{ questionDetail.courseId != null }}' bindtap='toCourseDetail'>
+    <image src='{{ courseDetail.courseUrlFirst }}'></image>
+    <view>{{ courseDetail.courseName }}</view>
+  </view>
+
+  <view class='question-title'>{{ questionDetail.title }}</view>
+  <view class='questionInfo'>
+    <view>{{ questionDetail.anonymity == 1 ? '匿名用户' : questionDetail.questionerName }}</view>
+    <view>{{ questionDetail.createDate }}</view>
+  </view>
+  <view class="{{ more ? 'question-detail-hidden' : 'question-detail' }}">{{ questionDetail.questionDesc }}</view>
+  <view class='ques-img' wx:if="{{!more}}">
+    <image wx:for='{{ questionUrl }}' wx:key='*this' src='{{ item.picUrl }}'></image>
+  </view>
+  
+  <view class='more' wx:if="{{more}}" bindtap='more'>查看更多
+    <image src='../../images/down@2x.png'></image>
+  </view>
+  <view class='mores'  wx:else bindtap='more'>收起
+    <image src='../../images/up@2x.png'></image>
+  </view>
+</view>
+
+<view class='answer'>
+  <view class='answerInfo'>
+    <image src='{{questionDetail.lecturerHead}}'></image>
+    <view class='answer-name'>
+      <view>{{ questionDetail.lecturerName }}</view>
+      <view>{{ questionDetail.answerTime == null ? '' : questionDetail.answerTime }}</view>
+    </view>
+    <view class='star' wx:if="{{ showStar }}">
+      <image src='/images/like.png' bindtap='addStar'></image>
+      <view>{{ starNum }}</view>
+    </view>
+    <view class='star' wx:if="{{ hasStar }}">
+      <image src='/images/has-like.png' bindtap='hasAddStar'></image>
+      <view>{{ starNum }}</view>
+    </view>
+    <view class='star' wx:if="{{ questionDetail.answerId == null || questionDetail.answerId == '' }}">
+      <image src='/images/like.png'></image>
+      <view>0</view>
+    </view>
+  </view>
+  <view class='answer-detail'>{{ questionDetail.answerText == null ? '' : questionDetail.answerText }}</view>
+  <view class='answer-img'>
+    <image  wx:for='{{ answerUrl }}' wx:key='*this' src='{{ item.picUrl }}'></image>
+  </view>
+</view>

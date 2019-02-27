@@ -1,0 +1,62 @@
+<!--pages/groupShare/groupShare.wxml-->
+<view class='top'>
+  <view class='topImgBox' bindtap='toIndex'>
+    <image class='topImg' src='../../images/Home@3x(2).png'></image>
+  </view>
+  <view class='topBgBox'>
+    <image class='topBg' src='../../images/group.png'></image>
+    <view class='topBgBoxText'>开团成功，快找好友参团吧！</view>
+  </view>
+</view>
+<view class='bottom '>
+  <view class='groupCourse '>
+    <image class='courseImg ' src='{{courseUrl}}'></image>
+    <view class='Course '>
+      <view class='courseTitle '>{{courseName}}</view>
+      <view class='price '>拼团价：
+        <text>￥{{collagePrice}}</text>
+      </view>
+    </view>
+  </view>
+  <block wx:if="{{status!=2}}">
+    <view class='groupNum '>当前参团
+      <text>{{corrent}}</text>人，还剩
+      <text>{{remain}}</text>个优惠名额</view>
+    <view class='time' wx:if="{{innerStatus==0}}">
+      <secondKill inner-text="{{endTime}}" inner-status="{{innerStatus}}"></secondKill>
+     </view>
+   </block>
+  <block wx:else>
+    <view class='success'>
+      <image src='../../images/successed.png'></image>
+      <text>拼团成功</text>
+    </view>
+  </block>
+  <view class='botton ' bindtap='showModal'>{{message}}</view>
+  <view class='shareText '>分享到3个群后，拼成率高达98%</view>
+</view>
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class='icon_box '>
+    <view>
+      <button class='closePop ' open-type='share'>
+        <image class='bottom-item_img ' src='../../images/wx@2x.png '></image>
+      </button>
+      <view class='btn_text '>微信好友</view>
+    </view>
+    <view>
+      <poster id="poster" config="{{jdConfig}}" bind:success="onPosterSuccess" bind:fail="onPosterFail">
+        <button class='closePop '>
+          <image class='bottom-item_img ' src='../../images/preserve@2x.png '></image>
+        </button>
+      </poster>
+      <view class='btn_text '>保存图片</view>
+    </view>
+  </view>
+</view>
+<view class='imgBox ' wx:if="{{imgBoxShow}}" style=' '>
+  <image src="{{picUrl}}"></image>
+</view>
+<view class='imgBoxbg ' wx:if="{{imgBoxShow}}"></view>
+<view class='download ' bindtap='dowload' wx:if="{{imgBoxShow}}">保存图片</view>
+<view class='bottomText ' wx:if="{{imgBoxShow}}">保存图片并分享，让好友帮你完成拼团</view>

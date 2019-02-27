@@ -1,0 +1,4 @@
+<!--pages/index/secondKill/secondKill.wxml-->
+<view class="inner">
+  {{zzr}}
+</view>

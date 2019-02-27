@@ -1,0 +1,88 @@
+/* pages/hasSettled/hasSettled.wxss *//* pages/income/income.wxss */
+.container{
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  font-size: 28rpx;
+  font-weight:400;
+color:rgba(72,72,72,1);
+}
+
+.tab{ 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width:100% ;
+
+  
+}
+.tab_title{
+  width: 375rpx;
+  text-align: center;
+  line-height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+.tab_title_text{
+  text-align: center;
+  line-height: 100rpx;
+  height: 100%;
+  font-size:30rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1); 
+  
+  
+}
+.change{
+  font-size:36rpx;
+  color: #6CDDC7;
+
+}
+.line{
+  width:48rpx;
+height:4rpx;
+background:rgba(108,221,199,1);
+border-radius:4rpx;
+
+}
+.campous{
+  border-bottom: 1rpx solid rgba(241,241,241,1) ;
+  display: flex;
+  flex-direction: row;
+}
+.head{
+  display: block;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+  height: 160rpx;
+  width: 160rpx;
+}
+.name_price{
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 32rpx;
+  margin-top: 44rpx;
+  margin-bottom: 44rpx;
+  color:rgba(72,72,72,1);
+}
+.price{
+  font-size: 24rpx;
+  color:rgba(102,102,102,1);
+  display: flex;
+  flex-direction: row;
+  
+  text-align: center;
+  align-items: flex-end;
+}
+.price_num{
+  margin-left: 12rpx;
+  font-size:30rpx;
+font-family:PingFangSC-Medium;
+font-weight:500;
+color:rgba(72,72,72,1);
+}

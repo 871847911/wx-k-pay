@@ -1,0 +1,33 @@
+<import src="../common/emptyView" />
+
+
+
+<view class='resPage-title'>
+  <view class='resPage-title_css' wx:for="{{ ['咨询反馈','系统消息','关注通知'] }}"  wx:key="*this" wx:for-index="idx" bindtap='clickTab' data-idx="{{ idx }}" data-page="{{pages[idx]}}">
+    <view class="resPage-title-item {{idx == index ? 'active' : ''}} " >
+      {{ item }}
+    </view>
+    <view class='line' wx:if="{{idx == index}}"></view>
+  </view>
+</view>
+
+<!--咨询反馈  -->
+<list listInfo="{{ message_index }}" bindgoDetail="goDetail" wx:if="{{ message_index == 'message_0' && list.length > 0}}" consultMessage="{{list}}" />
+<view class='empty-content' wx:if="{{ message_index == 'message_0' &&  list.length == 0}}" >
+    <image src='../../images/No_message@2x.png' ></image>
+    <text>暂无相关消息</text>
+  </view>
+
+<!--系统消息  -->
+<list listInfo="{{ message_index }}" bindgoDetail="goDetail" wx:if="{{ message_index == 'message_1' && list.length > 0}}" systemMessage="{{ list}}" />
+<view class='empty-content' wx:if="{{ message_index == 'message_1' &&  list.length == 0}}" >
+    <image src='../../images/No_message@2x.png' ></image>
+    <text>暂无相关消息</text>
+  </view>
+
+<!--关注通知  -->
+<list listInfo="{{ message_index }}" bindgoDetail="goDetail" wx:if="{{ message_index == 'message_2' && list.length > 0  }} " noticeMessage="{{list}}" />
+<view class='empty-content' wx:if="{{ message_index == 'message_2' &&  list.length == 0}}" >
+    <image src='../../images/No_message@2x.png' ></image>
+    <text>暂无相关消息</text>
+  </view>

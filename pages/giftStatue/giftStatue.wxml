@@ -1,0 +1,30 @@
+<view class='gift-bg'>
+  <image wx:if='{{ giftDetail.userName == null }}' src='/images/will_gift.png'></image>
+  <image wx:if='{{ giftDetail.userName != null }}' src='/images/has_gift.png'></image>
+  <text wx:if='{{ giftDetail.userName == null }}'>还没有好友领取，快去分享给你的好友吧</text>
+  <text wx:if='{{ giftDetail.userName != null }}'>您的好友已经领取，对您表示非常感谢！</text>
+  <view class='to-home'>
+    <image bindtap='toIndex' src='/images/Home@3x(2).png'></image>  
+  </view>
+</view>
+
+<view class='sead-gift'>
+  <view class='course'>
+    <image src="{{giftDetail.courseImage }}"></image>
+    <view class='course-info'>
+      <view>{{ giftDetail.courseName }}</view>
+      <view>￥{{ giftDetail.price }}</view>
+    </view>
+  </view>
+  <text wx:if='{{ giftDetail.userName == null }}'>您可以将该课程赠送给好友</text>
+  <text wx:if='{{ giftDetail.userName == null }}'>(每次赠送仅限一个好友领取)</text>
+  <view wx:if='{{ giftDetail.userName != null }}' class='geter'>
+    <image src='{{ giftDetail.headUrl }}'></image>
+    <view class='geter-info'>
+      <text>{{ giftDetail.userName }}</text>
+      <text>领取时间：{{ giftDetail.createDate }}</text>
+    </view>
+  </view>
+  <button class='unreceived button_color' open-type="share" wx:if='{{ giftDetail.userName == null }}'>赠送给好友</button>
+  <button class='received' wx:if='{{ giftDetail.userName != null }}'>我已经收到您赠送的课程，非常感谢！</button>
+</view>

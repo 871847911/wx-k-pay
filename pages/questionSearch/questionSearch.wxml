@@ -1,0 +1,34 @@
+<!--pages/questionSearch/questionSearch.wxml-->
+
+<view class='search'  wx:if='{{ !hasSearch }}'>
+  <view class='search-box'>
+    <icon class='iconfont icon-sousuo'></icon>
+    <input placeholder='请输入问题' maxlength='20' focus='true' bindconfirm='toSearchResult' bindinput='inputValue'></input>
+  </view>
+</view>
+
+<view class='search-history' wx:if='{{ !hasSearch }}'>
+  <view class='clear-history'>
+    <text>搜索历史</text>
+    <text bindtap='clearHistory'>清除历史</text>
+  </view>
+  <view class='history'>
+    <text wx:for='{{searchHistory}}' bindtap='getSearchValue'  data-index='{{index}}' wx:key='*this'>{{ item }}</text>
+  </view>
+</view>
+
+<view class='search-result'>
+  <view class='search-list' wx:for='{{searchList}}' bindtap='toQuestionDetail' data-index='{{index}}' wx:key='*this'>
+    <view class='quesTitle'>{{ item.title }}</view>
+    <view class='quesDet'>
+      <view>{{ item.lecturerName }}</view>
+      <view wx:if='{{ item.questionStatus == 1 }}'>回复：{{ item.answerTime }}</view>
+      <view>{{ item.questionStatus == 0 ? '待解答' : '已解答' }}</view>
+    </view>
+  </view>
+</view>
+
+<view class='empty' wx:if='{{ isEmpty }}'>
+  <image src="/images/empty.png" mode="aspectFit"></image>
+  <text>抱歉，未找到相关综合~换个词再试试</text>
+</view> 

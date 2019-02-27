@@ -1,0 +1,58 @@
+page{
+  color: #484848;
+}
+.choosed{
+  margin: 32rpx;
+}
+.choosed view{
+  width: 100%;
+  height: 96rpx;
+  line-height: 96rpx;
+  background: rgba(248,248,248,1);
+  text-indent: 32rpx;
+}
+
+.course{
+    margin: 32rpx;
+    padding: 32rpx;
+    display: flex;
+    background: rgba(248,248,248,1);
+}
+.course image{
+  width: 256rpx;
+  height: 160rpx;
+  border-radius: .08rpx;
+  margin-right: 20rpx;
+}
+.course view{
+
+}
+
+.add-title textarea{
+  width: calc(100% - 98rpx);
+  height: 200rpx;
+  padding: 0 48rpx;
+}
+.add-title view{
+  text-align: right;
+  padding-right: 48rpx;
+  color: rgba(204,204,204,1);
+  padding-bottom: 48rpx;
+  border-bottom: 1px solid rgba(241,241,241,1);
+}
+
+.toAddQuestionCont{
+  height: 98rpx;
+  background: rgba(254,128,96,1);
+  color: #fff;
+  margin: 296rpx 32rpx 0;
+  line-height: 98rpx;
+  }
+
+  .addWord{
+  height: 98rpx;
+  background: #F5B6A5;
+  color: #fff;
+  margin: 296rpx 32rpx 0;
+  line-height: 98rpx;
+  }

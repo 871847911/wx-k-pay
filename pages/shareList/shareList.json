@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "分享免费",
+  "usingComponents": {
+    "searchBar": "/components/search/search",
+    "list": "/components/list/list"
+  }
+}

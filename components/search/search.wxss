@@ -1,0 +1,102 @@
+.searchBar{
+  width: 100%;
+  display: flex;
+  
+}
+
+.searchBar .section{
+  width: 100%;
+  position: relative;
+  margin: 32rpx 30rpx 0 32rpx;
+  height: auto;
+}
+.search_img{
+position: absolute;
+left: 30rpx;
+top: 15rpx;
+}
+.searchBar .section .remove{
+  height: 30rpx;
+  width: 30rpx;
+  position: absolute;
+  top: 13rpx;
+  right: 30rpx;
+  z-index: 999;
+}
+
+.searchBar .section .input-placeholder{
+   margin: 1rpx; 
+}
+.searchBar .section icon {
+  position: absolute;
+  left: 32rpx;
+  bottom: 10rpx;
+  
+  z-index: 99;
+}
+.searchBar .section input{
+  border-radius: 8rpx;
+  width: 100%;
+  height: 56rpx;
+  background: #F1F1F1;
+  padding-left: 78rpx;
+  padding-right: 60rpx;
+  display: block;
+  box-sizing: border-box;
+  font-size:26rpx;
+}
+
+/* @import '../../../miniprogram/ico.wxss' */
+
+
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1528354849737'); /* IE9*/
+  src: url('iconfont.eot?t=1528354849737#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff;charset=utf-8;base64,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') format('woff'),
+  url('iconfont.ttf?t=1528354849737') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1528354849737#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:13px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shixiang:before { content: "\e608"; }
+
+.icon-quanxianfuzhi:before { content: "\e62c"; }
+
+.icon-arrow-right:before { content: "\e646"; }
+
+.icon-sousuo:before { content: "\e651"; }
+
+.icon-dingwei:before { content: "\e607"; }
+
+.icon-biaoqian:before { content: "\e62b"; }
+
+.icon-dianhua:before { content: "\e605"; }
+
+.icon-hunyin:before { content: "\e600"; }
+
+.icon-yusan:before { content: "\e702"; }
+
+.icon-chuguochujing:before { content: "\e71b"; }
+
+.icon-youjian:before { content: "\e68d"; }
+
+
+
+
+
+.iconfont2 {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: gray;
+}

@@ -1,0 +1,8 @@
+<view class="searchBar">
+  <view class="section">
+     <input placeholder="请输入课程名称或讲师名称" bindtap="clickInput" data-type="list" focus="{{ searchAttrs.isFocus }}" placeholder-class="input-placeholder"  bindblur='clickSearch' bindinput='watchInput' value="{{ inputTxt }}" disabled="{{ searchAttrs.isDis }}"/> 
+     <image  class='search_img' style='height:26rpx;width:26rpx;' src='../../images/search@2x.png'></image>
+     <image class="remove" src="/images/wrong_icon@2x.png" wx:if="/minprogram/images/wrong_icon@2x.png" mode="aspectFit" bindtap="clearInput"
+     hidden='{{ showRemove }}'></image>
+  </view>
+</view>

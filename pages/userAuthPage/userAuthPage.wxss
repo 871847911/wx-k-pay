@@ -1,0 +1,37 @@
+/* pages/userAuthPage/userAuthPage.wxss */
+page{
+  font-size:28rpx;
+}
+.logo_box{
+  text-align: center;
+  padding-top:250rpx;
+}
+.logo_box image{
+  width:220rpx;
+  height:220rpx;
+}
+.text_des{
+  padding:42rpx 0 72rpx;
+  text-align: center;
+}
+.text_des text{  
+  display: inline-block;
+  width:300rpx;
+  height: 88rpx;
+  line-height: 44rpx;
+  color:#666666;
+}
+
+button::after {
+  border: none;
+}
+
+.btn_type{
+  width:350rpx;
+  height:98rpx;
+  background:#6CDDC7;
+  color:#ffffff;
+  font-size:36rpx;
+  /* border:0; */
+  box-sizing: content-box;
+}

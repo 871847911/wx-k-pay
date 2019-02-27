@@ -1,0 +1,11 @@
+<view class='vip'>
+  <view class='all_img'>
+    <view class='discount_text'>尊享折扣特权
+    </view>
+    <image class='vip_img' src='../../images/symbols-vip_bg.png'></image>
+    <view class='discount_content'>会员提升到第{{lev}}级，可享受课程折扣特权</view>
+  </view>
+  
+</view>
+
+<view class='hui'></view>

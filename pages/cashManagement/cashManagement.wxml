@@ -1,0 +1,31 @@
+<!--pages/moneyManagement/moneyManagement.wxml-->
+<view class='container'>
+  <view class='moneay_all'>
+    <image class='allImage' src='../../images/symbols-bg-jifen.png'></image>
+    <view class='today_money'>
+      <view class='today_money_text'>
+        可提现金额
+      </view>
+      {{payUser.profit}}元
+    </view>
+  </view>
+  <view class='finish_pay' bindtap='gohad'>
+    <view class='pay_text'>
+      已提现
+      <view class='pay_num'>
+        {{payUser.payAmount}}元
+      </view>
+    </view>
+    <image class='goright' src='../../images/symbols-turn-left.png'></image>
+  </view>
+  <view class='finish_pay' bindtap='goice'>
+    <view class='pay_text'>
+      提现冻结
+      <view class='pay_num'>
+        {{payUser.freeze}}元
+      </view>
+    </view>
+    <image class='goright' src='../../images/symbols-turn-left.png'></image>
+  </view>
+  <button class='cash_bt' bindtap='getMoney'>提现</button>
+</view>

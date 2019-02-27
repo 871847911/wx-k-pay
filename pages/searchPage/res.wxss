@@ -1,0 +1,60 @@
+
+.resPage-title{
+  width: 100%;
+  line-height: 40rpx;
+  padding-left: 32rpx;
+  /* padding: 20rpx; */
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 2rpx solid #F1F1F1;
+  margin-bottom: 48rpx;
+}
+
+.course{
+  box-sizing: border-box; 
+  width: 100%;
+  line-height: 40rpx;
+  padding-top: 10rpx;
+  display: block;
+}
+ 
+.course .course-title {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: space-between ;
+  padding:0 32rpx;
+  height: 60rpx;
+  font-size: 44rpx;
+  color: #484848;
+  line-height: 60rpx;
+}
+.course .course-title .more{
+   height: 40rpx;
+  font-size: 28rpx;
+  color: #484848;
+  font-weight: 500;
+}
+
+.course view{
+  box-sizing: border-box;
+}
+
+
+.resPage-title .resPage-title-item{
+  /* width: 33.33%; */
+  
+  margin-right: 48rpx;
+  padding-bottom: 22rpx!important;
+  text-align: center;
+  padding: 10rpx 0;
+  color: #999999;
+  font-size: 30rpx;
+}
+
+.resPage-title  .active{
+  border-bottom: 4rpx solid #6cddc7;
+  font-size: 36rpx;
+  color: #6cddc7;
+  font-weight: 800;
+}

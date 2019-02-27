@@ -1,0 +1,71 @@
+<view class='container'>
+
+  <searchBar bindclickSearch="clickSearch" bindclickInput="clickInput" searchAttrs="{{ searchAttrs }}" />
+  <view class='carousel'>
+    <swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000" indicator-active-color="#FFFFFF" indicator-color="rgba(255,255,255,0.5)" style='height: 200rpx' circular="true">
+      <swiper-item wx:for="{{ carouselData }}" wx:key="*this" bindtap='go_lunbo' data-linkType='{{item.linkType}}' data-linkValue='{{item.linkValue}}'>
+        <image src="{{ item.sourceUrl }}" style="border-radius: {{ attrs.bor }}rpx;" mode="aspectFill" />
+      </swiper-item>
+    </swiper>
+  </view>
+  <scroll-view scroll-x class='index-type'>
+    <view class='type-item' bindtap='enterType' wx:for="{{ listCatalog }}" wx:key="*this" data-catalogid='{{ item.url }}' data-listtype='storeDetail'>
+      <image src="{{item.imgurl}}" mode="aspectFit"></image>
+      <text style='color:#6A6A6A'>{{item.name }} </text>
+    </view>
+
+  </scroll-view>
+
+
+  <!-- <view class='line'></view>
+  <list listInfo="{{ '160' }}" storeDetail="{{ storeDetail }}" bindgoDetail="goDetail" />
+  <view class='line'></view> -->
+  <!-- <view class="course">
+    <view class='course-title'>
+      <view class="course-subtitle">公开好课</view>
+      <view class="course-more" bindtap='getMore' data-index='1'>查看更多</view>
+    </view>
+    <list listInfo="{{ '256' }}" courseList="{{ freeList }}" bindgoDetail="goDetail" isIOS="{{isIOS}}" />
+  </view> -->
+
+  <view class="course">
+    <view class='course-title'>
+      <view class="course-subtitle">公开好课</view>
+      <view class="course-more" bindtap='getMore' data-index='1'>查看更多</view>
+    </view>
+    <list listInfo="{{ '256' }}" courseList="{{ freeList }}" isIOS="{{isIOS}}" aaa="aaa" bindgoDetail="goDetail" />
+  </view>
+
+  <view class="course">
+    <view class='course-title'>
+      <view class="course-subtitle">精选内容</view>
+      <view class="course-more" bindtap='getMore' data-index='2'>查看更多</view>
+    </view>
+    <list listInfo="{{ 'publicLesson' }}" lessonList="{{ choiceList }}" isIOS="{{isIOS}}" aaa="aaa" bindgoDetail="goDetail" />
+  </view>
+
+  <view class="course">
+    <view class='course-title'>
+      <view class="course-subtitle">热门课程</view>
+      <!-- <view class="course-more" bindtap='getMore' data-index='3'>查看更多</view> -->
+    </view>
+    <list listInfo="{{ 'hotLesson' }}" lessonList="{{ hotList }}" isIOS="{{isIOS}}" aaa="aaa" bindgoDetail="goDetail" />
+  </view>
+
+  <view class="course">
+    <view class='course-title'>
+      <view class="course-subtitle">最新发布</view>
+      <!-- <view class="course-more" bindtap='getMore' data-index='4'>查看更多</view> -->
+    </view>
+    <list listInfo="{{ 'newsLesson' }}" lessonList="{{ newList }}" isIOS="{{isIOS}}" aaa="aaa" bindgoDetail="goDetail" />
+  </view>
+
+
+
+</view>
+<!-- <button open-type="contact"  class="guest-button">联系客服获取更多</button> -->
+
+<!-- 
+<view>
+  <button bindtap="goBind">进入绑定页面</button>
+</view> -->

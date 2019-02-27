@@ -1,0 +1,219 @@
+/* pages/vipCenter2/vipCenter2.wxss */
+.vipCenter2{
+  padding-top:32rpx;
+}
+.vipInfoBox{
+  padding:0 30rpx 0 32rpx;
+  height: 398rpx;
+  position: relative;
+}
+.vipInfoContent{
+  padding:0 30rpx;
+  display: flex;
+  flex-direction: column;
+  
+}
+.vipBg{
+  position: absolute;
+  width:688rpx;
+  height:398rpx;
+  z-index: -1;
+}
+.infoTop{
+  width:100%;
+  margin-top:50rpx;
+  display: flex;
+  height:92rpx;
+  justify-content: space-between;
+ 
+}
+.leftDes{
+  width: calc( 100% - 152rpx);
+  display: flex;
+}
+.leftDes image{
+  width:92rpx;
+  height: 92rpx;
+  border-radius: 50%;
+  margin-right:18rpx;
+}
+.leftDes .name{
+  width: calc( 100% - 120rpx);
+  height: 92rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  color:#fff;
+}
+.name text:nth-child(1){
+  font-size:34rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.name text:nth-child(2){
+  font-size:24rpx;
+}
+.rightBtn{
+  width:152rpx;
+  height:56rpx;
+  border-radius:30px;
+  border:2rpx solid rgba(255,255,255,1);
+  color:#fff;
+  font-size:22rpx;
+  line-height: 54rpx;
+  text-align: center;
+}
+/* 进度条 */
+.levsBox{
+  margin-top: 76rpx;
+  position:relative;
+
+}
+.levs{
+  border-radius: 40rpx;
+  
+}
+.levNum{
+  display: inline-block;
+  padding:4rpx 10rpx;
+  color:#865C22;
+  background-color:#FBE7C1;
+  font-size:20rpx;
+  bottom:14rpx;
+  position: absolute;
+  border-radius: 8rpx;
+}
+.lesName{
+  color:#fff;
+  font-size:24rpx;
+  display: flex;
+  justify-content: space-between;
+  margin-top:20rpx;
+}
+.lesTips{
+  color:#865C22;
+  font-size:24rpx;
+  margin-top:44rpx;
+}
+/* 会员特权 */
+.vipClassify{
+  padding:0 30rpx 0 32rpx;
+  color:#484848;
+  font-size:30rpx;
+  margin-top:40rpx;
+}
+.vipScroll{
+  white-space: nowrap;
+  margin-top:28rpx;
+  font-size:0;
+  margin-bottom:40rpx;
+}
+.vipRights{
+  display: inline-block;
+  width:388rpx;
+  height:244rpx;
+  position: relative;
+  margin-right:20rpx;
+  vertical-align: top;
+}
+.vipRights .rightsvip{
+  width:388rpx;
+  height:244rpx;
+  position: absolute;
+  z-index: -1;
+ 
+}
+.vipScroll .vipRights:first-child{
+  margin-left:32rpx;
+}
+.vipzhe{
+  width:72rpx;
+  height:62rpx;
+  display: block;
+  margin:30rpx auto 36rpx auto;
+}
+.vipDes{
+  text-align: center;
+  color:#865C22;
+  font-size:32rpx;
+}
+.vipDes2{
+  text-align: center;
+  color:#865C22;
+  font-size:24rpx;
+  margin-top:22rpx;
+}
+.vipDes3{
+  color:#9B9B9B;
+}
+.hui{
+  width:100%;
+  height:10rpx;
+  background-color:#F8F8F8;
+}
+/* 成长值 */
+.growUp{
+  padding:0 30rpx 32rpx 32rpx;
+}
+.growUpTitle{
+  color:#333;
+  font-size:30rpx;
+  margin-top:40rpx;
+}
+.growUpDes{
+  color:#666666;
+  font-size:24rpx;
+  margin-top:50rpx;
+  text-align: justify;
+  line-height: 34rpx;
+}
+.explainTitle{
+  padding:0 30rpx 0 30rpx;
+}
+.explain{
+  padding-bottom:80rpx;
+}
+.headerBox{
+  background-color:#f8f8f8;
+  height: 76rpx;
+  margin-top:20rpx;
+  padding:0 30rpx 0 32rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size:26rpx;
+  color:#666666;
+}
+.headerList{
+  padding:0 30rpx 0 32rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top:28rpx;
+  color:#666666;
+  font-size:24rpx;
+}
+.headerBox text:nth-child(1){
+  width:30%
+}
+.headerBox text:nth-child(2){
+  width:36.6%;
+  text-align: center;
+}
+.headerBox text:nth-child(3){
+  width:33.3%;
+  text-align: right;
+}
+
+.headerList text:nth-child(1){
+  width:30%
+}
+.headerList text:nth-child(2){
+  width:36.6%;
+  text-align: center;
+}
+.headerList text:nth-child(3){
+  width:33.3%;
+  text-align: right;
+}

@@ -1,0 +1,13 @@
+<!--pages/cashRecord/cashRecord.wxml-->
+<view class='container'>
+  <view class='record' wx:for="{{list}}" wx:key="*this" bindtap='goDetails' data-id='{{index}}'>
+    <view class='bank_date'>
+      <view class='bank' wx:if="{{withdrawType == 2}}">入账-{{item.bankName}}</view>
+      <view class='bank' wx:if="{{withdrawType == 1}}">提现申请中</view>
+      <view class='date'>{{item.createTime}}</view>
+    </view>
+    <view class='price'>{{item.amount}}元</view>
+  </view>
+</view>
+<import src="../common/emptyView" />
+<template is="emptyView" wx:if="{{ list.length==0}}" data="{{...emptyJson}}" />

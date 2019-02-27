@@ -1,0 +1,5 @@
+<view class="upload" bindtap='uploadPic'>
+  <view class='add' wx:if="{{ !showPic }}">+</view>
+  <text wx:if="{{ !showPic }}">身份证正面</text>
+  <image wx:if="{{ showPic }}" src="{{ picUrl }}" mode="aspectFill" />
+</view>

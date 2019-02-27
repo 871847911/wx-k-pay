@@ -1,0 +1,5 @@
+
+<import src="../common/emptyView"/>
+ <template is="emptyView" wx:if="{{ consultList.list.length == 0 }}"  data="{{...emptyJson}}" />
+
+<list listInfo="message_0" consultMessage="{{consultList.list}}" wx:else bindgoDetail="goDetail"/>

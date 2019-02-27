@@ -1,0 +1,82 @@
+.course-list-item-order-title{
+  padding-left: 32rpx;
+  padding-right: 30rpx;
+  width: 100%;
+  margin-bottom: 41rpx;
+  height:42rpx;
+  font-size:30rpx;
+  font-family:PingFangSC-Regular;
+  color:rgba(102,102,102,1);
+  line-height:42rpx;
+}
+
+.course-list-item-order-title view{
+  display: inline-block;
+  vertical-align: top;
+  font-size:30rpx;
+}
+
+.course-list-item-order-title view:nth-child(1){
+  width: calc(100% - 100rpx);
+}
+
+.course-list-item-order-title view:nth-child(2){
+  width:90rpx;
+  height:42rpx;
+  font-size:30rpx;
+  font-family:PingFangSC-Medium;
+  color:rgba(254,128,96,1);
+  line-height:42rpx;
+  font-weight: 900;
+}
+
+.myOrder-price{
+  float: right;
+  margin-left: 60rpx;
+}
+.myOrder-price view:nth-child(1){
+  font-weight: 900;
+  height:42rpx;
+  font-size:30rpx;
+  font-family:PingFangSC-Medium;
+  color:rgba(72,72,72,1);
+  line-height:42rpx;
+  margin-bottom: 12rpx;
+}
+
+.myOrder-price view:nth-child(2){
+  height:42rpx;
+  font-size:30rpx;
+  font-family:PingFangSC-Medium;
+  color:#999999;
+  line-height:42rpx;
+  text-decoration:line-through;
+}
+.myOrder-btns{
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0 30rpx 0 30rpx;
+
+}
+
+.myOrder-btns button{
+  display: inline-block;
+  vertical-align: middle;
+  width:192rpx;
+  height:64rpx;
+  background:rgba(255,255,255,1);
+  font-size:30rpx;
+  font-family:PingFangSC-Medium;
+  line-height:42rpx;
+  font-weight: 900;
+  margin:0  0rpx 47rpx 30rpx;
+  padding-top: 10rpx;
+  text-align: center;
+  color: #666666;
+}
+
+.myOrder-btns button:nth-child(1){
+  border-color: #6CDDC7;
+  color: #6CDDC7;
+}

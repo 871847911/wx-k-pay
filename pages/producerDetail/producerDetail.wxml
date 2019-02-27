@@ -1,0 +1,70 @@
+<view class="container">
+  <view class="bck">
+    <image src="../../images/896145686031907365.jpg" mode="aspectFill"></image>
+  </view>
+  <view class='header'>
+    <view class='user-header'>
+      <image src="{{producerDetail.lecturer.photoUrl}}" mode="aspectFill"></image>
+    </view>
+    <view class='user-order {{ producerDetail.subscribed ? "ordering" : ""}}' bindtap='order'> {{ producerDetail.subscribed ? '正在关注' : '点击关注'}}</view>
+  </view>
+  <view class='content'>
+    <view class='username'>{{ producerDetail.lecturer.realName }}</view>
+    <view class='user-info'>
+      <text>课程：{{ producerDetail.courseList.length  }}</text>
+      <text>专栏：{{ columnList.length  }}</text>
+      <text> {{ producerDetail.lecturer.subscribedNum }}人关注</text>
+
+    </view>
+    <view class='user-intr {{isMore ? "ellplice": ""}}'>
+      {{ showData }}
+      <!-- <text class="read-more" bindtap='read'>{{ readMore ? '收起' : '阅读更多'}}</text> -->
+    </view>
+    <text class="read-more2" bindtap='read2' wx:if="{{contentH>63}}">{{readMore ? '收起':'阅读更多'}}</text>
+  </view>
+  <view class='hui'></view>
+  <view class='course'>
+    <view class='course-title' >
+      <view class="course-subtitle {{id == index ?'change':''}}" wx:for="{{tab}}" bindtap='changeTab' data-id='{{index}}'>{{item}}
+      
+      <view class='green' wx:if="{{id == index}}"></view></view>
+      
+    </view>
+    <list listInfo="{{ '256' }}" courseList="{{ producerDetail.courseList }}" bindgoDetail="goDetail" wx:if="{{id ==0}}" />
+    <view class="pay-column-list" wx:for="{{columnList}}" data-id='{{index}}' bindtap='goColumDetali' wx:if="{{id ==1}}" >
+      <!-- 一个列表 -->
+      <view class="pay-list-item">
+        <view class="item-left">
+          <image src="{{item.columnUrl}}"></image>
+        </view>
+        <view class="item-right">
+          <!-- 111 -->
+          <view class="right-top">
+            <view class="top-title">{{item.columnName}}</view>
+            <view class="top-des">
+              <text wx:if="{{item.updateType ==1}}">每日更新</text>
+              <text wx:if="{{item.updateType ==2}}">每周更新</text>
+              <text wx:if="{{item.updateType ==3}}">每月更新</text>
+              <text>进度{{item.currentArticleNumber }}/{{item.articleNumber}}</text>
+            </view>
+          </view>
+          <!-- 222 -->
+          <view class="bottom-des">
+            <text class="item-money">￥{{item.price}}</text>
+            <text class="item-num">{{item.buyNumber}}人订阅</text>
+          </view>
+
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>
+
+<!--active-sheet  -->
+
+<i-action-sheet visible="{{ visible2 }}" actions="{{ actions2 }}" show-cancel bind:cancel="handleCancel2" bind:click="handleClickItem2" mask-closable="{{ true}}">
+  <view slot="header" style="padding: 16px">
+    <view style="color: #444;font-size: 16px">真的要取消关注{{producerDetail.lecturer.realName}}老师吗？</view>
+  </view>
+</i-action-sheet>

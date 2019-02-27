@@ -1,0 +1,84 @@
+/* pages/creatGigeOrder/creatGigeOrder.wxss */
+
+.course{
+  display: flex;
+  margin: 0 32rpx;
+  padding: 48rpx 0;
+  border-bottom: 2rpx solid rgba(241,241,241,1);
+}
+.course .course-info{
+  flex: 1;
+}
+.course .course-info view:nth-of-type(1){
+  color: rgba(17,17,17,1);
+  line-height: 44rpx;
+  height: 88rpx;
+  font-size: 30rpx;
+  margin-bottom: 46rpx;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.course .course-info view:nth-of-type(2){
+  color: rgba(254,128,96,1);
+  line-height: 32rpx;
+  font-size: 32rpx;
+  font-weight: 900;
+}
+.course image{
+  width: 256rpx;
+  height: 160rpx;
+  margin-left: 28rpx;
+}
+
+.pay{
+  padding: 32rpx; 
+  height: 118rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2rpx solid rgba(241,241,241,1);
+}
+.pay view:nth-of-type(1){
+  color: rgba(51,51,51,1);
+  font-size: 32rpx;
+}
+.pay view:nth-of-type(2){
+  color: rgba(102,102,102,1);
+  font-size: 28rpx;
+}
+
+.submit{
+  width: 100%;  
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32rpx;
+  left: 0;
+  bottom: 0;
+  height: 106rpx;
+  border-top: 2rpx solid rgba(241,241,241,1);
+}
+.submit view{
+  color: #484848;
+  font-size: 30rpx;
+}
+.submit view text{
+  color: #FE8060;
+  font-weight: 900;
+}
+.submit button{
+  width: 336rpx;
+  height: 80rpx;
+  border-radius: 4rpx;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 80rpx;
+}

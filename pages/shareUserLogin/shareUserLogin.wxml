@@ -1,0 +1,3 @@
+<view class='getUser'>
+  <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">微信用户授权</button>
+</view>

@@ -1,0 +1,42 @@
+.h_line {
+  width: 100%;
+  height: 1rpx;
+  background: #f1f1f1;
+}
+
+.bigTitle {
+  margin: 44rpx 0 24rpx 0;
+  border-left: 4rpx solid #00b4b9;
+  font-size: 36rpx;
+  font-weight: 400;
+  color: rgba(72, 72, 72, 1);
+  text-indent: 28rpx;
+}
+
+.title {
+  padding: 0 32rpx;
+  font-size: 28rpx;
+  font-weight: 300;
+  color: rgba(102, 102, 102, 1);
+  padding-bottom: 22rpx;
+}
+
+.contant {
+  padding: 0 32rpx;
+  font-size: 28rpx;
+  font-weight: 300;
+  color: rgba(102, 102, 102, 1);
+  padding-bottom: 22rpx;
+}
+
+.rule {
+  font-size: 24rpx;
+  font-weight: 400;
+  padding: 0 32rpx 32rpx 32rpx;
+  color: rgba(254, 128, 96, 1);
+}
+
+.contant text.red {
+  color: rgba(254, 128, 96, 1);
+  display: inline
+}

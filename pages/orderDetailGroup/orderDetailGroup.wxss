@@ -1,0 +1,111 @@
+/* pages/orderDetailGroup/orderDetailGroup.wxss */
+
+/* flex style */
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-normal{
+    background:#FFFFFF;
+    border:2rpx solid #00B4B9;
+    color:#00B4B9;
+}
+.active-btn{
+    background:#00B4B9;
+    color:#ffffff;
+    border:none;
+}
+
+.content {
+    padding: 0 30rpx;
+    color: #666666;
+    font-size: 28rpx;
+    font-family: PingFangSC-Medium;
+}
+
+/* 团的状态标题 */
+.group-state {
+    padding: 40rpx 0 50rpx 0;
+    font-size: 48rpx;
+    color:#484848;
+}
+
+/* 课程信息区域 */
+.course-info {
+    padding-bottom: 40rpx;
+    border-bottom: 2rpx solid #F1F1F1;
+    align-items: center;
+}
+
+.course-info .title {
+    font-size: 36rpx;
+}
+
+.course-info .origin-price {
+    color: #999999;
+    padding: 48rpx 0 18rpx 0;
+    text-decoration: line-through;
+}
+
+.course-info .group-price{
+    color:#484848;
+}
+
+.course-info .group-price text {
+    color: #FE8060;
+    font-size: 30rpx;
+    font-weight: 500;
+    margin-left: 8rpx;
+}
+
+.course-info image {
+    width: 256rpx;
+    height: 160rpx;
+}
+
+/* 订单信息区域 */
+/* .order-area {} */
+.order-area .box:nth-child(1) .copy{
+    color:#00B4B9;
+}
+
+.order-area .box:nth-child(2n+1) {
+    padding-top: 38rpx;
+}
+
+.order-area .box:nth-child(2n),
+.order-area .box:nth-last-child(1) {
+    border-bottom: 2rpx solid #F1F1F1;
+}
+
+.order-area .box view {
+    padding-bottom: 36rpx;
+}
+
+.order-area .box view:nth-child(2n+1){
+    font-size:32rpx;
+    color:#484848;
+}
+.order-area .box .payTotal{
+    color: #FE8060;
+}
+
+.order-area .cash-state{
+    color:#FE8060;
+    font-size:32rpx;
+    padding:36rpx 0 110rpx 0;
+    border-top:2rpx solid #F1F1F1;
+}
+
+/* 按钮区域 */
+.btn-area{
+    margin-top:100rpx;
+}
+.btn-area button{
+    height: 96rpx;
+    line-height: 96rpx;
+    width:328rpx;
+    text-align: center;
+    border-radius: 8rpx;
+}

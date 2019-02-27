@@ -1,0 +1,27 @@
+<!--pages/issue/issue.wxml-->
+<view class="issue">
+  <view class="issue-title">{{introduction.contentName}}</view>
+  <view class="issue-content">
+    <view class="issue-top">
+      <text>{{introduction.readNumber+1}}人阅读</text>
+      <text>{{introduction.onDate}}更新</text>
+    </view>
+    <!-- 发刊词播放 -->
+    <view class="issue-play">
+      <view class="playLeft" bindtap='playAudio' wx:if="{{!isPlay}}">
+        <image src="../../images/Playbutton@2x.png"  ></image>
+      </view>
+      <view class="playLeft" bindtap='stopPlay' wx:else>
+        <image src="../../images/stopbutton@2x.png"></image>
+      </view>
+      <view class="playRight">
+        <view class="rightTitle">{{introduction.audioName}}</view>
+        <view class="rightInfo"><text>时长{{time}}</text><text>大小{{introduction.audioSize }}</text></view>
+      </view>
+    </view>
+    <!-- 发刊词获取的内容 -->
+    <view class="issueDetail">
+       <rich-text nodes="{{content}}"></rich-text>
+    </view>
+  </view>
+</view>

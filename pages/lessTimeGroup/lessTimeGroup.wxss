@@ -1,0 +1,5 @@
+/* pages/lessTimeGroup/lessTimeGroup.wxss */
+.carousel{
+  width: 100%;
+  padding: 32rpx 30rpx 0rpx 32rpx;
+}

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的咨询",
+  "usingComponents": {
+    "list": "/components/list/list",
+    "searchBar": "/components/search/search",
+    "uploadPic": "/components/uploadPic/uploadPic",
+    "carousel": "/components/carousel/carousel"
+  }
+}

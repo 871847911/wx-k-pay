@@ -1,0 +1,41 @@
+<view>
+  <view class='bigTitle'>规则基本信息</view>
+  <view class='title'>{{ruletitle}}</view>
+  <view class='contant'>{{ruleMain}}</view>
+  <view class='rule'>注：被分享用户需注册成为店铺用户，分享次数+1</view>
+  <view class='h_line'></view>
+  <view class='bigTitle'>规则详细说明</view>
+  <block wx:if="{{appCourseShareDto.courseType==1}}">
+    <view class='contant' wx:for="{{shareCourseDTOS}}" wx:key="*this">
+      <block wx:if="{{item.details==0}}">
+        分享次数达到
+        <text class='red'>{{item.shareExplain}}</text>次，可
+        <text class='red'>免费</text>获取该课程
+      </block>
+      <block wx:else>
+        分享次数达到
+        <text class='red'>{{item.shareExplain}}</text>次，可享受课程
+        <text class='red'>{{item.details}}</text>折优惠
+      </block>
+    </view>
+  </block>
+  <block wx:elif="{{appCourseShareDto.courseType==2}}">
+    <view class='contant' wx:for="{{shareCourseDTOS}}" wx:key="*this">
+      <block wx:if="{{item.discountType==0}}">
+        分享次数达到
+        <text class='red'>{{item.shareExplain}}</text>次，可免费阅读
+        <text class='red'>{{item.discountDetails}}</text>章节
+      </block>
+      <block wx:else>
+        分享次数达到
+        <block wx:if="{{item.details==0}}">
+          <text class='red'>{{item.shareExplain}}</text>次，可<text class='red'>免费</text>获得该课程
+        </block>
+        <block wx:else>
+          <text class='red'>{{item.shareExplain}}</text>次，可享受课程
+          <text class='red'>{{item.details}}</text>折优惠
+        </block>
+      </block>
+    </view>
+  </block>
+</view>

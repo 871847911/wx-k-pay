@@ -1,0 +1,23 @@
+.lecturer-list{
+  padding: 34rpx 34rpx 0;
+  box-sizing: content-box;
+}
+.lecturer-list .lecturer{
+  display: flex;
+  margin-bottom: 48rpx;
+}
+
+.lecturer-list .lecturer image{
+  width: 160rpx;
+  height: 208rpx;
+  border-radius: 8rpx;
+}
+.lecturerInfo{
+  flex: 1;
+  margin-left: 32rpx;  
+}
+.lecturerInfo .lecturer{
+  margin: 128rpx 0 0;
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,40 @@
+/* pages/addQuestionForS/addQuestionForS.wxss */
+.add-question{
+  position: fixed;
+  height: 80rpx;
+  width: 100%;
+  bottom: 16rpx;
+}
+.add-question image{
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;  
+  left: 50%;
+  margin-left: -40rpx;
+}
+
+.questions{
+  padding: 48rpx 32rpx 96rpx
+}
+.question-list{
+  margin-bottom: 32rpx;
+  background:rgba(248,248,248,1);
+}
+.question-list .quesTitle{
+  word-break: break-all;
+  line-height: 48rpx;
+  font-size: 30rpx;
+  color: rgba(72,72,72,1);
+  padding: 32rpx;
+}
+.question-list .quesDet{
+  display: flex;
+  justify-content: space-between;
+  line-height: 32rpx;
+  font-size: 24rpx;
+  color: rgba(72,72,72,1);
+  padding: 0 32rpx 32rpx;
+}
+.question-list .quesDet view:last-child{
+  color: rgba(254,128,96,1);
+}

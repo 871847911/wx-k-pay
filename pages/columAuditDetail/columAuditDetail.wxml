@@ -1,0 +1,42 @@
+<!--pages/payColumnDetail/payColumnDetail.wxml-->
+<view class="column-detail">
+  <image src="{{all.column.columnUrl}}" class="detailPic"></image>
+  <!-- 专栏描述 -->
+  <view class="column-des">
+    <view class="column-title">{{all.column.columnName}}
+      <view class='result'>
+       
+        <image class='columnStatus' mode="aspectFill" src='../../images/symbols_unaudited.png' wx:if="{{all.column.auditStatus ==10}}"></image>
+        <image class='columnStatus' mode="aspectFill" src='../../images/audit@2x.png' wx:if="{{all.column.auditStatus ==20}}"></image>
+        <image class='columnStatus' mode="aspectFill" src='../../images/Already_passed@2x.png' wx:if="{{all.column.auditStatus ==30}}"></image>
+        <image class='columnStatus' mode="aspectFill" src='../../images/not_through@2x.png' wx:if="{{all.column.auditStatus ==40}}"></image>
+      </view>
+
+    </view>
+    <view class="column-info">
+      <text>{{all.column.buyNumber}}人订阅</text>
+      <text>{{all.column.updateType}}{{all.column.frequency }}更新</text>
+      <text>进度{{all.column.currentArticleNumber?all.column.currentArticleNumber:0 }}/{{all.column.articleNumber }}</text>
+    </view>
+  </view>
+
+  <!-- 专栏简介 -->
+  <view class="column-introduction">
+    <view class="introduction-title">专栏简介</view>
+    <view class="column-intro-detail">
+      <rich-text nodes="{{introduction}} "></rich-text>
+    </view>
+  </view>
+
+  <!-- 订阅须知 -->
+  <view class="column-introduction clearPadding">
+    <view class="introduction-title">订阅须知</view>
+    <view class="need">
+      <rich-text nodes="{{all.column.notice }} "></rich-text>
+    </view>
+  </view>
+  <!-- 底部按钮 -->
+  <view class="bottomBox">
+    <view class="issue" bindtap='goIssue'>发刊词</view>
+  </view>
+</view>

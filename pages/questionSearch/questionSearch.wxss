@@ -1,0 +1,97 @@
+.search{
+  padding: 32rpx;
+}
+.search-box{
+  height: 80rpx;
+  background: rgba(241,241,241,1);
+  border-radius: 8rpx;
+  display: flex
+}
+.search-box .iconfont{
+  font-family: "iconfont" !important;
+  font-size:16px;
+  margin: 10rpx 0 0 32rpx;
+}
+.search-box input{
+  height: 80rpx;
+  flex: 1;
+  padding-left: 30rpx
+}
+
+.search-history{
+  margin: 0 32rpx;
+  padding-top: 56rpx;
+}
+.search-history .clear-history{
+  display: flex;
+  justify-content: space-between;
+}
+.search-history .clear-history text:nth-child(1){
+  height: 50rpx;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: rgba(0,0,0,1);
+  line-height: 50rpx;
+}
+.search-history .clear-history text:nth-child(2){
+  height: 50rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(153,153,153,1);
+  line-height: 50rpx;
+}
+
+.history{
+  margin-top: 34rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.history text{
+  width: 100%;
+  display: block;
+  line-height: 40rpx;
+  overflow: hidden;
+  word-break: break-all;
+  color: rgba(102,102,102,1);
+}
+
+.search-result{
+  padding: 48rpx 32rpx 80rpx
+}
+.search-list{
+  margin-bottom: 32rpx;
+  background:rgba(248,248,248,1);
+}
+.search-list .quesTitle{
+  line-height: 48rpx;
+  font-size: 30rpx;
+  color: rgba(72,72,72,1);
+  padding: 32rpx;
+}
+.search-list .quesDet{
+  display: flex;
+  justify-content: space-between;
+  line-height: 32rpx;
+  font-size: 24rpx;
+  color: rgba(72,72,72,1);
+  padding: 0 32rpx 32rpx;
+}
+.search-list .quesDet view:last-child{
+  color: rgba(254,128,96,1);
+}
+
+
+.empty{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.empty image{
+  display: block;
+  width: 320rpx;
+  height: 240rpx;
+}
+.empty text{
+  margin-top: 20rpx;
+}

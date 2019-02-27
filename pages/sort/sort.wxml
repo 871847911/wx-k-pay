@@ -1,0 +1,16 @@
+
+<view class='popup_1' >
+  <scroll-view class='left_tab' scroll-y="true">
+    <view class="left_tab_item {{id!=-1&&id== index ? 'acitive':''}}" wx:for="{{titleList}}" bindtap='choese_type' data-id='{{index}}'>
+      {{item.name}}
+    </view>
+
+  </scroll-view>
+  <scroll-view class='sv_right'>
+    <view class='right_tab'>
+      <view class="right_tab_item {{itemid!=-1&&itemid==index ?'acitive':''}}" wx:for="{{secondList}}" bindtap='chose_item' data-itemid='{{index}}'>
+        {{item.name}}
+      </view>
+    </view>
+  </scroll-view>
+</view>

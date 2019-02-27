@@ -1,0 +1,23 @@
+<!--pages/growthValue/growthValue.wxml-->
+<view class='container'>
+<view class='moneay_all'>
+  <view class='vip_tasks' bindtap='goMissionCenter'>会员任务说明</view>
+  <image class='allImage' src='../../images/symbols-mignxi-bg.png'></image>
+  <view class='today_money'>
+    <view class='num'>{{grow}}</view>
+    <view class='text'>当前成长值</view>
+  </view>
+</view>
+
+</view>
+<view class='kong'></view>
+<view class='mid'>
+  <view class='integra_item' wx:for="{{list}}" wx:key="*this">
+    <view class='name_time'>
+      <view class='name'>{{item.remark}}</view>
+      <view class='time'>{{item.createDate}}</view>
+    </view>
+    <view class='integral_add'>+{{item.growChange}}</view>
+  </view>
+</view> 
+<view class='hui'></view>

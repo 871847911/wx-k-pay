@@ -1,0 +1,55 @@
+page {
+  width: 100%;
+  min-height: 100%;
+  /* background-color: #f9f9f9; */
+  font-family: PingFangSC-Medium,
+                 -apple-system-font,
+                 'Helvetica Neue',
+                 Helvetica,
+                 'Microsoft YaHei',
+                 sans-serif;
+  font-size: 28rpx;
+  position: relative;
+  /* background: rgb(242,242,242);  */
+  
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* padding: 15rpx; */
+}
+
+.button_color{
+  background: rgba(108,221,199,1);
+}
+
+.container view, page view {
+  /* background: white; */
+  box-sizing: border-box;
+}
+
+.limit-word1 {
+  text-overflow: ellipsis !important;
+  /* display: -webkit-box !important; *//* -webkit-box-orient: vertical !important; *//* -webkit-line-clamp: 1 !important; */
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.limit-word2 {
+  text-overflow: ellipsis !important;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+@import './ico.wxss';
+@import './pages/common/emptyView.wxss';
+::-webkit-scrollbar{
+width: 0;
+height: 0;
+color: transparent;
+}

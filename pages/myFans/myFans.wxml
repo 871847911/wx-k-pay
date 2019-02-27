@@ -1,0 +1,12 @@
+<!--pages/myFans/myFans.wxml-->
+<view class='container'>
+<view class='hui'></view>
+  <view class='title'>共有{{total}}个粉丝</view>
+  <view class='hui'></view>
+  <view class="fans {{item.isNew ? 'new':''}}" wx:for="{{fans}}">
+    <view class='head'>
+      <image class='head_img' src='{{item.headUrl}}'></image>
+    </view>
+    <view class='name'>{{item.nickName}}</view>
+  </view>
+</view>

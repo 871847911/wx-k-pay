@@ -1,0 +1,205 @@
+<view class="course_page">
+  <view class='courseDetail'>
+    <!-- <view class='checking' wx:if="{{ !is_detailPage }}">
+            <image src="/images/status-checking.png" mode='aspectFill' wx:if="{{ courseDetail.courseMain.status === 20 }}"></image>
+            <image src="/images/status-not.png" mode='aspectFill' wx:elif="{{ courseDetail.courseMain.status === 30 }}"></image>
+            <image src="/images/status-yes.png" mode='aspectFill' wx:elif="{{ courseDetail.courseMain.status === 50 }}"></image>
+        </view> -->
+
+    <!--課程封面  -->
+    <!-- <image wx:if="{{index == 0 }}" src="{{ courseDetail.courseMain.courseUrlFirst }}" mode='aspectFill'></image>
+    <image wx:if="{{ index == 1 && subType == 1}}" src="{{courseDetail.courseMain.courseUrlFirst}}" mode='aspectFill'></image> -->
+    <swiper  wx:if="{{index == 0 }}"  style='height:416rpx' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" mode='aspectFill' />
+        </swiper-item>
+      </block>
+    </swiper>
+    <swiper  wx:if="{{index == 1 && subType == 1}}"  style='height:416rpx' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" mode='aspectFill' />
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <audio wx:if="{{subType == 2 && index == 1}}" poster="{{courseDetail.courseMain.courseUrlFirst}}" src="{{subUrl}}" id="{{myAudio+id}}" name='{{ subName }}' bindtap="audioPlay" author="{{courseDetail.courseMain.courseName}}" controls loop style='width:750rpx'></audio>
+    <video wx:if="{{subType == 3 && index == 1}}" id="{{myVideo+id}}" src="{{subUrl}}" enable-danmu danmu-btn controls bindtap="videoPlay"></video>
+
+    <!--Tab  -->
+    <view style='padding-top:2rpx' class="{{ isFixed_Preview ? 'fix-detail' : ''}}">
+      <view class="course-type {{ index == idx ? 'active' : '' }}" wx:for="{{ ['课程预览','课程详情'] }}" wx:key="*this" wx:for-index="idx" bindtap='setIndex' data-idx="{{ idx }}">
+        {{ item }}
+        <view class='active-flag' wx:if="{{ index == idx }}"></view>
+      </view>
+    </view>
+
+    <!-- 课程预览  -->
+    <view class='course-preview' wx:if="{{ index == 0 }}">
+      <view class='course-preview-title'>
+        <view class="title">
+          <text wx:if="{{!isEdit}}">{{ courseDetail.courseMain.courseName }}</text>
+          <input class="changeInput" wx:else value='{{ courseDetail.courseMain.courseName }}' bindblur="changeCourseName"></input>
+          <button class='share' wx:if="{{ fromPage == 'myPublish' }}" bindtap='updateName'>
+            <icon class="iconfont icon-bianji"></icon>
+          </button>
+        </view>
+
+        <view class='course-preview-des'>
+          <view class='info info2' style='color:#00B4B9' wx:if="{{ courseDetail.courseMain.price == 0 }}">免费 </view>
+          <view class='info info2'wx:else>
+            <view class='info info2' wx:if="{{!isIOS}}" >￥{{ courseDetail.courseMain.price }}</view>
+          </view>
+          <view class='info infomid'>
+            <icon class="iconfont icon-chakan"></icon>{{ courseDetail.courseMain.buyNumber }} 人
+          </view>
+          <view class='info infoqw'>
+            <image class='shareImg' src='../../images/share.png'></image>
+            <view class='shareText'>{{ courseDetail.courseMain.buyNumber }}次</view>
+          </view>
+        </view>
+        <view class='share-rules'>
+          <view wx:if="{{true}}" class='sharefree'>分享免费读</view>
+          <view class='shareruleBtn' bindtap='shareruleBtn'>查看分享规则</view>
+          <view class='sharedate'>{{ courseDetail.courseMain.createDate }}</view>
+        </view>
+      </view>
+
+      <view class='course-artist'>
+        <view class='artist-intr'>讲师简介</view>
+        <view class='artist-info'>
+          <view class='pic'>
+            <image src="{{ courseDetail.lecturer.photoUrl }}"></image>
+          </view>
+          <view class='info'>
+            <view class='username'>{{ courseDetail.lecturer.realName }} </view>
+            <view class='intr'>{{ courseDetail.lecturer.introduce }} </view>
+          </view>
+        </view>
+      </view>
+
+      <view class='course-course'>
+        <view class="course-intr">课程简介</view>
+        <view class='course-content'>
+          <rich-text nodes="{{ introduction }} "></rich-text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 课程详情  -->
+    <view class='course-detail' wx:if="{{ index == 1 }}">
+
+      <!-- 结构化渲染  -->
+      <view class="course-directory {{ isFixed_Detail ? 'fix-detail' : ''}} " wx:if="{{courseDetail.courseMain.courseType == 2}}">
+        <view class='directory-intr'>课程目录
+          <text class="small-flag">( {{courseDetail.courseSubList.length}}节 )</text>
+        </view>
+        <!-- 免费  -->
+        <scroll-view class='dir-item' wx:if='{{isFree}}' scroll-y style="height:300rpx">
+          <view class="inner" wx:for="{{ courseDetail.courseSubList }}" wx:for-index="idx" wx:key="*this" bindtap='chooseCourse' data-item="{{ item }}" data-index="{{item.id}}">
+            <!-- <view class='inner-title limit-word1'>{{ courseDetail.courseMain.courseName }}</view> -->
+            <view class="dir-item-icon">
+              <image src="../../images/couse-icon@2x_1.png"></image>
+            </view>
+            <view class="inner-content limit-word1 {{idxs == item.id ? 'active-word': ''}}  ">第{{ idx+1}}节 {{ item.subName }}</view>
+            <!-- <view class="dir-item-icon-lock ">
+                            <image src="../../images/suo.png"></image>
+                        </view> -->
+          </view>
+        </scroll-view>
+        <!-- 付费  -->
+        <scroll-view class='dir-item' wx:if="{{!isFree}}" scroll-y="true" style="height:500rpx">
+          <view class="inner" wx:for="{{ courseDetail.courseSubList }}" wx:for-index="idx" wx:key="*this" bindtap='chooseCourse' data-item="{{ item }}" data-index="{{item.id}}" data-isShow="{{item.isCharge}}">
+            <!-- <view class='inner-title limit-word1'>{{ courseDetail.courseMain.courseName }}</view> -->
+            <view class="dir-item-icon">
+              <image src="../../images/couse-icon@2x_1.png"></image>
+            </view>
+            <view class='inner-content limit-word1  {{idxs == item.id  ? "active-word" : ""}}' data-id='{{index}}' bindtap='changeColor'>第{{ idx+1}}节 {{ item.subName }}</view>
+            <view class="dir-item-icon-lock " wx:if="{{!courseDetail.isBuy}}">
+              <image src="../../images/suo.png"></image>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+
+      <!-- 图文课程渲染内容  -->
+      <view class='detail-content'>
+        <!-- <template is="wxParse" data="{{wxParseData:article.nodes}}"/> -->
+        <rich-text nodes="{{ context }}" style='height: 100%'></rich-text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- bottom  -->
+<view wx:if="{{!isIOS}}">
+  <view class='course-bottom' style='z-index:1' wx:if="{{ is_detailPage }} ">
+    <view class='bottom-item' bindtap='ask' style='margin-left: 42rpx;'>
+      <image class='bottom-item_img' src='../../images/inform.png'></image>
+      <text class='bottom-item-text'>咨询</text>
+    </view>
+    <view class='course-bottom-item' style='margin-left: 30rpx;' bindtap='showModal'>
+      <button class='share_bt' style='height:40rpx;width:40rpx;'>
+        <image class='bottom-item_img' src='../../images/share.png'></image>
+      </button>
+      <text class='bottom-item-text'>分享</text>
+    </view>
+    <button bindtap='buy' class='{{ courseDetail.isBuy ? "buyed" : "" }}' wx:if="{{ courseDetail.courseMain.price != 0 }}">{{ courseDetail.isBuy ? '已购买' : '立即购买'}}</button>
+    <button bindtap='join' class='{{ courseDetail.isBuy ? "buyed" : "" }}' wx:else>{{ courseDetail.isBuy ? '已加入' : '加入课程'}} </button>
+  </view>
+</view>
+<view class="course-bottom ios_text" wx:if="{{isIOS}}" style='z-index:2'>由于微信政策原因暂不支持购买</view>
+
+<!-- 上拉弹窗 -->
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class='attr_box_text'>课程分享</view>
+  <view class='icon_box'>
+    <button class='closePop' open-type='share'>
+      <image class='bottom-item_img' src='../../images/wx@2x.png'></image>
+    </button>
+    <view style='font-size:24rpx;font-weight:400;color:rgba(51,51,51,1);padding-top:12rpx;'>微信好友</view>
+  </view>
+
+  <button class="weui-btnz" style='color: rgba(72, 72, 72, 1)' type="primary" bindtap="hideModal">取消</button>
+</view>
+<!-- <view class='course-bottom' style='z-index:1' wx:if="{{ is_detailPage }}">
+    <view class='course-bottom-item' bindtap='ask'>
+        <icon class="iconfont icon-zixunzhuanyefuwu"></icon>
+        <text>咨询</text>
+    </view>
+    <view class='course-bottom-item'>
+        <button open-type='share'>
+      <icon class="iconfont icon-fenxiang"></icon>
+    </button>
+        <text>分享</text>
+    </view>
+    <button bindtap='buy' class='{{ courseDetail.isBuy ? "buyed" : "" }}' wx:if="{{ courseDetail.courseMain.price != 0 }}">{{ courseDetail.isBuy ? '已购买' : '立即购买'}}</button>
+    <button bindtap='join' class='{{ courseDetail.isBuy ? "buyed" : "" }}' wx:else>{{ courseDetail.isBuy ? '已加入' : '加入课程'}}</button>
+</view> -->
+
+<view class='course-bottom' style='z-index:2' wx:if="{{ fromPage == 'myPublish' }}">
+  <button class='sold-out' bindtap='soldOut'>下架</button>
+</view>
+
+<view class='course-bottom' style='z-index:2' wx:if="{{ fromPage == 'courseManage' && courseDetail.courseMain.status != 20  && courseDetail.courseMain.status != 40  }}">
+  <button class='sold-out' bindtap='submitCheck'>提交审核</button>
+</view>
+
+<view class='course-bottom' style='z-index:2' wx:if="{{ fromPage != 'myPublish' && fromPage != 'courseBuyed' && courseDetail.courseMain.status == 50 }}">
+  <button class='sold-out' bindtap='soldUp'>上架</button>
+</view>
+
+<!--modal  buy  soldout-->
+<i-action-sheet visible="{{ visible1 }}" i-class="iclass" actions="{{ actions1 }}" show-cancel bind:cancel="handleCancel1" bind:click="handleClickItem1" />
+
+<i-modal title="下架成功" visible="{{ visible2 }}" actions="{{ actions2 }}" bind:click="handleClose2">
+  <view>{{t_5}}s后自动跳转至发布列表</view>
+</i-modal>
+
+<i-modal title="已提交审核，请耐心等待" visible="{{ visible3 }}" actions="{{ actions3 }}" bind:cancel="handleCancel1" bind:click="handleClose3">
+</i-modal>
+<i-modal title="提示" bindgetuserinfo="bindgetuserinfo" openType="getUserInfo" visible="{{ visibleqw }}" actions="{{ actions }}" bind:cancel="handleCancelqw" bind:click="handleClose3" optionscourseId="{{courseId}}" optionsuserId="{{userId}}">
+  <view>请先授权</view>
+</i-modal>

@@ -1,0 +1,292 @@
+<view class="course_page">
+  <view class='courseDetail'>
+    <!-- <view class='checking' wx:if="{{ !is_detailPage }}">
+            <image src="/images/status-checking.png" mode='aspectFill' wx:if="{{ courseDetail.courseMain.status === 20 }}"></image>
+            <image src="/images/status-not.png" mode='aspectFill' wx:elif="{{ courseDetail.courseMain.status === 30 }}"></image>
+            <image src="/images/status-yes.png" mode='aspectFill' wx:elif="{{ courseDetail.courseMain.status === 50 }}"></image>
+        </view> -->
+
+    <!--課程封面  -->
+    <!-- <image wx:if="{{index == 0 }}" src="{{ courseDetail.courseMain.courseUrlFirst }}" mode='aspectFill'></image>
+    <image wx:if="{{ index == 1 && subType == 1}}" src="{{courseDetail.courseMain.courseUrlFirst}}" mode='aspectFill'></image> -->
+    <swiper wx:if="{{index == 0 }}" style='height:416rpx' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" mode='aspectFill' />
+        </swiper-item>
+      </block>
+    </swiper>
+    <swiper wx:if="{{index == 1 && subType == 1}}" style='height:416rpx' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" mode='aspectFill' />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='audio' wx:if="{{subType == 2 && index == 1}}">
+      <!-- <audio wx:if="{{subType == 2 && index == 1}}" poster="{{courseDetail.courseMain.courseUrlFirst}}" src="{{subUrl}}" id="{{myAudio+id}}" name='{{ subName }}' bindtap="audioPlay" author="{{courseDetail.courseMain.courseName}}" controls loop style='width:750rpx'></audio> -->
+<view class='audio_item'>
+      <image src="{{imgUrls[0]}}" mode='aspectFill'></image>
+      <image class='audio_img'  bindtap='playmusic' src='../../images/playaudio.png' style='height:64rpx;width:64rpx' wx:if="{{!isPlay}}"></image>
+      <image class='audio_img' bindtap='pausemusic' src='../../images/stopmusic.png' style='height:64rpx;width:64rpx' wx:if="{{isPlay}}"></image>
+      <view class="pro11">
+        <view class="proleft">{{currentPosition === 0 || '' ? '00:00' : currentPosition}}</view>
+        <view class="procenter body-view">
+          <slider class='sliderone' bindchange="bindSliderchange" bindchanging='changing' value="{{sliderValue}}"  block-size="12" activeColor="#6CDDC7" />
+        </view>
+        <view class="proright">{{durations == null? '00:00':durations}}</view>
+      </view>
+    </view>
+      
+    </view>
+    <video wx:if="{{subType == 3 && index == 1}}" id="{{myVideo+id}}" poster="../../images/videoimg.jpg" src="{{subUrl}}" enable-danmu danmu-btn controls bindplay="videoPlay" ></video>
+
+    <!--Tab  -->
+    <view style='padding-top:2rpx' class="{{ isFixed_Preview ? 'fix-detail' : ''}}">
+      <view class="course-type {{ index == idx ? 'active' : '' }}" wx:for="{{ ['课程预览','课程详情'] }}" wx:key="*this" wx:for-index="idx" bindtap='setIndex' data-idx="{{ idx }}">
+        {{ item }}
+        <view class='active-flag' wx:if="{{ index == idx }}"></view>
+      </view>
+    </view>
+
+    <!-- 课程预览  -->
+    <view class='course-preview' wx:if="{{ index == 0 }}">
+      <view class='course-preview-title'>
+        <view class="title">
+          <text wx:if="{{!isEdit}}">{{ courseDetail.courseMain.courseName }}</text>        
+          <input class="changeInput" wx:else value='{{ courseDetail.courseMain.courseName }}' bindblur="changeCourseName"></input>        
+          <view class='Give' wx:if='{{ sendGiftNum.status == 0 || sendGiftNum.status == 1 || sendGiftNum.status == 2 }}' bindtap='getShareNum'>
+            <image src='../../images/liwu.png'></image>赠送</view>
+          <!-- <button class='share' wx:if="{{ fromPage == 'myPublish' }}" bindtap='updateName'>
+            <icon class="iconfont icon-bianji"></icon>
+          </button> -->
+        </view>
+        <view class='course-preview-des'>
+          <block wx:if="{{groupStatus}}">
+            <view class='info info2' style='color:#1AA97B;' wx:if="{{ courseDetail.courseMain.price == 0 }}">免费 </view>
+            <view class='info info2' style='text-decoration: line-through;' wx:else>￥{{ courseDetail.courseMain.price }} </view>
+          </block>
+          <block wx:elif="{{courseDetail.courseMain.isShowShare}}">
+            <view class='info info2' style='color:#1AA97B' wx:if="{{ courseDetail.courseMain.price == 0 }}">免费 </view>
+            <view class='info info2' wx:else>
+              <text class='newPrice' wx:if="{{!isIOS}}">￥{{ courseDetail.courseMain.discountPrice }} </text>
+              <text class='oldPrice' wx:if="{{!isIOS}}">￥{{ courseDetail.courseMain.price }} </text>
+            </view>
+          </block>
+          <block wx:else>
+            <view class='info info2' style='color:#6CDDC7' wx:if="{{ courseDetail.courseMain.price == 0 }}">免费 </view>
+            <view class='info info2' wx:else>￥{{ courseDetail.courseMain.discountPrice }} </view>
+          </block>
+          <view class='info infomid'>
+            <icon class="iconfont icon-chakan"></icon>{{ courseDetail.courseMain.hits }} 人
+          </view>
+          <view class='info infoqw'>
+            <image class='shareImg' src='../../images/share.png'></image>
+            <view class='shareText'>{{ courseDetail.courseMain.shareCount }}次</view>
+          </view>
+        </view>
+        <view class='share-rules'>
+          <view wx:if="{{courseDetail.courseMain.isShowShare}}" class='sharefree'>分享免费读</view>
+          <view wx:if="{{courseDetail.courseMain.isShowShare}}" class='shareruleBtn' bindtap='shareruleBtn'>查看分享规则</view>
+          <view class='sharedate'>{{ courseDetail.courseMain.createDate }}</view>
+        </view>
+      </view>
+
+      <view class='course-artist' wx:if="{{courseDetail.lecturer!=null}}">
+        <view class='artist-intr' >讲师简介</view>
+        <view class='artist-info' >
+          <view class='pic'>
+            <image src="{{ courseDetail.lecturer.photoUrl }}"></image>
+          </view>
+          <view class='info' >
+            <view class='username'>{{ courseDetail.lecturer.realName }} </view>
+            <view class='intr'>{{ courseDetail.lecturer.introduce }} </view>
+          </view>
+        </view>
+      </view>
+
+      <view class='groupthis' wx:if="{{groupStatus}}">
+        <view class='groupthisLeft'>拼团价:
+          <text>¥{{groupBuyRule.price}}</text>
+        </view>
+        <view class='groupthisMid'>{{groupBuyRule.addNum }}人成团</view>
+        <view class='groupthisRightIcon' bindtap='goGroupList'>
+          <image src='../../images/symbols-turn-left.png'></image>
+        </view>
+        <view class='groupthisRight' bindtap='goGroupList'>{{ sumNum }}人正在拼单</view>
+      </view>
+      <view class='groupListBox' wx:if="{{groupStatus&&grouplist.length!=0}}">
+        <view class='groupList' wx:for="{{grouplist}}" wx:key="*this">
+          <view class='grouprImg'>
+            <image src='{{item.userImg}}'></image>
+          </view>
+          <view class='grouprName'>{{item.userNickName}}</view>
+          <view class='grouprtime'>
+            <view>还差
+              <text>{{item.surplusNum}}</text>人成团</view>
+            <view>
+              <secondKill inner-text="{{item.createDateTime}}" inner-hour="{{item.validity}}" inner-status="{{innerStatus}}"></secondKill>
+            </view>
+          </view>
+          <view class='{{item.isState==0?"grouprBtn":"ngrouprBtn"}}' bindtap='gogroupPin' data-index='{{index}}' data-status='{{item.state}}'>去拼团</view>
+        </view>
+      </view>
+
+      <view class='course-course'>
+        <view class="course-intr">课程简介</view>
+        <view class='course-content'>
+          <rich-text nodes="{{introduction }} "></rich-text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 课程详情  -->
+    <view class='course-detail' wx:if="{{ index == 1 }}">
+
+      <!-- 结构化渲染  -->
+      <view class="course-directory {{ isFixed_Detail ? 'fix-detail' : ''}} " wx:if="{{courseDetail.courseMain.courseType == 2 || 1}}">
+        <view class='directory-intr'>课程目录
+          <text class="small-flag">( {{courseDetail.courseSubList.length}}节 )</text>
+        </view>
+        <!-- 免费  -->
+        <scroll-view class='dir-item' wx:if='{{isFree}}' scroll-y style="height:100%">
+          <view class="inner" wx:for="{{ courseDetail.courseSubList }}" wx:for-index="idx" wx:key="*this" bindtap='chooseCourse' data-item="{{ item }}" data-index="{{item.id}}">
+            <!-- <view class='inner-title limit-word1'>{{ courseDetail.courseMain.courseName }}</view> -->
+            <!-- <view class="dir-item-icon">
+              <image src="../../images/couse-icon@2x_1.png"></image>
+            </view> -->
+            <view class="inner-content limit-word1 {{idxs == item.id ? 'active-word': ''}}  ">第{{ idx+1}}节 {{ item.subName }}</view>
+            <!-- <view class="dir-item-icon-lock ">
+                              <image src="../../images/suo.png"></image>
+                          </view> -->
+          </view>
+        </scroll-view>
+        <!-- 付费  -->
+        <scroll-view class='dir-item' wx:if="{{!isFree}}" scroll-y="true" style="height:500rpx">
+          <view class="inner" wx:for="{{ courseDetail.courseSubList }}" wx:for-index="idx" wx:key="*this" bindtap='chooseCourse' data-item="{{ item }}" data-index="{{item.id}}" data-isShow="{{item.isCharge}}">
+            <!-- <view class='inner-title limit-word1'>{{ courseDetail.courseMain.courseName }}</view> -->
+            <view class="dir-item-icon">
+              <image src="../../images/couse-icon@2x_1.png"></image>
+            </view>
+            <view class='inner-content limit-word1  {{idxs == item.id  ? "active-word" : ""}}' data-id='{{index}}' bindtap='changeColor'>第{{ idx+1}}节 {{ item.subName }}</view>
+            <view class="dir-item-icon-lock " wx:if="{{!isHave}}">
+              <image src="../../images/suo.png"></image>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+
+      <!-- 图文课程渲染内容  -->
+      <view class='detail-content'>
+        <!-- <template is="wxParse" data="{{wxParseData:article.nodes}}"/> -->
+        <rich-text nodes="{{ context }}" style='height: 100%'></rich-text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- bottom  -->
+<block wx:if="{{!groupStatus}}" >
+  <view class='course-bottom' style='z-index:1' wx:if="{{ is_detailPage }}" hidden="{{isNoBuy}}">
+    <view class='bottom-item' bindtap='ask' style=''>
+      <image class='bottom-item_img' src='../../images/inform.png'></image>
+      <text class='bottom-item-text'>咨询</text>
+    </view>
+    <view class='course-bottom-item' style='' bindtap='showModal'>
+      <button class='share_bt' style=''>
+        <image class='bottom-item_img' src='../../images/share.png'></image>
+      </button>
+      <text class='bottom-item-text'>分享</text>
+    </view>
+    <button bindtap='buy' class='{{ isHave ? "buyed" : "" }}' wx:if="{{ courseDetail.courseMain.price != 0&&courseDetail.courseMain.discountPrice!=0 }}">{{ isHave ? '已购买' : '立即购买'}}</button>
+    <button bindtap='joinShareCourse' class='{{ isHave ? "buyed" : "" }}' wx:elif="{{courseDetail.courseMain.discountPrice==0}}">{{ isHave ? '已加入' : '加入课程'}}</button>
+    <button bindtap='join' class='{{ isHave ? "buyed" : "" }}' wx:else>{{ isHave ? '已加入' : '加入课程'}}</button>
+  </view>
+</block>
+<block wx:else >
+  <view class='course-bottom' style='z-index:1' wx:if="{{ is_detailPage }}" hidden="{{isNoBuy}}">
+    <view class='bottom-item newbottom-item' bindtap='ask' style=''>
+      <image class='bottom-item_img' src='../../images/inform.png'></image>
+      <text class='bottom-item-text'>咨询</text>
+    </view>
+    <view class='btn_line'></view>
+    <view class='course-bottom-item newcourse-bottom-item' style='' bindtap='showModal'>
+      <button class='share_bt' style='height:40rpx;width:40rpx;'>
+        <image class='bottom-item_img' src='../../images/share.png'></image>
+      </button>
+      <text class='bottom-item-text'>分享</text>
+    </view>
+    <block wx:if="{{!isgroup}}">
+      <view class='groupOldPrice' bindtap='buy'>
+        <view style='padding-top:5px;'>¥ {{courseDetail.courseMain.price}}</view>
+        <view>原价</view>
+      </view>
+      <view class='groupNewPrice' bindtap='groupBuy'>
+        <view>
+          <secondKill inner-text="{{stopDate}}" inner-status="{{innerStatus}}"></secondKill>
+        </view>
+        <view>￥{{groupBuyRule.price}} 一键开团</view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class='groupShare' bindtap='groupShare'>
+        邀请好友完成拼团
+      </view>
+    </block>
+  </view>
+</block>
+
+
+<!-- 上拉弹窗 -->
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class='attr_box_text'>课程分享</view>
+  <view class='icon_box'>
+    <button class='closePop' open-type='share'>
+      <image class='bottom-item_img' src='../../images/wx@2x.png'></image>
+    </button>
+    <view style='font-size:24rpx;font-weight:400;color:rgba(51,51,51,1);padding-top:12rpx;'>微信好友</view>
+  </view>
+
+  <button class="weui-btnz" style='color: rgba(72, 72, 72, 1)' type="primary" bindtap="hideModal">取消</button>
+</view>
+
+<!-- <view class='course-bottom' style='z-index:2' wx:if="{{ fromPage == 'myPublish' }}">
+  <button class='sold-out' bindtap='soldOut'>下架</button>
+</view>
+
+<view class='course-bottom' style='z-index:2' wx:if="{{ fromPage == 'courseManage' && courseDetail.courseMain.status != 20  && courseDetail.courseMain.status != 40  }}">
+  <button class='sold-out' bindtap='submitCheck'>提交审核</button>
+</view>
+
+<view class='course-bottom' style='z-index:2' wx:if="{{ fromPage != 'myPublish' && fromPage != 'courseBuyed' && courseDetail.courseMain.status == 50 }}">
+  <button class='sold-out' bindtap='soldUp'>上架</button>
+</view> -->
+
+<!--modal  buy  soldout-->
+<i-action-sheet visible="{{ visible1 }}" i-class="iclass" actions="{{ actions1 }}" show-cancel bind:cancel="handleCancel1" bind:click="handleClickItem1" />
+
+<i-modal title="下架成功" visible="{{ visible2 }}" actions="{{ actions2 }}" bind:click="handleClose2">
+  <view>{{t_5}}s后自动跳转至发布列表</view>
+</i-modal>
+
+<i-modal title="已提交审核，请耐心等待" visible="{{ visible3 }}" actions="{{ actions3 }}" bind:cancel="handleCancel1" bind:click="handleClose3">
+</i-modal>
+<i-modal title="提示" bindgetuserinfo="bindgetuserinfo" openType="getUserInfo" visible="{{ visibleqw }}" actions="{{ actions }}" bind:cancel="handleCancelqw" bind:click="handleClose3">
+  <view>请先授权</view>
+</i-modal>
+
+
+
+<view class="commodity_screen" bindtap="hideGiftDilong" wx:if="{{ giftDilong }}"></view>
+<view animation="{{animationData}}" class="gift-box" wx:if="{{ giftDilong }}">
+  <image src='/images/send_gift@3x.png'></image>
+  <image class='close' bindtap='hideGiftDilong' src='/images/close@3x.png'></image>
+  <text>赠人玫瑰，手有余香</text>
+  <text>（还可赠送购买{{sendGiftNum.number}}次）</text>
+  <text>1、购买课程后，可以通过连接分享给好友 </text>
+  <text>2、好友领取后就能免费参与赠送课程</text>
+  <text>3、随时在赠送记录中，查看领取详情</text>
+  <button class="next-step" bindtap='toCreatGiftOrder'>下一步</button>
+</view>
+<button class='askPeople' bindtap='createOrder' open-type='contact' wx:if="{{courseDetail.courseMain.price != 0 && isIOS}}" hidden='{{isHave || isNoBuy}}'>回复1咨询</button>

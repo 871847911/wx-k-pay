@@ -1,0 +1,27 @@
+<view class='hui'></view>
+<view class='myManage' bindtap='goManage'>我的审核课程
+  <image class='right' src='../../images/symbols-turn-left.png'></image>
+</view>
+<view class='hui'></view>
+<import src="../common/emptyView" />
+<template wx:if="{{ publishDetail.list.length == 0 }}" is="emptyView" data="{{...emptyJson}}" />
+<!-- <list wx:else listInfo="{{ '256' }}" bindgoDetail="goDetail" courseList="{{ publishDetail.list }}" /> -->
+
+<view class='shareList' wx:for="{{courseManage.list}}" bindtap='goDetail' data-listtype='courseDetail' data-courseid="{{ item.id }}">
+  <view class='share_left'>
+    <image class='share_img' src='{{item.courseUrlFirst}}'></image>
+    <view class='share_left_icon'>
+      
+    </view>
+  </view>
+  <view class='share_right'>
+    <view class='share_title'>{{item.courseName}}</view>
+    <view class='share_status'>
+      {{item.status == 40 ? '已上架':'未上架'}}
+      <view wx:if="{{item.status == 40}}"> {{item.buyNumber}}人购买</view>
+    </view>
+    <view class='share_content'>
+      {{item.createDate}}
+    </view>
+  </view>
+</view>

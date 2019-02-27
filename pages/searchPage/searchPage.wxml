@@ -1,0 +1,54 @@
+<view class="container">
+  <!-- search  -->
+  <view style='width:100%;padding-bottom: 24rpx;'>
+    <view class='search-header'>
+      <searchBar bindclickSearch="clickSearch" bindclickInput="clickInput" bindbindfocus="bindfocus" searchAttrs="{{ searchAttrs }}" />
+    </view>
+    <view class='cancel' bindtap='cancel'>搜索</view>
+  </view>
+  <!-- his  -->
+  <view class='searchPage-content' wx-if="{{ !isRes }}">
+    <view class='title'>
+      搜索历史
+      <!-- <view class='clear-his' bindtap='clearHis'>清除历史</view> -->
+    </view>
+    <view class='content-list'>
+      <view class='content-list-content' style='width: 100%'>
+        <view class='content-list-content-item' wx:for="{{ listSearchHistory }}" wx:key="*this" bindtap='getHistory' data-item="{{item}}">{{ item }}</view>
+      </view>
+    </view>
+  </view>
+
+  <!--result  -->
+  <view class='res' wx:if="{{ isRes }}">
+    <view class='resPage-title'>
+      <view class="resPage-title-item {{idx == index ? 'active' : ''}} " wx:for="{{ pageInfo }}" wx:key="*this" wx:for-index="idx" bindtap='clickTab' data-idx="{{ idx }}">
+        {{ item }}
+      </view>
+    </view>
+    <block wx:if="{{ index != 2 && !isEmpty}}">
+      <view class='course'>
+        <view class='course-title'>
+          <view>课程</view>
+          <view class="more" bindtap='getMore' data-index='1' wx:if="{{index == 0}}">查看更多</view>
+        </view>
+        <list listInfo="{{ '256' }}"  courseList="{{ courseList }}" bindgoDetail="goDetail"/>
+      </view>
+    </block>
+    <block wx:if="{{index != 1 && !isEmpty}}">
+      <view class='course'>
+        <view class='course-title'>
+          <view>讲师</view>
+          <view class="more"   bindtap='getMore' data-index='2' wx:if="{{index == 0}}">查看更多</view>
+        </view>
+        <list listInfo="{{ '208' }}"  lecturerList="{{ lecturerList }}" bindgoDetail="goDetail"/>
+      </view>
+    </block>
+    
+    <!-- empty  -->
+     <view class='empty' wx:if="{{ isEmpty }}">
+      <image src="../../images/search_result_icon@2x.png" mode="aspectFit"></image>
+      <view style='margin-top: 48rpx;'>抱歉，未找到相关综合~换个词再试试</view>
+    </view> 
+  </view>
+</view>

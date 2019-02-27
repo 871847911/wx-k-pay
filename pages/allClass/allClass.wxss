@@ -1,0 +1,236 @@
+/* pages/allClass/allClass.wxss */
+
+.tab {
+  padding-top: 30rpx;
+  padding-bottom: 24rpx;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.tab_item {
+  width: 250rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab_name {
+  max-width: 125rpx;
+  text-align: right;
+  overflow: hidden; /*超出部分隐藏*/
+  white-space: nowrap; /*不换行*/
+  text-overflow: ellipsis; /*超出部分文字以...显示*/
+}
+
+.tab_icon {
+  margin-left: 10rpx;
+  height: 28rpx;
+  width: 28rpx;
+}
+
+.list {
+  padding-left: 32rpx;
+  padding-top: 32rpx;
+  padding-right: 32rpx;
+}
+
+.list_item {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 68rpx;
+}
+
+.head {
+  position: relative;
+  border-radius: 4rpx;
+  height: 162rpx;
+  width: 256rpx;
+}
+
+.text {
+  width: 410rpx;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text_title {
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 600;
+  color: rgba(51, 51, 51, 1);
+  display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+overflow: hidden;
+}
+
+.num_price {
+  font-size: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.num {
+  color: rgba(153, 153, 153, 1);
+}
+
+.price {
+  color: rgba(254, 128, 96, 1);
+}
+
+.popupBackground {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 92rpx;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 199;
+}
+
+.popup_1 {
+  width: 100%;
+  max-height: 778rpx;
+  min-height: 0rpx;
+  background: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 92rpx;
+  z-index: 200;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+
+.popup_2 {
+  width: 100%;
+  background: rgba(248, 248, 248, 1);
+  position: absolute;
+  top: 92rpx;
+  z-index: 200;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+
+.popup_3 {
+  width: 68.8%;
+  height: 100%;
+  background: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 92rpx;
+  left: 31.25%;
+  z-index: 200;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.left_tab {
+  width: 204rpx;
+  max-height: 778rpx;
+  background: rgba(248, 248, 248, 1);
+}
+
+.left_tab_item {
+  padding-right: 32rpx;
+  padding-top: 28rpx;
+  padding-bottom: 28rpx;
+  text-align: start;
+  padding-left: 32rpx;
+  width: 204rpx;
+  background: rgba(248, 248, 248, 1);
+}
+
+.sv_right {
+  margin-left: 46rpx;
+}
+
+.right_tab {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.right_tab_item {
+  padding-top: 29rpx;
+  padding-bottom: 29rpx;
+  text-align: center;
+  width: 250rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+}
+
+.sort_item {
+  width: 750rpx;
+  padding-left: 32rpx;
+  padding-top: 28rpx;
+  padding-bottom: 28rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+}
+
+.corust_type {
+  padding-left: 30rpx;
+  padding-top: 28rpx;
+  padding-bottom: 28rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+}
+
+.corust_type_item {
+  display: flex;
+  flex-direction: row;
+  padding-left: 12rpx;
+  padding-right: 30rpx;
+}
+
+.type_item {
+  line-height: 70rpx;
+  text-align: center;
+  margin-left: 18rpx;
+  height: 70rpx;
+  width: 140rpx;
+  background: #F6F6F6;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #999;
+}
+
+.acitive {
+  background: rgba(255, 255, 255, 1);
+  color: #6cddc7;
+}
+
+.change {
+  background: rgba(255, 255, 255, 1);
+  color: #6cddc7;
+}
+
+.green {
+  background: #E9FAF7;
+  color: #6cddc7;
+}
+.lessonPic2{
+  z-index: 1;
+  height: 40rpx;
+  width: 40rpx;
+  position: absolute;
+  bottom: 16rpx;
+  right: 16rpx;
+}

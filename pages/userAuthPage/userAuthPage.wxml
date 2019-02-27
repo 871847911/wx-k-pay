@@ -1,0 +1,11 @@
+<!--pages/userAuthPage/userAuthPage.wxml-->
+<view class="logo_box">
+  <image src='../../images/authlogo@2x.png' ></image>
+</view>
+
+<view class="text_des">
+  <text>由于您是首次登陆店铺需要进行授权</text>
+</view>
+
+<button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class="btn_type">授权用户信息</button>
+

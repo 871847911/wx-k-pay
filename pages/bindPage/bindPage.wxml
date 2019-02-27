@@ -1,0 +1,12 @@
+<!--pages/bindPage/bindPage.wxml-->
+<view class="page_box">
+  <image src='{{imageSrc}}'></image>
+  <view class="type_one ts_deal">{{phone}}</view>
+  <view class="type_one">{{bind_des == 1?'绑定成功':'绑定失败'}}</view>
+  <view class="type_two" style="padding:{{bind_des == 1?'0':'0 60rpx;'}}">{{bind_des == 1?'账号密码会通过短信的形式 稍后发送给您':'该号码已被绑定 请勿重复绑定'}}</view>
+
+  <button class="btn_type" bindtap="goIndex">进入店铺首页</button>
+  
+</view>
+
+

@@ -1,0 +1,24 @@
+<view class="info">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+
+    <view class='info-item'>
+      <view class='title'>擅长领域
+      </view>
+
+      <view class='info-list'>
+        <view class='info-list-item'>php</view>
+        <view class='info-list-item'>node</view>
+        <view class='info-list-item'>javascript</view>
+      </view>
+    </view>
+
+    <view class='info-item'>
+      <view class='title'>个人简介
+      </view>
+      <textarea name="intr" placeholder="个人简介 " type='text' auto-height />
+    </view>
+    <view class='course-bottom'>
+      <button formType="submit">下一步：联系方式</button>
+    </view>
+  </form>
+</view>

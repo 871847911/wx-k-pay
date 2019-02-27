@@ -1,0 +1,24 @@
+<!--pages/courseManage/courseManage.wxml-->
+<view class='resPage-title'>
+  <view class="resPage-title-item {{idx == index ? 'active' : ''}} " wx:for="{{ ['已创建','审核中','未通过','已通过'] }}" wx:key="*this" wx:for-index="idx" bindtap='clickTab' data-idx="{{ idx }}">
+    {{ item }}
+  </view>
+</view>
+<import src="../common/emptyView" />
+<template is="emptyView" wx:if="{{ courseManage.list.length == 0 }}" data="{{...emptyJson}}" />
+<!-- <list listInfo="{{ '256' }}" courseList="{{ courseManage.list }}" bindgoDetail="goDetail" wx:else /> -->
+
+<view class='shareList' wx:for="{{courseManage.list}}" bindtap='goDetail' data-listtype='courseDetail' data-courseid="{{ item.id }}">
+  <view class='share_left'>
+    <image class='share_img' src='{{item.courseUrlFirst}}'></image>
+    <view class='share_left_icon'>
+      
+    </view>
+  </view>
+  <view class='share_right'>
+    <view class='share_title'>{{item.courseName}}</view>
+    <view class='share_content'>
+      {{item.createDate}}
+    </view>
+  </view>
+</view>

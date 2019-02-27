@@ -1,0 +1,34 @@
+<!--pages/cashDetails/cashDetails.wxml-->
+<view class='container'>
+  <view class='top'>
+    <view class='money'>{{amount}}元</view>
+    <view class='tip' wx:if="{{withdrawType ==1}}" >申请中</view>
+    <view class='tip' hidden='{{withdrawType ==1}}'>对方已转账</view>
+  </view>
+
+  <view class='item'>
+    <view class='title'>提现时间</view>
+    <view class='content'>{{createTime}}</view>
+  </view>
+  <view class='item' hidden='{{withdrawType ==1}}'>
+    <view class='title'>完成时间</view>
+    <view class='content'>{{finishTime}}</view>
+  </view>
+  <view class='item'>
+    <view class='title'>姓名</view>
+    <view class='content'>{{userName}}</view>
+  </view>
+  <view class='item'>
+    <view class='title'>卡号</view>
+    <view class='content'>{{cardNumber}}</view>
+  </view>
+  <view class='item'>
+    <view class='title'>银行卡</view>
+    <view class='content'>{{bankName}}</view>
+  </view>
+  <view class='item'>
+    <view class='title'>剩余可提现</view>
+    <view class='content'>1234.00元</view>
+  </view>
+
+</view>

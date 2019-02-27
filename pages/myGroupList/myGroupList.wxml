@@ -1,0 +1,49 @@
+<!--pages/myGroupList/myGroupList.wxml-->
+<view class='resPage-title'>
+  <view class="resPage-title-item {{idx == index ? 'active' : ''}} " wx:for="{{ ['全部','拼团中', '已成团','已散团'] }}" wx:key="*this" wx:for-index="idx" bindtap='clickTab' data-idx="{{ idx }}">
+    {{ item }}
+    <view class='line' wx:if="{{idx == index}}"></view>
+  </view>
+
+</view>
+<import src="../common/emptyView" />
+<template is="emptyView" wx:if="{{ list.length == 0 }}" data="{{...emptyJson}}" />
+<block wx:else>
+  <view class='gropListBox' wx:for="{{list}}" wx:key="*this">
+    <view class='gropList' bindtap='goListDeatil' data-index='{{index}}'>
+      <view class='courseUrl'>
+        <image src='{{item.courseImg}}'></image>
+      </view>
+      <view class='courseTitle'>{{item.courseName}}</view>
+      <view class='price'>
+        <view class='gropPirce'>￥{{item.price}}</view>
+        <!-- <view class='oldPrice'>￥{{item.price}}</view> -->
+        <view wx:if="{{item.state==0}}" class='tuikuan'>
+          <text wx:if="{{item.userState=='1'}}">退款中</text>
+          <text wx:if="{{item.userState=='2'}}">已退款</text>
+        </view>
+      </view>
+    </view>
+    <block wx:if="{{item.state==1}}">
+      <view class='groupListBtn'>
+        <view class='textLeft'>拼团中，差
+          <text>{{item.surplusNum}}</text>人</view>
+        <view class='shareBtn' data-index='{{index}}' bindtap='groupShare'>邀请好友拼单</view>
+      </view>
+    </block>
+    <block wx:elif="{{item.state==2}}">
+      <view class='groupListBtn2'>
+        <view class='textLeftNone'>已成团</view>
+        <view class='lookBtn' bindtap='goIndex'>再去逛逛</view>
+        <view class='deletBtn' bindtap='deletBtn' data-index='{{index}}'>删除订单</view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class='groupListBtn2'>
+        <view class='textLeftNone'>已散团</view>
+        <view class='lookBtn' bindtap='goIndex'>再去逛逛</view>
+        <view class='deletBtn' bindtap='deletBtn' data-index='{{index}}'>删除订单</view>
+      </view>
+    </block>
+  </view>
+</block>

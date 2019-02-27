@@ -1,0 +1,27 @@
+<view class='pay-page'>
+  <view class='order-info'>
+    <view class='title'>{{ courseMain.courseName }}</view>
+    <view class='oldprice'>￥{{ courseMain.price }}</view>
+    <view class='price'>拼团价<text>￥{{ groupPrice }}</text></view>
+  </view>
+  <view class='order-pic'>
+    <image src="{{courseMain.courseUrlFirst}}"></image>
+  </view>
+
+  <view class="order-style">
+    <view class='pay'>支付方式</view>
+    <view class='sty'>微信支付</view>
+  </view>
+</view>
+<!-- bottom  -->
+<view class='course-bottom'>
+  <view class='course-bottom-item'>
+    <view>应付：
+      <text> {{ groupPrice }}</text>
+    </view>
+  </view>
+  <button disabled='{{disabled}}' bindtap='pay'>去付款</button>
+</view>
+<i-modal visible="{{ visible3 }}" actions="{{ actions3 }}" bind:click="handleClick3">
+  <view class='buy-succeed'>支付后即可开团</view>
+</i-modal>

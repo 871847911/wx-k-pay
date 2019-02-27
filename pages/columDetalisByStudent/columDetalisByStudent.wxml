@@ -1,0 +1,58 @@
+<view class="column-detail">
+  <image src="{{all.column.columnUrl}}" class="detailPic"></image>
+  <!-- 专栏描述 -->
+  <view class="column-des">
+    <view class="column-title">{{all.column.columnName}}</view>
+    <view class="column-info">
+      <text>{{all.column.buyNumber}}人订阅</text>
+      <text>{{all.column.updateType}}{{all.column.frequency }}更新</text>
+      <text>进度{{all.column.currentArticleNumber?all.column.currentArticleNumber:0 }}/{{all.column.articleNumber }}</text>
+    </view>
+  </view>
+  <view class='hui'></view>
+  <view class='tab'>
+    <view class="tab_item {{tabId ==index ?'green':''}}"  wx:for="{{tab}}" data-id='{{index}}' bindtap='change'>{{item}}
+    <view class='short' wx:if="{{tabId ==index}}"></view>
+    </view>
+    
+  </view>
+  <view class='list' wx:if="{{tabId ==1}}">
+    <view class='list_item' wx:for="{{list}}" bindtap='goDeatalis' data-id='{{index}}'>
+      <view class='item_img'>
+        <image class='item_img' src='{{item.contentUrl}}' ></image>
+      </view>
+      <view class='item_right'>
+        <view class='item_title'>{{item.contentName}}</view>
+        <!-- <view class='item_audit'>已上架</view> -->
+        <view class='item_msg'>
+          <view class='item_num'>第{{item.currentNo}}篇</view>
+          <view class='read_num'>
+            <image class="read_num_img" src="../../images/read.png"></image>
+            {{item.readNumber}}人
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='jianjie' wx:if="{{tabId ==0}}">
+   <!-- 专栏简介 -->
+  <view class="column-introduction">
+    <view class="introduction-title">专栏简介</view>
+    <view class="column-intro-detail">
+     <rich-text nodes="{{introduction}} "></rich-text>
+    </view>
+  </view>
+
+  <!-- 订阅须知 -->
+  <view class="column-introduction clearPadding">
+    <view class="introduction-title">订阅须知</view>
+    <view class="need">
+      <rich-text nodes="{{all.column.notice }} "></rich-text>
+    </view>
+  </view>
+  <!-- 底部按钮 -->
+  <view class="bottomBox">
+      <view class="issue" bindtap='goIssue'>发刊词</view>
+  </view>
+  </view>
+</view>

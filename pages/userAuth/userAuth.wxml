@@ -1,0 +1,6 @@
+<view class='text'>授权用户信息</view>
+<image class='img' src='../../images/authlogo@2x.png'></image>
+<view class='getUser'>
+  <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">微信用户授权</button>
+</view>
+<view class='tips'>您即将进入微信授权页面，请在授权页面点击“允许”以保证数据和访问正常。</view>

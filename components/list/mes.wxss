@@ -1,0 +1,114 @@
+.message0-item {
+  padding: 30rpx 30rpx 32rpx 32rpx;
+  border-bottom: 2rpx #f1f1f1 solid;
+  display: flex;
+}
+
+.message0-item .poster {
+  width: 128rpx;
+  height: 128rpx;
+  /* border: 1px solid black; */
+  border-radius: 8rpx;
+}
+
+.message0-item .poster3 {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+}
+
+.message0-item  .item-info {
+  width: 524rpx;
+  margin-left: 32rpx;
+  position: relative;
+}
+
+.message0-item  .item-info .title {
+  width: 336rpx;
+  height: 45rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(72, 72, 72, 1);
+  line-height: 42rpx;
+  font-weight: 900;
+}
+
+.message0-item  .item-info .title3 {
+  width: 336rpx;
+  height: 48rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(72, 72, 72, 1);
+  line-height: 44rpx;
+  font-weight: 900;
+}
+
+.message0-item  .item-info .time {
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(153, 153, 153, 1);
+  line-height: 34rpx;
+  font-weight: 500;
+  position: absolute;
+  top: 4rpx;
+  right: 0rpx;
+}
+
+.message0-item  .item-info .red-point {
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background: #f12c20;
+  line-height: 34rpx;
+  position: absolute;
+  top: 65rpx;
+  right: 0rpx;
+}
+
+.message0-item  .item-info .des {
+  margin-top: 15rpx;
+  width: 480rpx;
+  font-size: 24rpx;
+  color: rgba(153, 153, 153, 1);
+  line-height: 34rpx;
+}
+
+.message1-item{
+  padding-left: 0;
+  padding-right: 15rpx;
+  width: 735rpx;
+}
+
+.message1-item .item-info{
+  width: 100%;
+}
+.message1-item .item-info .title{
+  width: auto;
+}
+
+.message1-item .item-info .des{
+  width: 596rpx;
+}
+
+.message1-item .item-info .yes{
+  height: 40rpx;
+  font-size:24rpx;
+  font-family:PingFangSC-Regular;
+  color:#6CDDC7;
+  line-height:34px;
+  display: inline-block;
+  position: relative;
+  bottom: 5rpx;
+}
+
+.message1-item .item-info .no{
+  font-size:24rpx;
+  font-family:PingFangSC-Regular;
+  color:#F12C20;
+  line-height:34px;
+  display: inline-block;
+  position: relative;
+  bottom: 5rpx;
+  
+}

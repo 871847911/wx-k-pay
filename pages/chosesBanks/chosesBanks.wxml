@@ -1,0 +1,11 @@
+<!--pages/chosesBanks/chosesBanks.wxml-->
+<view class='container'>
+  <view class='bank_choese' wx:for="{{bankList}}" wx:key="*this" >
+     <view class='bank_name'>{{item.bankName}}
+      <view class='bank_num'>{{item.cardNumber}}</view>
+     </view>
+     <view class='wirte_plus' bindtap='wirteBank' data-id='{{index}}' ><image class='wirte' src='../../images/symbols-edick.png' ></image></view>
+     
+  </view>
+  <button class='new_bank' bindtap='newBank'>新建银行卡</button>
+</view>

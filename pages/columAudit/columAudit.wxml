@@ -1,0 +1,21 @@
+<!--pages/contentAudit/contentAudit.wxml-->
+<view class="contentAudit">
+  <scroll-view class="contentBox" scroll-y>
+    <view class="contentItem" wx:for="{{list}}" bindtap='goDetalis' data-id='{{index}}' wx:key="sadd">
+      <view class="itemLeft">
+        <image src="{{item.columnUrl}}" mode="aspectFill"></image>
+      </view>
+      <view class="itemRight">
+        <view>
+          <view class="title">{{item.columnName}}</view>
+        </view>
+        <!-- <view class="auditResult">已通过</view> -->
+        <view class="auditResult2" style='color:#999999' wx:if="{{item.auditStatus==10}}">未审核</view>
+        <view class="auditResult2" style='color:#FCCD81' wx:if="{{item.auditStatus==20}}">审核中</view>
+        <view class="auditResult2" style='color:#6CDDC7' wx:if="{{item.auditStatus==30}}">已通过</view>
+        <view class="auditResult2" wx:if="{{item.auditStatus==40}}">未通过</view>
+        <view class="time">{{item.createDate}}</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,7 @@
+
+<template name="emptyView">
+  <view class='empty-content'>
+    <image src='{{imgUrl}}'></image>
+    <text>{{des}}</text>
+  </view>
+</template>

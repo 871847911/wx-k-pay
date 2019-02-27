@@ -1,0 +1,6 @@
+/* pages/imgTextDeatils/imgTextDeatils.wxss */
+.container{
+  padding-top: 20rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}

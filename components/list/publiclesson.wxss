@@ -1,0 +1,216 @@
+.publicLesson{
+  padding-bottom:42rpx;
+  margin-top: 42rpx;
+}
+.publicLessonSwiper{
+  width:750rpx;
+  font-size:0;
+  white-space: nowrap;
+}
+.lessonItem{
+  margin-left:20rpx;
+  width:256rpx;
+  display: inline-block;
+}
+.publicLesson .lessonItem:first-child{
+  margin-left:28rpx;
+}
+.publicLesson .lessonItem:last-child{
+  margin-right:28rpx;
+}
+.lessonPic{
+  position: relative;
+  width:100%;
+  height:162rpx;
+}
+.lessonPic1{
+  width:256rpx;
+  height:162rpx;
+}
+.lessonPic2{
+  position: absolute;
+  right: 16rpx;
+  bottom: 16rpx;
+  height: 40rpx;
+  width: 40rpx;
+}
+.lessonDes{
+  /* height: 85rpx; */
+  margin-top:14rpx;
+  color:#333;
+  font-size:30rpx;
+  white-space: normal;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;
+  font-weight: 600;
+}
+.swiperBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150rpx;
+}
+.bottomDes{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  margin-top:20rpx;
+}
+.bottomDes text{
+  font-size:20rpx;
+  font-weight: 800;
+}
+.bottomDes text:nth-child(1){
+  color:#B4B4B4;
+}
+.bottomDes text:nth-child(2){
+  color:#FE8060;
+}
+.bottomDes text:nth-child(3){
+  color:#FE8060;
+}
+
+/* 最新上架的开始 */
+.newsLesson{
+  display: flex;
+  flex-direction: column;
+  padding:0 30rpx;
+  margin-bottom:52rpx;
+  margin-top: 42rpx;
+}
+.topImg{
+  position: relative;
+  width:690rpx;
+  height:344rpx;
+
+}
+.topImg image{
+  width:690rpx;
+  height:344rpx;
+}
+.newsLesson .lessonDes{
+  /* margin-top:14rpx;
+  color:#333;
+  font-size:30rpx;
+  white-space: normal;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;
+  font-family:PingFangSC-Medium;
+  font-weight:500; */
+  height:auto;
+}
+.newsLesson .bottomDes{
+  margin-top:12rpx;
+}
+
+/* 热门课程开始 */
+.hotLesson{
+ padding:0 30rpx 0 32rpx;
+ height: 162rpx;
+ display: flex;
+ justify-content: space-between;
+ margin-bottom:65rpx;
+ margin-top: 42rpx;
+ /* flex-direction: row-reverse; */
+}
+.txtBox{
+  width:410rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.picBox{
+  position: relative;
+  width:256rpx;
+  height: 162rpx;
+}
+.hotLesson .lessonDes{
+  height: auto;
+  margin-top:0;
+}
+.hotLesson:last-child{
+  margin-bottom:40rpx;
+}
+.hotLesson .bottomDes{
+  margin-bottom:6rpx;
+}
+/* 精品课程 */
+.goodLesson{
+  padding:0 30rpx;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.goodLessonItem{
+  width:336rpx;
+  margin-bottom:60rpx;
+  margin-right:18rpx;
+}
+.bottomBox{
+  height: 154rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.goodLessonItem:nth-child(2n){
+  margin-right:0;
+}
+.goodPic{
+  width:336rpx;
+  height:212rpx;
+}
+.goodPic image{
+  width:336rpx;
+  height:212rpx;
+}
+
+/* 一起拼课的开始 */
+.spellingLesson{
+  padding:0 30rpx;
+}
+.spellingItem{
+  height:162rpx;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom:65rpx;
+}
+.lessonDesBox{
+  display: flex;
+}
+.lessonDesBox .pin{
+  width:40rpx;
+  height:40rpx;
+  background:rgba(254,128,96,1);
+  border-radius:2px;
+  line-height: 40rpx;
+  text-align: center;
+  color:#fff;
+  font-size:24rpx;
+}
+.lessonDesBox .lessonDes{
+  height: auto;
+  width:334rpx;
+  padding-left:24rpx;
+  margin-top:0;
+}
+.spellingLesson .bottomDes{
+  margin-bottom:6rpx;
+}
+.money text:nth-child(1){
+  color:#999;
+  font-size:24rpx;
+  text-decoration:line-through;
+  margin-right:14rpx;
+}
+.newPrice_text{
+  display: flex;
+  flex-direction: row;
+}

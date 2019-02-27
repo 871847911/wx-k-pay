@@ -1,0 +1,13 @@
+<view class='resPage-title'>
+    <view class="resPage-title-item {{idx == index ? 'active' : ''}} " wx:for="{{ ['待付款','已支付','已失效','已退款'] }}" wx:key="*this" wx:for-index="idx" bindtap='clickTab' data-idx="{{ idx }}">
+        {{ item }}
+        <view class='line' wx:if="{{idx == index}}"></view>
+    </view>
+</view>
+<import src="../common/emptyView" />
+<template is="emptyView" wx:if="{{ orderDetail.list.length == 0 }}" data="{{...emptyJson}}" />
+<list listInfo="{{ 'myOrder' }}" orderList="{{ orderDetail.list }}" binddelOrder="handDelOrderClick" bindhandClickOrder="handClickOrder" wx:else/>
+<i-modal title="删除确认" visible="{{ visible }}" actions="{{ actions }}" bind:click="confimDelOrder">
+    <view>删除后无法恢复哦</view>
+</i-modal>
+<i-message id="message" />

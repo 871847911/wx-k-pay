@@ -1,0 +1,140 @@
+/* pages/issue/issue.wxss */
+
+.issue {
+  padding-top: 28rpx;
+  font-family: PingFangSC-Regular;
+}
+
+.issue-title {
+  font-size: 34rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(51, 51, 51, 1);
+  line-height: 1;
+  padding-left: 28rpx;
+  border-left: 4rpx solid #6cddc7;
+}
+
+.issue-content {
+  padding-left: 32rpx;
+  padding-right: 30rpx;
+}
+
+.issue-content .issue-top {
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 发刊词播放 */
+
+.issue-play {
+  width: 100%;
+  height: 120rpx;
+  background-color: #f8f8f8;
+  margin-top: 32rpx;
+  margin-bottom: 32rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.playLeft image {
+  min-height: 70rpx;
+  min-width: 70rpx;
+  max-height: 80rpx;
+  max-width: 80rpx;
+  margin-right: 10rpx;
+}
+
+.playRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.playRight .rightTitle {
+  font-size: 26rpx;
+  font-weight: 400;
+  color: rgba(72, 72, 72, 1);
+}
+
+.playRight .rightInfo {
+  font-size: 22rpx;
+  color: rgba(153, 153, 153, 1);
+}
+
+.rightInfo text:nth-child(1) {
+  margin-right: 50rpx;
+}
+
+.issueDetail text {
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  line-height: 40rpx;
+  margin-top: 20rpx;
+  display: block;
+}
+
+.issueDetail image {
+  display: block;
+  width: 688rpx;
+  height: 474rpx;
+  margin-top: 20rpx;
+}
+
+commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+.commodity_attr_box {
+  width: 100%;
+  overflow: hidden;
+  height: 450rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  padding-top: 20rpx;
+}
+
+.commodity_attr_box .attr_box_text {
+  text-align: center;
+  padding: 10rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.weixinIcon {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.weui-btnz {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  border-radius: 0 !important;
+  background-color: #fff !important;
+  border-top: 1rpx solid rgba(214, 214, 210, 1);
+  font-size: 36rpx;
+  font-weight: 400;
+  color: rgba(72, 72, 72, 1);
+}

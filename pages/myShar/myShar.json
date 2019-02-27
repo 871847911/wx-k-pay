@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "我的分享",
+  "usingComponents": {
+    "searchBar": "/components/search/search",
+    "list": "/components/list/list"
+  }
+}

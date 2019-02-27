@@ -1,0 +1,27 @@
+<!--pages/contentAudit/contentAudit.wxml-->
+<view class="contentAudit">
+  <!-- 上面的导航 -->
+  <view class="auditNav">
+    <view class="navItem {{index==navId ? 'navActive': ''}}" wx:for="{{navList}}" wx:key="*this" data-index="{{index}}" bindtap='changeNav'>{{item}}<view class="line"></view>
+    </view>
+  </view>
+  <!-- 下面显示的内容 -->
+  <scroll-view class="contentBox" scroll-y>
+    <view class="contentItem" wx:for="{{list}}" bindtap='goDetalis' data-id='{{index}}'>
+      <view class="itemLeft">
+        <image src="{{item.contentUrl}}" mode="aspectFill"></image>
+      </view>
+      <view class="itemRight">
+        <view>
+          <view class="title"> <text style='font-weight: bold'>[第{{item.currentNo }}篇]</text>{{item.contentName}}</view>
+          <view class="des"> {{item.columnName}}</view>
+        </view>
+        <!-- <view class="auditResult">已通过</view> -->
+        <view class="auditResult2" wx:if="{{item.auditStatus==10}}"></view>
+        <view class="auditResult2" style='color:#9B9B9B' wx:if="{{item.auditStatus==20}}">{{item.createDate}}提交审核</view>
+        <view class="auditResult2" style='color:#6CDDC7' wx:if="{{item.auditStatus==30}}">已通过</view>
+        <view class="auditResult2" wx:if="{{item.auditStatus==40}}">未通过</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

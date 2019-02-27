@@ -1,0 +1,36 @@
+<!--pages/contentAuditDetail/contentAuditDetail.wxml-->
+<view class="contentDetail">
+  <!-- 上面的标题 -->
+  <view class="topTitle">
+    <view class="title">{{all.contentName}}</view>
+    <view class="result">
+    <image src="/images/symbols_unaudited.png" mode="aspectFill" wx:if="{{all.auditStatus ==10}}"></image>
+    <image src="/images/audit@2x.png" mode="aspectFill" wx:if="{{all.auditStatus ==20}}"></image>
+    <image src="/images/Already_passed@2x.png" mode="aspectFill" wx:if="{{all.auditStatus ==30}}"></image>
+    <image src="/images/not_through@2x.png" mode="aspectFill" wx:if="{{all.auditStatus ==40}}"></image>
+      
+    </view>
+  </view>
+  <!-- 浏览量 -->
+  <!-- <view class="numBox">
+    <text>2334人阅读</text>
+    <text>每周一更新</text>
+  </view> -->
+   <!-- 内容播放处 -->
+   <view class="issue-play">
+      <view class="playLeft" bindtap='playAudio' wx:if="{{!isPlay}}">
+        <image src="../../images/Playbutton@2x.png"></image>
+      </view>
+      <view class="playLeft" bindtap='stopPlay' wx:else>
+        <image src="../../images/stopbutton@2x.png"></image>
+      </view>
+      <view class="playRight">
+        <view class="rightTitle">{{all.audioName}}</view>
+        <view class="rightInfo"><text>时长{{time}} </text><text>大小{{all.audioSize}}</text></view>
+      </view>
+    </view>
+     <!-- 发刊词获取的内容 -->
+    <view class="issueDetail">
+     <rich-text nodes="{{content}}"></rich-text>
+    </view>
+</view>

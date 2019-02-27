@@ -1,0 +1,12 @@
+.message_0_0-price{
+  width:80rpx;
+  height:42rpx;
+  font-size:30rpx;
+  font-family:PingFangSC-Medium;
+  color:rgba(254,128,96,1);
+  line-height:42rpx;
+  font-weight: 900;
+}
+.message_0_0-free{
+  color:#6CDDC7;
+}

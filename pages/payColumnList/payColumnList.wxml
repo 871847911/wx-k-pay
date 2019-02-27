@@ -1,0 +1,30 @@
+<!--pages/payColumnList/payColumnList.wxml-->
+<!-- 付费专栏列表 -->
+<view class="pay-column-list" wx:for="{{columnLis}}" wx:key="sds" data-id='{{index}}' bindtap='goDetali'>
+  <!-- 一个列表 -->
+  <view class="pay-list-item">
+    <view class="item-left">
+      <image src="{{item.columnUrl}}"></image>
+    </view>
+    <view class="item-right">
+      <!-- 111 -->
+      <view class="right-top">
+        <view class="top-title">{{item.columnName}}</view>
+        <view class="top-des">
+          <text>{{item.updateType }}{{item.frequency}}更新</text><text>进度{{item.currentArticleNumber }}/{{item.articleNumber}}</text>
+        </view>
+      </view>
+      <!-- 222 -->
+      <view class="bottom-des">
+      <text class="item-num">{{item.buyNumber}}人订阅</text>
+        <text class="item-money">￥{{item.price}}</text>
+        
+      </view>
+      
+    </view>
+  </view>
+
+</view>
+<import src="../common/emptyView" />
+
+<template is="emptyView" wx:if="{{columnLis.length == 0 }}" data="{{...emptyJson}}" />

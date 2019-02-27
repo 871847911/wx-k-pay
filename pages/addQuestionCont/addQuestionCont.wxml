@@ -1,0 +1,29 @@
+<!-- <view class='add-cont'> -->
+  <view class='docu'>
+  <textarea auto-focus maxlength='1000' auto-height bindinput='getQuestionCont' placeholder='详细描述：尽可能详细的描述下你的问题，方便问题快速解决' /> 
+  </view>
+
+    <view class="question-images-area">
+    <!-- 图片缩略图  -->
+    <view class="question-images">
+      <block wx:for="{{images}}" wx:key="*this">
+        <view class="q-image-wrap">
+          <image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+          <image class='delete_pic' data-idx="{{index}}" bindtap="removeImage" src='/images/delete_pic.png'></image>
+        </view>
+      </block>
+    </view>
+  </view>
+
+<!-- </view> -->
+
+<view class='btn-list'>
+  <view class='choosePic' bindtap='choosePic'>
+    <image src='/images/camera.png'></image>
+  </view>
+  <view class='show-name'>
+    匿名<switch bindchange="switchChange" color='rgba(254,128,96,1)' />
+  </view>
+  <view class="{{ questionLength >= 20 ? 'submit' : 'add-word' }}" wx:if='{{ showSubmit }}' bindtap='submitQuestion'>提交</view>
+  <view wx:if='{{ !showSubmit }}' class="add-word" bindtap=''>提交</view>
+  </view>

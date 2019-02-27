@@ -1,0 +1,37 @@
+<!--pages/integralCenter/integralCenter.wxml-->
+<view class='container'>
+  <view class='description'>
+    <view class='description_title'>积分说明</view>
+    <view class='description_content'>积分是店铺用户通过完成新手任务、日常任务、后获得的数值， 积分可用于消费抵扣</view>
+  </view>
+  <view class='tasks_title'>
+    日常任务
+  </view>
+  <view class='tasks_tap'>
+    <view class='tasks_name'>
+      任务名称
+    </view>
+    <view class='getPoints'>获得积分</view>
+    <view class='todyFinsh'>今日完成</view>
+  </view>
+  <view class='tasks' wx:for="{{tasks}}">
+    <view class='tasks_content'>{{item}}</view>
+    <view class='points'>5</view>
+    <image class='ifFinsh' src='../../images/symbols-gouxuan.png'></image> 
+  </view>
+  <view class='tasks_title'>
+    新手任务
+  </view>
+  <view class='tasks_tap'>
+    <view class='tasks_name'>
+      任务名称
+    </view>
+    <view class='getPoints'>获得积分</view>
+    <view class='todyFinsh'>完成情况</view>
+  </view>
+  <view class='tasks' wx:for="{{tasks}}">
+    <view class='tasks_content'>{{item}}</view>
+    <view class='points'>500</view>
+    <image class='ifFinsh' src='../../images/symbols-gouxuan.png'></image> 
+  </view>
+</view>

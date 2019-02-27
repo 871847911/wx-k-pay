@@ -1,0 +1,55 @@
+<!--pages/requestWithdrawal/requestWithdrawal.wxml-->
+<view class='container'>
+  <view class='chosesBank' bindtap='setModalStatus' data-status="1">
+    <view class='bank'>到账银行卡
+      <view class='bankContent' wx:if="{{firstBank.name != ''}}">{{firstBank.name}}({{firstBank.num}})</view>
+    </view>
+
+    <image class='right' src='../../images/symbols-turn-left.png'></image>
+  </view>
+  <view class='money_all'>
+    <view class='withdrawal'>提现金额(元)</view>
+    <input class='withdrawal_num' type='digit' bindinput='bindNum' value="{{moneyNum}}" bindfocus="del0"></input>
+  </view>
+
+  <view class='money_getAll' wx:if="{{!moreMoney}}">
+    <view class='money_num' >
+      可提现金额
+      <view class='num'> {{profit}}</view>
+      元
+    </view>
+    <view class='getAll' bindtap='allIGet'>全部提现</view>
+  </view>
+
+  <view class='more_money' wx:else>金额已超过可提现金额
+   <view class='getAll' bindtap='allIGet'>全部提现</view>
+  </view>
+
+  <!-- <view class='money'>
+  <view class='money_text'>金额
+    <input class='money_text_num' placeholder='0.00' type='digit' bindinput='bindNum' value='{{moneyNum}}'></input>
+  </view>
+  <view class='money_num'>
+    可提现金额
+    <view class='num'> {{profit}}</view>
+    元
+  </view>
+</view> -->
+  <button class='commit_bt' bindtap='commit'>提交</button>
+</view>
+<view class="drawer_screen" bindtap="setModalStatus" data-status="0" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}">
+  <view class="drawer_attr_content">
+    <view class='title'>请选择银行卡</view>
+    <scroll-view style='height:572rpx' scroll-y="true">
+      <view class='bankMsg' wx:for="{{newBankList}}" wx:key="*this" data-id='{{index}}' bindtap='sureBank' data-status="0" wx:if="{{showModalStatus}}">
+        <view class='bankMsg_name'>{{item.name}} </view>
+        <view class='bankMsg_num'>（{{item.cardNumber}}）</view>
+      </view>
+      <view class='newBank ' bindtap='newBank'>
+        <view class='newBank_text'>新建银行卡</view>
+        <image class='right' src='../../images/symbols-turn-left.png'></image>
+      </view>
+    </scroll-view>
+  </view>
+</view>

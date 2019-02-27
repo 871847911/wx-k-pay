@@ -1,0 +1,76 @@
+<!--pages/vipCenter2/vipCenter2.wxml-->
+<view class="vipCenter2">
+  <!-- 个人信息 -->
+  <view class="vipInfoBox">
+   <image src="/images/vipBg.png" class="vipBg"></image>
+    <view class="vipInfoContent">
+     
+    <!-- 上面的个人信息 -->
+      <view class="infoTop">
+        <view class="leftDes">
+          <image src="{{info.headUrl}}"></image>
+          <view class="name">
+            <text>{{nickName}}</text>
+            <text>{{info.levelName}}</text>
+          </view>
+        </view>
+        <view class="rightBtn" bindtap='goGrowthValue'>成长值明细</view>
+      </view>
+       
+      <!-- 上面的进度条 -->
+      <view class="levsBox">
+       <!-- <view class="levNum" style='left:{{percent}}rpx'>200</view> -->
+       <progress class='levs' percent="{{baifenbi}}" active="true" stroke-width="5" color='#fbe7c1' backgroundColor= "#D8B77D"></progress>
+      </view>
+       <view class="lesName">
+        <text>LV{{info.level}}</text><text>LV{{info.level +1 }}</text>
+       </view>
+       <view class="lesTips">当前经验值{{info.grow }}，还差{{info.gap}}成长值升为LV{{info.level +1 }}</view>
+    </view>
+  </view>
+
+  <!-- 会员特权 -->
+  <view class="vipClassify">会员特权</view>
+  <scroll-view scroll-x class='vipScroll'>
+    <view class="vipRights">
+      <image src="/images/vip1.png" class="rightsvip" wx:if="{{sale}}"></image>
+      <image src="/images/vip2.png" class="rightsvip" wx:else></image>
+      <image src="/images/zhe1.png" class="vipzhe" wx:if="{{sale}}"></image>
+      <image src="/images/zhe2.png" class="vipzhe"  wx:else></image>
+      <view class="vipDes" wx:if="{{sale}}">尊享折扣特权</view>
+      <view class="vipDes vipDes3"  wx:else>尊享折扣特权</view>
+      <!-- <view class="vipDes2">查看</view> -->
+    </view>
+    <view class="vipRights">
+      <image src="/images/vip2.png" class="rightsvip"></image>
+      <image src="/images/nozhe.png" class="vipzhe"></image>
+      <view class="vipDes vipDes3">更多特权敬请期待</view>
+    </view>
+  </scroll-view>
+  <view class="hui"></view>
+
+  <!-- 成长值 -->
+  <view class="growUp">
+     <view class="growUpTitle">成长值</view>
+     <view class="growUpDes">
+     成长值是店铺用户通过完成新手任务、日常任务、主线任务后获 得的数值，对应数值影响用户等级。
+     </view>
+  </view>
+  <view class="hui"></view>
+
+  <!-- 等级说明 -->
+  <view class="explain">
+     <view class="growUpTitle explainTitle">会员等级说明</view>
+     <view class="headerBox">
+        <text>等级</text>
+        <text>会员名称</text>
+        <text>所需成长值</text>
+     </view>
+     <view class="headerList" wx:for="{{listLev}}" >
+        <text>{{item.level}}</text>
+        <text>{{item.levelName}}</text>
+        <text>{{item.growMin}}</text>
+     </view>
+  </view>
+
+</view>

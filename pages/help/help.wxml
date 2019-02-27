@@ -1,0 +1,16 @@
+<!--pages/help/help.wxml-->
+<view>
+    <view class='img'>
+        <image src="../../images/logo.png"></image>
+        <view>知识付费1.0.0</view>
+    </view>
+    <view class='main'>
+        <image src="/images/one.png" style="border-radius: {{ attrs.bor }}rpx;" mode="aspectFill" />
+        <text>电脑登录网址</text>
+
+        <view class='input-div'>
+            <view class='input-box'>http://cloud.vdongchina.com</view>
+            <view class='input-btn' bindtap='copy'>复制</view>
+        </view>
+    </view>
+</view>

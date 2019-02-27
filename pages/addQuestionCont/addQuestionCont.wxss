@@ -1,0 +1,123 @@
+page{
+  color: #484848;
+}
+.docu{
+  position: absolute;
+  width: 100%;
+  margin-bottom: 450rpx;
+  height: calc(100% - 450rpx);
+  overflow: auto;
+}
+textarea{
+  width: 100%;
+  min-height: 300rpx;
+  word-break:break-all;
+}
+
+.btn-list{
+  width: calc(100% - 10rpx);
+  display: flex;
+  position: fixed;
+  align-items: center;  
+  left: 0;
+  bottom: 0;
+  /* height: 98rpx; */
+  margin: 4rpx;
+  border-top: rgba(241,241,241,1);
+}
+.btn-list .choosePic image{
+  width: 48rpx;
+  height: 48rpx;
+  margin: 0 30rpx;
+}
+.btn-list .show-name{
+  padding-left: 32rpx;
+  border-left: 1px solid rgba(241,241,241,1);
+}
+.btn-list .show-name switch{
+  margin-left: 16rpx;
+}
+.btn-list .submit{
+  flex: 1;
+  margin-left: 24rpx;
+  height: 98rpx;
+  background: rgba(254,128,96,1);
+  text-align: center;
+  line-height: 98rpx;
+  color: #fff;
+  font-size: 36rpx;
+  border-radius: 4rpx;
+}
+
+.btn-list .add-word{
+  flex: 1;
+  margin-left: 24rpx;
+  height: 98rpx;
+  background: rgba(245,182,165,1);
+  text-align: center;
+  line-height: 98rpx;
+  color: #fff;
+  font-size: 36rpx;
+  border-radius: 4rpx;
+}
+
+.wx-switch-input{
+  width: 88rpx !important;
+  height: 54rpx !important;
+}
+.wx-switch-input::before{
+  width: 84rpx !important;
+  height: 50rpx !important;
+}
+.wx-switch-input::after{
+  margin-top: 5rpx !important;
+  width: 40rpx !important;
+  height: 40rpx !important;
+}
+
+.question-images-area{
+  position: fixed;
+  left: 0;
+  bottom: 156rpx;
+}
+.weui-textarea-counter, .title-input-counter {
+  color: #b3b3b3;
+  font-size: 14px;
+  padding-left: 10rpx;
+  float: right;
+}
+.question-images{
+  display: flex;
+  align-items: center;
+  margin: 0 32rpx;
+}
+.question-images-tool{
+  background: #fff;
+}
+.q-image-wrap {
+  position: relative;
+  width: 218rpx;
+  height: 140rpx;
+  margin-right: 16rpx;
+}
+.delete_pic{
+  background: rgba(0,0,0,0.3);
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 32rpx;
+  height: 32rpx;
+}
+.q-image-wrap:nth-of-type(3){
+  margin-right: 0;
+}
+
+.q-image {
+  flex: 1;
+  height: 140rpx;
+  width: 100%;
+}
+
+.q-image-remover {
+  text-align: center;
+}

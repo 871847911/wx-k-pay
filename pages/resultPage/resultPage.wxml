@@ -1,0 +1,22 @@
+<view class="container">
+  <view class='resPage-title'>
+      <view class="resPage-title-item {{idx == index ? 'active' : ''}} " wx:for="{{ pageInfo }}" wx:key="*this" wx:for-index="idx" 
+      bindtap='clickTab' data-idx="{{ idx }}">
+          {{ item }}
+      </view>
+  </view>
+  <view class='course' hidden='{{index == 2}}'>
+    <view class='course-title'>
+      <view>课程</view>
+      <view style='color:gray'>更多>></view>
+    </view>  
+    <list listInfo="{{ '160' }}"/>
+  </view>
+  <view class='course' hidden='{{index == 1}}'>
+    <view class='course-title'>
+      <view>讲师</view>
+      <view style='color:gray'>更多>></view>
+    </view>  
+    <list listInfo="{{ '160' }}"/>
+  </view>
+</view>

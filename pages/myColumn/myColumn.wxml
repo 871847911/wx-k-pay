@@ -1,0 +1,38 @@
+<!--pages/myColumn/myColumn.wxml-->
+
+<view class="myColumn">
+  <view class="shenHeBox">
+    <view bindtap='goContentAudit'>
+      <image src="/images/content_audit@2x.png"></image>
+      <text>内容审核</text>
+    </view>
+    <view bindtap='goColumAudit'>
+       <image src="/images/column_audit@2x.png"></image>
+       <text>专栏审核</text>
+    </view>
+  </view>
+
+ <!-- 专栏列表 -->
+  <!-- 一个列表 -->
+  <view class="pay-list-item" wx:for="{{list}}" bindtap='go' data-id='{{index}}' >
+    <view class="item-left">
+      <image src="{{item.columnUrl}}"></image>
+    </view>
+    <view class="item-right">
+      <!-- 111 -->
+      <view class="right-top">
+        <view class="top-title">{{item.columnName}}</view>
+        <view class="top-des">
+          <text>{{item.updateType}}</text><text>进度{{item.currentArticleNumber}}/{{item.articleNumber }}</text>
+        </view>
+      </view>
+      <!-- 222 -->
+      <view class="bottom-des">
+      <text class="item-num">{{item.buyNumber}}人订阅</text>
+        <text class="item-money">￥{{item.price}}</text>
+        
+      </view>
+      
+    </view>
+  </view>
+</view>

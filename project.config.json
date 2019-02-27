@@ -1,0 +1,254 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.1.1",
+	"appid": "wx9a3e13724e52d4be",
+	"projectname": "kpay-dev",
+	"isGameTourist": false,
+	"scripts": {
+		"beforeCompile": "F:\\berfore-run.cmd",
+		"beforePreview": "F:\\run-dev.cmd",
+		"beforeUpload": "echo module.exports = {\"complie\": \"%date:~0,4%%date:~5,2%%date:~8,2%%time:~0,2%%time:~3,2%\"} > asset/lib/ver-complie-lib.js"
+	},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 33,
+			"list": [
+				{
+					"id": 0,
+					"name": "courseDetail",
+					"pathName": "pages/courseDetail/courseDetail",
+					"query": "courseId=71"
+				},
+				{
+					"id": -1,
+					"name": "questionAndAnswer",
+					"pathName": "pages/questionAndAnswer/questionAndAnswer",
+					"query": ""
+				},
+				{
+					"id": 5,
+					"name": "addQuestionTitle",
+					"pathName": "pages/addQuestionTitle/addQuestionTitle",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "addQuestionCont",
+					"pathName": "pages/addQuestionCont/addQuestionCont",
+					"query": "courseId=71"
+				},
+				{
+					"id": 4,
+					"name": "questionDetail",
+					"pathName": "pages/questionDetail/questionDetail",
+					"query": "id=83"
+				},
+				{
+					"id": 5,
+					"name": "111",
+					"pathName": "pages/shareDetail/shareDetail",
+					"query": "userId=112&courseId=6"
+				},
+				{
+					"id": 6,
+					"name": "111",
+					"pathName": "pages/shareDetail/shareDetail",
+					"query": "userId=179&courseId=68"
+				},
+				{
+					"id": -1,
+					"name": "payColumn",
+					"pathName": "pages/payColumn/payColumn",
+					"query": ""
+				},
+				{
+					"id": 8,
+					"name": "demo",
+					"pathName": "pages/demo/demo",
+					"query": "s=123&c=321",
+					"scene": "1047"
+				},
+				{
+					"id": 9,
+					"name": "courseDetailTwo",
+					"pathName": "pages/courseDetailTwo/courseDetailTwo",
+					"query": "sence=49",
+					"scene": "1047"
+				},
+				{
+					"id": -1,
+					"name": "courseDetail",
+					"pathName": "pages/courseDetail/courseDetail",
+					"query": "c=2",
+					"scene": "1047"
+				},
+				{
+					"id": -1,
+					"name": "payPage",
+					"pathName": "pages/payPage/payPage",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "showDetails",
+					"pathName": "pages/showDetails/showDetails",
+					"query": ""
+				},
+				{
+					"id": 13,
+					"name": "shareDetail",
+					"pathName": "pages/shareDetail/shareDetail",
+					"query": "courseId=38"
+				},
+				{
+					"id": 14,
+					"name": "requestWithdrawal",
+					"pathName": "pages/requestWithdrawal/requestWithdrawal",
+					"query": "courseId=38"
+				},
+				{
+					"id": -1,
+					"name": "appIdAuth",
+					"pathName": "pages/appIdAuth/appIdAuth",
+					"query": "courseId=38"
+				},
+				{
+					"id": -1,
+					"name": "myBasicSet",
+					"pathName": "pages/myBasicSet/myBasicSet",
+					"query": "sence=49",
+					"scene": "1047"
+				},
+				{
+					"id": -1,
+					"name": "appContact",
+					"pathName": "pages/appContact/appContact",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "myBasicSet",
+					"pathName": "pages/myBasicSet/myBasicSet",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "allClass",
+					"pathName": "pages/allClass/allClass",
+					"query": ""
+				},
+				{
+					"id": 20,
+					"name": "分享进入页面",
+					"pathName": "pages/gropShareDeails/gropShareDeails",
+					"query": "collageId=34&courseId=129"
+				},
+				{
+					"id": -1,
+					"name": "分享进入页面",
+					"pathName": "pages/gropShareDeails/gropShareDeails",
+					"query": "collageId=1&courseId=1"
+				},
+				{
+					"id": -1,
+					"name": "columDetalisByStudent",
+					"pathName": "pages/columDetalisByStudent/columDetalisByStudent",
+					"query": "courseId=71"
+				},
+				{
+					"id": -1,
+					"name": "courseDetail",
+					"pathName": "pages/courseDetail/courseDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "courseDetail",
+					"pathName": "pages/courseDetail/courseDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "courseDetail",
+					"pathName": "pages/courseDetail/courseDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "专栏",
+					"pathName": "pages/contentAuditDetail/contentAuditDetail",
+					"query": "contentId=70"
+				},
+				{
+					"id": -1,
+					"name": "myFans",
+					"pathName": "pages/myFans/myFans",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "issue1",
+					"pathName": "pages/issue1/issue1",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "income",
+					"pathName": "pages/income/income",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "storeOrder",
+					"pathName": "pages/storeOrder/storeOrder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "shareList",
+					"pathName": "pages/shareList/shareList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "cashDetails",
+					"pathName": "pages/cashDetails/cashDetails",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "1111111111111",
+					"pathName": "pages/lectureBindPhone/lectureBindPhone",
+					"scene": null
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,23 @@
+.course-bottom {
+  margin-top: 10rpx;
+  margin-left: 4rpx;
+  margin-bottom: 4rpx;
+  bottom: 0;
+  left: 0;
+  background: white;
+  width:742rpx;
+  height:98rpx;
+  background:#6CDDC7;
+  border-radius:4rpx;
+  position: fixed;
+  
+}
+
+.course-bottom button{
+  margin: 0;
+  padding: 0;
+  background: none;
+  height: auto;
+  color: #FFFFFF;
+  font-weight: 900;
+}

@@ -1,0 +1,57 @@
+<view class="info">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class='info-item'>
+            <view class='title'>身份证照片
+                <text style='color:red'>*</text>
+            </view>
+            <view class='detail'>
+                <view class='pic-box' bindtap='choosePic' data-index='0'>
+                    <view class='pic-box-plus' wx:if="{{!tempFilePaths_0}}">
+                        <view class='plus'>+</view>
+                        <view class='txt'>身份证正面</view>
+                    </view>
+                    <view wx:else class='showPic'>
+                        <image src="http://{{temp}}/{{tempFilePaths_0}}" mode="aspectFill" />
+                    </view>
+                </view>
+                <view class='pic-box' bindtap='choosePic' data-index='1'>
+                    <view class='pic-box-plus' wx:if="{{!tempFilePaths_1}}">
+                        <view class='plus'>+</view>
+                        <view class='txt'>身份证反面</view>
+                    </view>
+                    <view wx:else class='showPic'>
+                        <image src="http://{{temp}}/{{tempFilePaths_1}}" mode="aspectFill" />
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class='info-item'>
+            <view class='title'>身份证号码
+                <text style='color:red'>*</text>
+            </view>
+            <input name="idCard" placeholder="请输入您的身份证号码" type='text' />
+        </view>
+        <view class='info-item'>
+            <view class='title'>所在地区
+            </view>
+            <!-- <input name="place" placeholder="请输入您的所在地区" type='text' /> -->
+            <view style='display:inline-block;margin-top:-10rpx'>
+                <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+                    <view class="picker">
+                        {{region[0]}}，{{region[1]}}，{{region[2]}}
+                        <icon class="iconfont2 icon-arrow-right" style='color:#D8D8D8'></icon>
+                    </view>
+                </picker>
+            </view>
+        </view>
+        
+        <view class='info-item'>
+            <view class='title'>详细地址
+            </view>
+            <input name="address" placeholder="请输入您的详细地址" type='text' auto-height ></input> 
+        </view>
+        <view class='course-bottom'>
+            <button formType="submit">下一步: 其他信息</button>
+        </view>
+    </form>
+</view>

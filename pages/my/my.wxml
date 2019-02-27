@@ -1,0 +1,199 @@
+<view class="my my-product" wx:if="{{isRoleId}}">
+
+ 
+ <!-- 新的生产者头部开始 -->
+  <view class="headerBox productHeader" >
+    <view class="mine-header"  bindtap='edit' >
+      <view class="mine-left"  >
+          <image src="{{ userInfo.avatarUrl }}" mode="aspectFill" class="leftImg" bindtap='edit'></image>
+          <view class="mine-name">
+            <view class='username' >{{ userInfo.nickName }}</view>
+            <view class='edit'  >查看并编辑个人资料</view>
+          </view>
+      </view>
+      <view class="mine-right"  bindtap='edit' >
+        <image class='mine-right-img' src="../../images/wihte_right.png" ></image>
+      </view>
+    </view>
+    <!-- 上面的白框开始 -->
+    <view class="productListBox">
+      <view class="listTop">
+         <view class="topLeft">
+          <view class="leftDes"><image src="/images/my_money@2x.png"></image><text>可提现余额（元）</text></view>
+          <view class="leftMoney">{{profit}}</view>
+         </view>
+         <view class="topRight">
+           <text bindtap='getMoney'>提现</text><image class='go_img' src="../../images/symbols-turn-left.png"></image>
+         </view>
+      </view>
+      <view class="listBottom">
+        <view class="myItemList2"  bindtap='goMyCourse' >
+          <view class="listDes">我的课程</view>
+          <view class="listNum">{{lecturer.courseCount}}</view>
+        </view>
+        <view class="myItemList2" bindtap='goMyFans'>
+         
+          <view class="listDes">我的粉丝</view>
+          <view class="listNum">{{lecturer.subscribeCount}}</view>
+        </view>
+        <view class="myItemList2" bindtap='goMyQuestios'>
+          <view class="listDes">提问我的</view>
+          <view class="listNum">{{lecturer.questionCount}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="myset-item2 noBorder" wx:for="{{ myNav8 }}" wx:key="un" bindtap='changeModle'>
+    <view class='img'>
+      <image class='img_img' src="{{ item.iconPath }}"></image>
+      <view class='des'>{{item.name}}</view>
+    </view>
+    <image class='go_img' src="../../images/symbols-turn-left.png"></image>
+  </view>
+
+  <view class='hui2'></view>
+  <view class="myset-item2" wx:for="{{ myNav9 }}" wx:key="uu" bindtap='onClick' data-param='{{item.url}}'>
+    <view class='img'>
+      <image class='img_img' src="{{ item.iconPath }}"></image>
+      <view class='des'>{{item.name}}</view>
+    </view>
+    <image class='go_img' src="../../images/symbols-turn-left.png"></image>
+  </view>
+  <!-- <view class='hui2'></view> -->
+   <view class="myset-item2" wx:for="{{ myNav10 }}" wx:key="uvs" bindtap='onClick' data-param='{{item.url}}'>
+    <view class='img'>
+      <image class='img_img' src="{{ item.iconPath }}"></image>
+      <view class='des'>{{item.name}}</view>
+    </view>
+    <image class='go_img' src="../../images/symbols-turn-left.png"></image>
+  </view>
+  <view class='hui2'></view>
+  <view class="myset-item2 noBorder" wx:for="{{ myNav6 }}" wx:key="yu" bindtap='onClick' data-param='{{item.url}}'>
+    <view class='img'>
+      <image class='img_img' src="{{ item.iconPath }}"></image>
+      <view class='des'>{{item.name}}</view>
+    </view>
+    <image class='go_img' src="../../images/symbols-turn-left.png"></image>
+  </view>
+  <view class='hui2'></view>
+  
+</view>
+
+
+<view class="my my2" wx:else>
+  
+  <!-- 个人中心的头部开始 -->
+  <view class="headerBox">
+    <view class="mine-header"  bindtap='edit'>
+      <view class="mine-left" >
+          <image src="{{ userInfo.avatarUrl }}" mode="aspectFill" class="leftImg"></image>
+          <view class="mine-name">
+            <view class='username'>{{ userInfo.nickName }}</view>
+            <view class='edit'>查看并编辑个人资料</view>
+          </view>
+      </view>
+      <view class="mine-right">
+        <image class='mine-right-img' src="../../images/wihte_right.png"></image>
+      </view>
+    </view>
+
+    <!-- 上面白色框 -->
+    <view class="myItem">
+       <view class="myItemList" bindtap='goCourseBuyed'>
+        <view class="listNum" >{{student.courseCount}}</view>
+        <view class="listDes">我的学习</view>
+       </view>
+       <view class="myItemList" bindtap='golecturerList'>
+        <view class="listNum">{{student.subscribeCount}}</view>
+        <view class="listDes">我的关注</view>
+       </view>
+       <view class="myItemList" bindtap='goAskMyQuestios'>
+        <view class="listNum" >{{student.questionCount}}</view>
+        <view class="listDes">我的提问</view>
+       </view>
+    </view>
+    <!-- 知识变现 -->
+    <view class="knowledgeBox" wx:if="{{!isAppaly}}"  bindtap='go_ruzhu'>
+     <image src="/images/admission.png" class="knowledgeBoxPic"></image>一键知识变现
+    </view>
+   
+  </view>
+  <!-- 切换知识店铺 -->
+   <block wx:if="{{isAppaly}}">
+     <!-- <view class='hui'></view> -->
+     <view class="myset-item2 noBorder" wx:for="{{ myNav7 }}" wx:key="sds" bindtap='changeModle'>
+
+      <view class='img'>
+        <image class='img_img' src="{{ item.iconPath }}"></image>
+        <view class='des'>{{item.name}}</view>
+      </view>
+      <image class='go_img' src="../../images/symbols-turn-left.png"></image>
+    </view>
+    <view class='hui2'></view>
+   </block>
+
+  <!-- 会员中心开始 -->
+  <view class="myset-item3" wx:for="{{ myNav3 }}" wx:key="sd" bindtap='onClick' data-param='{{item.url}}'>
+    <view class='img'>
+      <image class='img_img' src="{{ item.iconPath }}"></image>
+      <view class='des'>{{item.name}}</view>
+    </view>
+    <image class='go_img' src="../../images/symbols-turn-left.png"></image>
+  </view>
+  <view class="myset-item2 noBorder" wx:for="{{ myNav4}}" wx:key="*this" bindtap='onClick' data-param='{{item.url}}'>
+
+    <view class='img'>
+      <image class='img_img' src="{{ item.iconPath }}"></image>
+      <view class='des'>{{item.name}}</view>
+    </view>
+    <view class="goright">
+      <text class='goright_text'>{{integral.availableScore}}积分</text>
+      <image class='go_img' src="../../images/symbols-turn-left.png"></image>
+    </view>
+  </view>
+  <view class='hui2'></view>
+ <!-- 我的积分结束 -->
+
+
+  <!-- <view class="myset-item2" wx:for="{{myNav5}}" wx:key="*this" bindtap='onClick' data-param='{{item.url}}'>
+
+    <view class='img'>
+      <image class='img_img' src="{{ item.iconPath }}"></image>
+      <view class='des'>{{item.name}}</view>
+    </view>
+    <view class="goright">
+      <text class='goright_text'>海量积分等你拿</text>
+      <image class='go_img' src="../../images/symbols-turn-left.png"></image>
+    </view>
+  </view> -->
+
+
+  <view class="myset-item2" wx:for="{{ myNav2 }}" wx:key="xc" bindtap='onClick' data-param='{{item.url}}' >
+
+    <view class='img'>
+      <image class='img_img' src="{{ item.iconPath }}"></image>
+      <view class='des'>{{item.name}}</view>
+    </view>
+    <image class='go_img' src="../../images/symbols-turn-left.png"></image>
+  </view>
+  
+  <view class='hui2'></view>
+  <view class="myset-item2 noBorder" wx:for="{{ myNav6 }}" wx:key="*this" bindtap='onClick' data-param='{{item.url}}'>
+
+    <view class='img'>
+      <image class='img_img' src="{{ item.iconPath }}"></image>
+      <view class='des'>{{item.name}}</view>
+    </view>
+    <image class='go_img' src="../../images/symbols-turn-left.png"></image>
+  </view>
+  <view class='hui2'></view>
+
+</view>
+<view class='version'></view>
+
+
+
+<i-modal visible="{{ visible }}" actions="{{ actions }}" bind:click="handleClick">
+  <view>{{phoneNumber == null ? '暂无客服电话' : phoneNumber}}</view>
+</i-modal>

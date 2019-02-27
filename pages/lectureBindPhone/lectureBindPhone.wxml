@@ -1,0 +1,25 @@
+
+<view class="info_box">
+
+  <view class="flex">
+    <text>手机号</text>
+    <input type="text" placeholder='请输入手机号' type='number' value='{{phone}}' maxlength='11' disabled='true'></input>
+  </view>
+
+  <view class="flex">
+    <text>验证码</text>
+    <input type="number" placeholder='请输入验证码' value='{{captcha}}' bindinput='getVcode' maxlength='6'></input>
+    <button size='mini' class='checkNumber {{ !isSend ? "active" : "wait" }}' bindtap='check'>
+      <block wx:if="{{ isSend }}">{{t}}</block>{{!isSend?"发送验证码":"s"}}
+    </button>
+  </view>
+
+  <!-- <view  class="btn">
+    <button bindtap="getPhone">获取手机号测试用</button>
+  </view> -->
+
+  <view class="btn">
+    <button bindtap="bind_submit" disabled='{{btn_state}}'>提交</button>
+  </view>
+
+</view>

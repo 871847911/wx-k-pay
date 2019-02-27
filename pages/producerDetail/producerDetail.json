@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "生产者详情",
+  "usingComponents": {
+    "list": "/components/list/list",
+    "searchBar": "/components/search/search",
+    "carousel": "/components/carousel/carousel",
+    "uploadPic": "/components/uploadPic/uploadPic",
+    "i-action-sheet": "../../dist/action-sheet/index",
+    "i-button": "../../dist/button/index",
+    "i-message": "../../dist/message/index"
+  }
+}

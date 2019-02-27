@@ -1,0 +1,94 @@
+/* pages/courseList/courseList.wxss */
+
+.resPage-title {
+  width: 100%;
+  line-height: 40rpx;
+  padding-left: 32rpx;
+  /* padding: 20rpx; */
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 2rpx solid #f1f1f1;
+  margin-bottom: 32rpx;
+}
+
+.course {
+  box-sizing: border-box;
+  width: 100%;
+  line-height: 40rpx;
+  padding-top: 10rpx;
+  display: block;
+}
+
+.course .course-title {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 32rpx;
+  height: 60rpx;
+  font-size: 44rpx;
+  color: #484848;
+  line-height: 60rpx;
+}
+
+.course .course-title .more {
+  height: 40rpx;
+  font-size: 28rpx;
+  color: #484848;
+  font-weight: 500;
+}
+
+.course view {
+  box-sizing: border-box;
+}
+
+.resPage-title .resPage-title-item {
+ margin-right: 48rpx;
+  text-align: center;
+  color: #999999;
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resPage-title  .active {
+  font-size: 36rpx;
+  color: #6cddc7;
+  font-weight: 400;
+}
+
+.empty view {
+  width: 480rpx;
+  height: 320rpx;
+  margin: 0 auto;
+  text-align: center;
+  color: #999;
+}
+
+.empty view image {
+  margin-top: 400rpx;
+  margin-bottom: 10rpx;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.tabcss {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tab_item {
+  padding-bottom: 24rpx;
+}
+
+.line{
+   margin-top: 26rpx;
+  display: flex;
+  align-items: center;
+  background: #6CDDC7;
+  width: 40rpx;
+  height: 4rpx;
+}

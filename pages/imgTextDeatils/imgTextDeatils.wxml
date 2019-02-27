@@ -1,0 +1,5 @@
+<!--pages/imgTextDeatils/imgTextDeatils.wxml-->
+<view  class='container'>
+<rich-text nodes="{{context}} "></rich-text>
+</view>
+

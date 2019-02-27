@@ -1,0 +1,136 @@
+/* pages/receiveGift/receiveGift.wxss */
+
+.authorization{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.4);
+}
+.authorization .tip{
+  position: absolute;
+  display: block;
+  width: 100%;
+  color: #FFF;
+  text-align: center;
+  font-size: 32rpx;
+  top: 32rpx;
+}
+.authorization .gift-box{
+  position: relative;
+  background: #fff;
+  width: 686rpx;
+  border-radius: 4rpx;
+  margin-left: 32rpx;
+  margin-right: 32rpx;
+}
+.authorization .gift-box .sender{
+  /* height: 96rpx; */
+  display: flex;
+  padding-top: 32rpx;
+  margin: 0 32rpx;
+  align-items: center;
+}
+.authorization .gift-box .sender image{
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+  margin-right: 24rpx;
+}
+.authorization .gift-box .sender text{
+  
+}
+.authorization .gift-box .tip-text{
+  width: 590rpx;
+  height: 98rpx;
+  position: absolute;
+  left: 48rpx;
+  top: 114rpx;
+}
+.authorization .gift-box .tip-text image{
+  position: absolute;
+  width: 590rpx;
+  height: 98rpx;
+}
+.authorization .gift-box .tip-text text{
+  position: absolute;
+  display: block;
+  text-align: center;
+  width: 100%;  
+  color: rgba(153,153,153,1);
+  font-size: 24rpx;
+  height: 24rpx;
+  top: 54rpx;
+}
+.authorization .gift-box .course-name{
+  margin-top: 132rpx;
+  width: 590rpx;
+  height: 92rpx;
+  line-height: 46rpx;
+  font-size: 16px;
+  margin-left: 48rpx;
+  color: rgba(72,72,72,1);
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  word-break: break-all;
+  word-wrap: break-word;
+  text-align: center;
+}
+.authorization .gift-box .course-img{
+  width: 340rpx;
+  height: 340rpx;
+  margin: 32rpx 0 80rpx;
+  margin-left: 164rpx;  
+}
+.authorization .can-rective{
+  background: rgba(108,221,199,1);
+  width: 686rpx;
+  margin: 32rpx 32rpx 0;
+  color: #fff;
+}
+.authorization .cant{
+  background: rgba(212,212,212,1);
+  width: 686rpx;
+  margin: 32rpx 32rpx 0;
+  color: #fff;
+}
+.authorization .to-home{
+  position: absolute;
+  right: 0;
+  top: 72rpx;
+  background: #fff;
+  width: 120rpx;
+  height: 80rpx;
+  border-radius: 40rpx 0 0 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.authorization .to-home image{
+  width: 52rpx;
+  height: 52rpx;
+}
+
+
+
+.unauthorization{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+}
+.unauthorization button{
+  box-sizing: border-box;
+  width: 100%;
+  margin: 32rpx;
+  background: rgba(0,180,185,1);
+  color: #fff;
+}

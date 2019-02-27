@@ -1,0 +1,101 @@
+.resPage-title{
+  box-sizing: border-box;
+  width: 100%;
+  line-height: 40rpx;
+  /* padding: 20rpx; */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.course{
+  box-sizing: border-box; 
+  width: 100%;
+  line-height: 40rpx;
+  padding-top: 10rpx;
+  display: block;
+}
+ 
+.course .course-title {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: space-between ;
+  padding:0 20rpx;
+}
+
+.course view{
+  box-sizing: border-box;
+}
+
+.resPage-title .resPage-title-item{
+  width: 33.33%;
+  text-align: center;
+  padding: 10rpx 0;
+}
+
+.resPage-title  .active{
+  border-bottom: 4rpx solid black;
+}
+
+
+/* .course .course-list{
+  width: 100%;
+  box-sizing: border-box;
+}
+.course .course-list navigator {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 20rpx 0;
+}
+
+.course .course-list navigator  .course-list-item{
+  height: 200rpx;
+  display: flex;
+}
+.course .course-list navigator .course-list-item .poster{
+  width: 35%;
+  height: 200rpx;
+}
+
+.course .course-list navigator .course-list-item .item-info{
+  padding: 0 10rpx;
+  width: 65%;
+  position: relative;
+}
+
+.course .course-list navigator .course-list-item .item-info .info-title,
+.course .course-list navigator .course-list-item .item-info .info-subtitle{
+  display: block;
+  height: 140rpx;
+  margin: 0 15rpx 15rpx 15rpx;
+}
+
+.course .course-list navigator .course-list-item .item-info .info-title {
+  font-size: 28rpx;
+}
+
+.course .course-list navigator .course-list-item .item-info .info-subtitle {
+  font-size: 22rpx;
+  color: #c0c0c0;
+}
+
+.course .course-list navigator .course-list-item .item-info .price {
+  position: absolute;
+  font-size: 22rpx;
+  bottom: 0;
+  right: 0;
+  color: red;
+}
+
+.course .course-list navigator .course-list-item .item-info .item-name{
+  height: 75rpx;
+  line-height: 66rpx; 
+  display: flex;
+  width: 100%;
+}
+
+.course .course-list navigator .course-list-item .item-info .item-name text{
+  display: flex;
+  width: 33%;
+} */
+

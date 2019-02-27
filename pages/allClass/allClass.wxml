@@ -1,0 +1,64 @@
+<view class="container">
+  <view class='tab'>
+    <view class="tab_item {{tabid == index ? 'acitive':''}}" wx:for="{{tab}}" wx:key="*this" bindtap='chose_bt' data-tabid='{{index}}'>
+      <view class='tab_name'>{{item.name}}</view>
+      <image class='tab_icon' src="../../images/{{item.imgurl[1]}}" wx:if="{{tabid == index}}"></image>
+      <image class='tab_icon' src="../../images/{{item.imgurl[0]}}" wx:else></image>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='list_item' wx:for="{{courseList}}" wx:key="*this" bindtap='goCourseDtail' data-id='{{index}}'>
+      <image class='head' src="{{item.courseUrlFirst}}">
+        <image class='lessonPic2' wx:if="{{item.subType == '3'}}" src="/images/video_icon@2x.png" mode="aspectFill" />
+        <image class='lessonPic2' wx:elif="{{item.subType == '1'}}" src="/images/Article_icon@2x.png" mode="aspectFill" />
+        <image class='lessonPic2' wx:elif="{{item.subType == '2'}}" src="/images/audio_icon@2x.png" mode="aspectFill" />
+      </image>
+
+      <view class='text'>
+        <view class='text_title'>
+          {{item.courseName}}
+        </view>
+        <view class='num_price'>
+          <view class='num'>{{item.buyNumber}}人学习</view>
+          <view class='price' wx:if="{{item.price == 0}}">免费</view>
+          <view class='price' wx:else>￥{{item.price}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='popupBackground' wx:if="{{ifshow}}" bindtap='cancleShow'></view>
+<view class='popup_1' wx:if="{{ifshow1}}">
+  <scroll-view class='left_tab' scroll-y="true" style='max-height:778rpx;'>
+    <view class="left_tab_item {{id!=-1&&id== index ? 'acitive':''}}" wx:for="{{titleList}}" bindtap='choese_type' data-id='{{index}}'>
+      {{item.name}}
+    </view>
+
+  </scroll-view>
+  <scroll-view class='sv_right'>
+    <view class='right_tab'>
+      <view class="right_tab_item {{itemid!=-1&&itemid==index ?'acitive':''}}" wx:for="{{secondList}}" bindtap='chose_item' data-itemid='{{index}}'>
+        {{item.name}}
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<view class='popup_2' wx:if="{{ifshow2}}">
+  <view class='sort'>
+    <view class="sort_item {{sortid!=-1&sortid==index ? 'change':''}}" wx:for="{{sort}}" bindtap='choese_sort' data-sortid='{{index}}'>
+      {{item}}
+    </view>
+  </view>
+</view>
+<view class='popup_3' wx:if="{{ifshow3}}">
+  <view class='corust_type'>课程类型
+
+  </view>
+  <view class='corust_type_item'>
+    <view class="type_item {{typeid!=-1&typeid==index? 'green' : ''}}" wx:for="{{courseTitle}}" bindtap='choese_typeid' data-typeid='{{index}}'>
+      {{item}}
+    </view>
+  </view>
+
+</view>

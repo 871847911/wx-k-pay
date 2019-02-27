@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "我的订单",
+    "usingComponents": {
+        "list": "/components/list/list",
+        "searchBar": "/components/search/search",
+        "carousel": "/components/carousel/carousel",
+        "uploadPic": "/components/uploadPic/uploadPic",
+        "i-modal": "../../dist/modal/index",
+        "i-message": "../../dist/message/index"
+    }
+}

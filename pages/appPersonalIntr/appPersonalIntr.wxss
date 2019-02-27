@@ -1,0 +1,113 @@
+.info {
+  padding: 0rpx 32rpx 120rpx 30rpx;
+  color: #666666;
+}
+
+.info .info-item {
+  padding: 46rpx 0;
+  border-bottom: 2rpx solid rgba(241, 241, 241, 1);
+}
+
+.info .info-item .title, 
+.info .info-item text,
+.info .info-item .input {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 50rpx;
+  height: 50rpx;
+  font-size: 32rpx;
+}
+
+.info .info-item .title {
+  width: 200rpx;
+}
+
+.info .info-item .info-list{
+  display: inline-block;
+  width: 480rpx;
+}
+
+.info .info-item .info-list .info-list-item{
+  display: inline-block;
+  margin-right: 32rpx;
+  margin-bottom: 24rpx;
+  height:64rpx;
+  background:#6CDDC7;
+  border-radius:8rpx;
+  font-size:32rpx;
+  line-height: 64rpx;
+  text-align: center;
+  padding: 0 24rpx;
+  color: white;
+}
+
+.info .info-item .detail {
+  width: 480rpx;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.info .info-item .pic-box {
+  width: 400rpx;
+  height: 274rpx;
+  background: rgba(247, 247, 247, 1);
+  margin-bottom: 32rpx;
+}
+
+.info .info-item .pic-box .pic-box-plus{
+  color: #666666;
+  padding-top: 94rpx;
+}
+
+.info .info-item .pic-box .showPic{
+  width: 100%;
+  height: 100%;
+}
+
+.info .info-item .pic-box .showPic image{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.info .info-item .pic-box .pic-box-plus .plus{
+ font-size: 60rpx;
+ text-align: center;
+}
+
+.info .info-item .pic-box .pic-box-plus .txt{
+ font-size: 22rpx;
+ text-align: center;
+}
+
+.info .info-item .flag {
+  width: 310rpx;
+  height: 96rpx;
+  font-size: 22rpx;
+  color: rgba(153, 153, 153, 1);
+  line-height: 32rpx;
+  margin-top: 20rpx;
+}
+
+.info input{
+  width: 480rpx;
+  display: inline-block;
+  color: black;
+}
+.info textarea {
+  width: 480rpx;
+  display: inline-block;
+  color: black;
+  margin-top: 10rpx;
+  min-height: 40rpx;
+  height: auto;
+}
+
+.agreement .agreement-content::-webkit-scrollbar-thumb {
+  width: 8rpx;
+  height: 10rpx;
+  border-radius: 10px;
+  background-color: #6CDDC7;
+}
+
+  @import './btn.wxss'  

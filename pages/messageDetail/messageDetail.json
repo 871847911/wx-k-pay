@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "list": "/components/list/list",
+    "searchBar": "/components/search/search",
+    "carousel": "/components/carousel/carousel",
+    "uploadPic": "/components/uploadPic/uploadPic"
+  }
+}

@@ -1,0 +1,54 @@
+<view class='wenti' wx:if="{{showTitle}}">
+  <view class='title'>{{title}}</view>
+  <view class='time'>
+    <text wx:if="{{anonymity==0}}">{{name}}</text>
+    <text wx:else>匿名用户</text>
+    <text class='timeText'>{{time}}</text>
+  </view>
+  <view class='contant' wx:if="{{more}}">{{contant}}</view>
+  <view class='contants' wx:else>{{contant}}</view>
+  <view class='contantImg' wx:for="{{contantImg}}" wx:key="*this" wx:if="{{!more}}">
+    <image src="{{item.picUrl}}"></image>
+  </view>
+  <view class='mores' wx:if="{{more}}" bindtap='more'>查看更多
+    <image src='../../images/down@2x.png'></image>
+  </view>
+  <view class='more' wx:else bindtap='more'>收起
+    <image src='../../images/up@2x.png'></image>
+  </view>
+</view>
+<view class="question-input-area">
+  <!-- 回答  -->
+  <view class='hidTextareaBox'>
+    <image wx:if="{{!showTitle}}" bindtap='hidTextarea' class='hidTextarea' src='../../images/shrink@2x.png'></image>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <textarea bindfocus="bindfocus" bindblur="hidTextarea" class="weui-textarea" placeholder="讲师在这里答复问题..." maxlength="1000" placeholder-style="color:#b3b3b3;font-size:14px;" style="" bindinput="handleContentInput" />
+        <!-- <view class="weui-textarea-counter">{{contentCount}}/500</view> -->
+      </view>
+    </view>
+  </view>
+  <view class='imgTip' wx:if="{{images.length>0}}">最多可添加3张图片，每张大小不超过2MB；建议尺寸338px*180px</view>
+  <view class="question-images-area">
+    <!-- 图片缩略图  -->
+    <view class="question-images">
+      <block wx:for="{{images}}" wx:key="*this">
+        <view class="q-image-wrap {{index==1?'q-image2':''}}" data-idx="{{index}}">
+          <image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+          <view class="q-image-remover" data-idx="{{index}}">
+            <image src='../../images/cancel.png' bindtap="removeImage"></image>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+<view class='course-bottom' style='z-index:1'>
+  <view class='bottom-item' bindtap="choosePic">
+    <image class='bottom-item_img' src='../../images/camera.png'></image>
+  </view>
+  <button bindtap='submitForm' class="submitForm {{issub?'issub':''}}">提交</button>
+</view>
+<!-- 提交表单按钮  -->

@@ -1,0 +1,20 @@
+<!--pages/income/income.wxml-->
+<view class='container'>
+  <view class='income' wx:for="{{income}}" wx:key="*this">
+    <view class='name_price'>
+      <view class='whobuy'>
+        {{item.consumer == null? '' :item.consumer}}购买
+        <view class='class_name'>《{{item.productName }}》</view>
+      </view>
+      <view class='price'>+{{item.amount }}元</view>
+    </view>
+    <view class='date_service'>
+      {{item.createTime }}
+      <view class='service_price'>
+        服务费{{item.serviceRate }}%
+      </view>
+    </view>
+  </view>
+</view>
+<import src="../common/emptyView" />
+<template is="emptyView" wx:if="{{ income.length == 0 }}" data="{{...emptyJson}}" />

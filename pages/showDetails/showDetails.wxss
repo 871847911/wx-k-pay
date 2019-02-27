@@ -1,0 +1,42 @@
+/* pages/showDetails/showDetails.wxss */
+.container{
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.showMoney{
+  margin-top: 60rpx;
+font-size:60rpx;
+font-family:PingFangSC-Medium;
+font-weight:500;
+color:rgba(0,0,0,1);
+}
+.success{
+  margin-top: 13rpx;
+  font-size:30rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(153,153,153,1);
+margin-bottom: 60rpx;
+}
+.mes{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 32rpx;
+}
+.title{
+  font-size:30rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(153,153,153,1);
+}
+.content{
+  font-size:32rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(72,72,72,1);
+}

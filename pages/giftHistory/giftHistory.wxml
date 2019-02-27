@@ -1,0 +1,15 @@
+
+<import src="../common/emptyView" />
+
+<view class='gift-list'>
+  <view class='gift' wx:for='{{ giftList }}' bindtap='giftDetail' data-index='{{index}}' wx:key='*this'>
+    <image src='{{ item.courseImage }}'></image>
+    <view class='gift-info'>
+      <text>{{ item.courseName }}</text>
+      <view class='unreceived' wx:if='{{ item.giftStatus == 0 }}'>未被领取</view>
+      <view class='received' wx:if='{{ item.giftStatus == 1 }}'>已赠送</view>
+    </view>
+  </view>
+</view>
+
+<template is="emptyView" data="{{...emptyJson}}" wx:if='{{giftList.length == 0}}'/>

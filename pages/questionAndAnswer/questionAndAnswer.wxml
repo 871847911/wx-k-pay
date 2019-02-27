@@ -1,0 +1,55 @@
+<import src="../common/emptyView" />
+
+<!-- 搜索框 -->
+<view class='search'>
+  <view class='search-box' bindtap='toQuestionSearch'>
+    <icon class='iconfont icon-sousuo'></icon>
+    <input placeholder='请输入问题'></input>
+  </view>
+</view>
+  
+<!-- 消费者 -->
+<view class='question-title'wx:if='{{ roleId == 3 }}'>
+  <view class="question-title-item {{index == idx ? 'is-active' : ''}}" wx:for='{{ questionDataUser }}' bindtap='changeIndex' data-index='{{index}}' wx:key='*this'>
+    <image src='{{ item.url }}'></image>  
+    <text>{{ item.name }}</text>
+    <view class='line'></view>
+  </view>  
+</view>
+  <!-- 生产者 -->
+
+<view class='question-title' wx:if='{{ roleId == 1 || roleId == 2 }}'>
+  <view class="question-title-item {{index == idx ? 'is-active' : ''}}" wx:for='{{ questionDataOwner }}' bindtap='changeOwnerIndex' data-index='{{index}}' wx:key='*this'>
+    <image src='{{ item.url }}'></image>
+    <text>{{ item.name }}</text>
+    <view class='line'></view>
+  </view>  
+</view>
+
+<view class='questions'>
+  <view class='question-list'  wx:for='{{questionList}}' bindtap='toQuestionDetail' data-index='{{index}}' wx:key='*this'>
+    <view class='quesTitle'>{{ item.title }}</view>
+    <view class='quesDet'>
+      <view>{{  item.lecturerName }}</view>
+      <view wx:if='{{ item.questionStatus == 1 }}'>回复：{{ item.answerTime }}</view>
+      <!-- <view>{{ item.questionStatus == 0 ? '待解答' : '已解答' }}</view> -->
+      <view class='ans' wx:if='{{ item.questionStatus == 0 }}'>待解答</view>
+      <view class='no_ans' wx:else>已解答</view>
+    </view>
+  </view>
+</view>
+
+
+
+<template is="emptyView" data="{{...emptyJson}}" wx:if='{{questionList.length == 0}}'/>
+
+
+<view class='add-question' wx:if='{{ showAdd }}'>
+  <image bindtap='toAddQuestion' src='/images/add_question.png'></image>
+</view>
+
+<view class='my-question' wx:if='{{ showMy }}'>
+  <image src='/images/my_ques.png' bindtap='toAddQuestionForS'></image>
+  <text bindtap='toAddQuestionForS'>我的提问</text>
+</view>
+

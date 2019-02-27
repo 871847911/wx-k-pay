@@ -1,0 +1,20 @@
+<view class='gift-bg'>
+  <image src='/images/has_pay.png'></image>
+  <text>您已成功购买该课程，好友领取后可以免费阅读</text>
+  <view class='to-home'>
+    <image bindtap='toIndex' src='/images/Home@3x(2).png'></image>  
+  </view>
+</view>
+
+<view class='sead-gift'>
+  <view class='course'>
+    <image src='{{ courseDetail.courseUrlFirst }}'></image>  
+    <view class='course-info'>
+      <view>{{ courseDetail.courseName }}</view>
+      <view>￥{{ courseDetail.price }}</view>
+    </view>
+  </view>
+  <text>您可以将该课程赠送给好友</text>
+  <text>(每次赠送仅限一个好友领取)</text>
+  <button class='button_color' open-type='share'>赠送给好友</button>
+</view>

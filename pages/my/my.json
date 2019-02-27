@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "我的",
+  "usingComponents": {
+    "list": "/components/list/list",
+    "searchBar": "/components/search/search",
+    "carousel": "/components/carousel/carousel",
+    "uploadPic": "/components/uploadPic/uploadPic",
+    "i-modal": "../../dist/modal/index",
+    "i-button": "../../dist/button/index",
+    "i-message": "../../dist/message/index"
+  }
+ 
+}

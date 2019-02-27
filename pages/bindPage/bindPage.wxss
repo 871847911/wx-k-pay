@@ -1,0 +1,44 @@
+/* pages/bindPage/bindPage.wxss */
+page{
+
+}
+
+button::after {
+  border: none;
+}
+
+.page_box{
+  padding:214rpx 200rpx 0;
+  text-align: center;
+}
+
+.page_box image{
+  width:96rpx;
+  height:96rpx;
+}
+
+.page_box .ts_deal{
+  margin:50rpx 0 16rpx 0;
+}
+
+.page_box .type_one{
+  color:#484848;
+  font-size:30rpx;
+  height:44rpx;
+  margin:0 auto;
+}
+
+.page_box .type_two{
+  height: 72rpx;
+  color:#999999;
+  margin:64rpx 0 72rpx 0; 
+}
+
+.page_box .btn_type{
+  height:98rpx;
+  background:#6CDDC7;
+  color:#ffffff;
+  font-size:36rpx;
+  box-sizing: content-box;
+}
+

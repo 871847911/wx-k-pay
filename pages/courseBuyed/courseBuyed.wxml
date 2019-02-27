@@ -1,0 +1,4 @@
+<import src="../common/emptyView" />
+
+<template is="emptyView" wx:if="{{ courseDetail.list == 0  }}" data="{{...emptyJson}}" />
+<list wx:else listInfo="{{ '256' }}" bindgoDetail="goDetail" courseList="{{ courseDetail.list }}"/>

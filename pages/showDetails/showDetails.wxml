@@ -1,0 +1,9 @@
+<!--pages/showDetails/showDetails.wxml-->
+<view class='container'>
+  <view class='showMoney'>300.00元</view>
+  <view class='success'>交易成功</view>
+  <view class='mes' wx:for="{{mes}}" wx:key="*this">
+    <view class='title'>{{item.key}}</view>
+    <view class='content'>{{item.value}}</view>
+  </view>
+</view>

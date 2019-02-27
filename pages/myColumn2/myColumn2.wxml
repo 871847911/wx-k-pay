@@ -1,0 +1,30 @@
+<!--pages/myColumn/myColumn.wxml-->
+
+<view class="myColumn">
+  
+ <!-- 专栏列表 -->
+  <!-- 一个列表 -->
+  <view class="pay-list-item" wx:for="{{list}}" bindtap='goDetalis' data-id='{{index}}'>
+    <view class="item-left">
+      <image src="{{item.columnUrl}}"></image>
+    </view>
+    <view class="item-right">
+      <!-- 111 -->
+      <view class="right-top">
+        <view class="top-title">"{{item.columnName}}"</view>
+        <view class="top-des">
+          <text>{{item.updateType}}</text><text>进度{{item.currentArticleNumber}}/{{item.articleNumber }}</text>
+        </view>
+      </view>
+      <!-- 222 -->
+      <view class="bottom-des">
+      <text class="item-num">{{item.buyNumber}}人订阅</text>
+        <text class="item-money">￥{{item.price}}</text>
+        
+      </view>
+      
+    </view>
+  </view>
+</view>
+<import src="../common/emptyView" />
+<template is="emptyView" wx:if="{{ list.length == 0 }}" data="{{...emptyJson}}" />

@@ -1,0 +1,15 @@
+
+<view class='choosed' wx:if='{{ courseId == null }}'>
+  <view>已选讲师：{{lecturerName}}</view>
+</view>
+<view class='course' wx:if='{{ courseId != null }}'>
+  <image src='{{ courseDetail.courseUrlFirst }}'></image>
+  <view>{{ courseDetail.courseName }}</view>
+</view>
+
+
+<view class='add-title'>
+  <textarea maxlength='50' auto-focus='true' bindinput='getTextareaLength' placeholder='输入您要提的问题（10-50字）' /> 
+  <view>{{textareaLength}} / 50</view>
+  <button class="{{ textareaLength >= 10 ? 'toAddQuestionCont' : 'addWord' }}" bindtap='toAddQuestionCont'>下一步</button>
+</view>

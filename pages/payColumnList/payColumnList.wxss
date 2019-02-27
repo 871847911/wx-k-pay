@@ -1,0 +1,58 @@
+/* pages/payColumnList/payColumnList.wxss */
+.pay-column-list{
+  padding:0 28rpx 20rpx 32rpx;
+  overflow:hidden;
+}
+.pay-list-item{
+  display: flex;
+  margin-top:32rpx;
+}
+.item-left{
+  margin-right:32rpx;
+}
+.item-left image{
+  width:256rpx;
+  height:162rpx;
+  display:block;
+  border-radius: 8rpx;
+}
+.item-right{
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.top-title{
+  width:400rpx;
+  font-size:30rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:700;
+  color:rgba(17,17,17,1);
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.top-des{
+  display: flex;
+  justify-content: space-between;
+  font-size:24rpx;
+  font-family:PingFangSC-Light;
+  font-weight:300;
+  color:rgba(102,102,102,1);
+  margin-top:20rpx;
+}
+.bottom-des{
+  display: flex;
+  justify-content: space-between;
+  font-family:PingFangSC-Regular;
+}
+.bottom-des .item-money{
+  font-size:20rpx;
+  font-weight:700;
+  color:rgba(254,128,96,1);
+}
+.bottom-des .item-num{
+  font-size:20rpx;
+  font-weight:700;
+  color:#B4B4B4;
+}

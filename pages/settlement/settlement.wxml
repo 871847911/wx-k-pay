@@ -1,0 +1,23 @@
+<!--pages/settlement/settlement.wxml-->
+<view class="settlement">
+  <!-- 列表 -->
+  <view class="settlement-item">
+    <view class="item-left">
+      <view class="item-title">{{title}}</view>
+      <text class="item-price">￥{{price}}</text>
+    </view>
+    <view class="item-right">
+      <image src="{{img}}"></image>
+    </view>
+  </view>
+  <!-- 支付方式 -->
+  <view class="payway">
+    <text>支付方式</text>
+    <text>微信支付</text>
+  </view>
+  <!-- 底部的确认支付 -->
+  <view class="bottomPay">
+    <view class="payLeft">应付：<view class="price">{{price}}</view></view>
+    <view class="payRight" bindtap='createrOrder'>确认支付</view>
+  </view>
+</view>

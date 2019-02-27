@@ -1,0 +1,6 @@
+<!--pages/submitFeedback/submitFeedback.wxml-->
+<view class='container'>
+  <image class='img' src='../../images/symbols-submission12.png'></image>
+  <view class='text'>提现申请已提交</view>
+  <button class='bt' bindtap='returnMy'>返回个人中心</button>
+</view>

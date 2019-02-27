@@ -1,0 +1,40 @@
+<!--pages/groupShare/groupShare.wxml-->
+<view class='top'>
+    <view class='topImgBox' bindtap='toIndex'>
+        <image class='topImg' src='../../images/Home@3x(2).png'></image>
+    </view>
+    <view class='topBgBox'>
+        <image class='topBg' src='../../images/has_lean.png'></image>
+        <view class='topBgBoxText'>发现好内容，邀你一起来学习</view>
+    </view>
+</view>
+<view class='bottom '>
+    <view class='groupCourse '>
+        <image class='courseImg '  src="{{courseData.courseUrl}}">
+        </image>
+    <view class='Course '>
+        <view class='courseTitle '>{{courseData.courseName}}</view>
+            <view class='price '>拼团价：
+                <text>￥{{courseData.collagePrice}}</text>
+            </view>
+        </view>
+    </view>
+    <view class='groupNum ' wx:if="{{courseData.status == 0 || courseData.status == 1 || courseData.status == 4 || courseData.status == 7}}">当前参团
+        <text>{{courseData.corrent}}</text>人，还剩
+        <text>{{courseData.remain}}</text>个优惠名额</view>
+    <view class='time' wx:if="{{courseData.status == 0 || courseData.status == 1 || courseData.status == 4 || courseData.status == 7}}">
+        <secondKill inner-text="{{courseData.endTime}}"></secondKill>
+    </view>
+    <view class='time' wx:if="{{courseData.status == 2}}">您来晚了，该团已成团</view>
+    <view class='time' wx:if="{{courseData.status == 3}}">您来晚了，该团已解散</view>
+    <view class='time' wx:if="{{courseData.status == 5}}"><icon type="success" size="20" style="vertical-align: bottom;"/><text>拼团成功</text> </view>
+    <view class='time' wx:if="{{courseData.status == 6}}"><icon type="clear" color="red" size="20" style="vertical-align: bottom;"/>拼团失败，等待商家处理退款</view>
+    
+    <view class='botton' wx:if="{{courseData.status == 0}}" bindtap='addGroup'>加入拼团</view>
+    <view class='botton' wx:if="{{courseData.status == 1}}" bindtap='toCourseDetail'>您已拥有该课程</view>
+    <view class='botton' wx:if="{{courseData.status == 2 || courseData.status == 3}}" bindtap='toCourseDetail'>我要发起拼团</view>
+    <view class='botton' wx:if="{{courseData.status == 4}}" bindtap='toCourseDetail'>您已参团</view>
+    <view class='botton' wx:if="{{courseData.status == 5 || courseData.status == 6}}" bindtap='toCourseDetail'>查看课程</view>
+    <view class='botton' wx:if="{{courseData.status == 7}}" bindtap='toCourseDetail'> 您已参与该课程其他拼团</view>
+    <view class='shareText '>分享到3个群后，拼成率高达98%</view>
+</view>

@@ -1,0 +1,47 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+<view class='order-status'>
+    {{courseDetails.status == 1 ? '待支付' : courseDetails.status == 2 ? '已支付' : '已失效'}}
+</view>
+
+<view class='pay-page'>
+    <view class='order-info'>
+        <view class='title'>{{courseDetails.productName }}</view>
+        <view class='price'>￥{{courseDetails.totalPrice}}</view>
+    </view>
+    <view class='order-pic'>
+        <image src="{{courseDetails.productImage }}"></image>
+    </view>
+
+    <view class="order-style border-top-241" style='margin-top:37rpx;'>
+        <view class='pay'>订单编号</view>
+        <view class='sty'>{{courseDetails.orderNumber}}</view>
+    </view>
+    <view class="order-style2">
+        <view class='pay'>生成时间</view>
+        <view class='sty'>{{courseDetails.createDate}}</view>
+    </view>
+    <view style="width: 100%">
+        <view class="order-style">
+            <view class='pay'>商品价格</view>
+            <view class='sty' style="color:#FE8060">{{courseDetails.payPrice}}</view>
+        </view>
+        <view class="order-style">
+            <view class='pay'>订单类型</view>
+            <view class='sty' wx:if="{{courseDetails.channelType ==1 }}">普通订单</view>
+            <view class='sty' wx:if="{{courseDetails.channelType ==2 }}">赠送订单</view>
+            <view class='sty' wx:if="{{courseDetails.channelType ==3 }}">拼团订单</view>
+            <view class='sty' wx:if="{{courseDetails.channelType ==4}}">分享订单</view>
+        </view>
+        <view class="order-style2" style='border-bottom: 1rpx solid rgba(241,241,241,1);'>
+            <view class='pay'>用户</view>
+            <view class='sty' >{{courseDetails.buyerName}}</view>
+        </view>
+    </view>
+    <!-- <button bindtap="handDelOrderClick">删除订单</button>
+    <button wx:if="{{courseDetails.status == 1}}" class='active-btn' bindtap="pay">去支付</button>
+    <button wx:else class='active-btn' bindtap="goIndex">再去逛逛</button> -->
+</view>
+<i-modal title="删除确认" visible="{{ visible }}" actions="{{ actions }}" bind:click="confimDelOrder">
+    <view>删除后无法恢复哦</view>
+</i-modal>
+<i-message id="message" />

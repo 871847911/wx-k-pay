@@ -1,0 +1,3 @@
+<import src="../common/emptyView" />
+<template is="emptyView" wx:if="{{ feedBackDetail.list.length == 0 }}" data="{{...emptyJson}}" />
+<list listInfo="message_0" consultMessage="{{ feedBackDetail.list }}" bindgoDetail="goDetail" wx:else />

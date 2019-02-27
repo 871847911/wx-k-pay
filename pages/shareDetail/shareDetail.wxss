@@ -1,0 +1,585 @@
+/* pages/couseDetail.wxss */
+
+.changeInput {
+  border: 2rpx solid #00B4B9;
+  border-radius: 8rpx;
+}
+
+.course_page {
+  padding-bottom: 100rpx;
+}
+
+.courseDetail {
+  /* padding: 20rpx; */
+  margin-bottom: 100rpx;
+  position: relative;
+}
+
+.courseDetail .checking {
+  width: 211rpx;
+  height: 211rpx;
+  position: absolute;
+  top: 20rpx;
+  left: 27rpx;
+  z-index: 999;
+}
+
+.courseDetail .checking image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.courseDetail image, .courseDetail video {
+  width: 750rpx;
+  height: 416rpx;
+}
+
+.courseDetail audio {
+  width: 100% !important;
+  margin-bottom: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.courseDetail .course-type {
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 32rpx;
+  padding-bottom: 22rpx;
+  width: 50%;
+  text-align: center;
+  font-size: 30rpx;
+  /* position: relative; */
+  background-color: white !important;
+  border-bottom: 2rpx solid #f1f1f1;
+}
+
+.courseDetail .active {
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium;
+  color: #00B4B9;
+  font-weight: 900;
+  margin-top: -8rpx;
+}
+
+.courseDetail .course-type .active-flag {
+  width: 48rpx;
+  position: absolute;
+  margin-left: 164rpx;
+  margin-top: 20rpx;
+  background-color: #00B4B9;
+  height: 2rpx;
+}
+
+/* bottom */
+
+.course-bottom {
+  height: 100rpx;
+  border-top: 1px #eee solid;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: white;
+}
+
+.course-bottom .sold-out {
+  width: 742rpx;
+  left: 0;
+  right: 0;
+  height: 98rpx;
+  background: #00B4B9;
+  border-radius: 4rpx;
+  position: absolute;
+  bottom: 4rpx;
+  color: white;
+}
+
+.course-bottom .course-bottom-item {
+  padding-top: 4rpx;
+  width: 20%;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.course-bottom .course-bottom-item button::after {
+  border: none;
+}
+
+.course-bottom .course-bottom-item button {
+  margin: 0;
+  padding: 0;
+  background: none;
+  height: auto;
+}
+
+.course-bottom .course-bottom-item icon, .course-bottom .course-bottom-item text {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-content: center;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(102, 102, 102, 1);
+  line-height: 40rpx;
+}
+
+.course-bottom .course-bottom-item icon {
+  font-size: 40rpx;
+}
+
+.course-bottom button {
+  width: 468rpx;
+  height: 98rpx;
+  background: rgba(254, 128, 96, 1);
+  border-radius: 4rpx;
+  font-size: 38rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(255, 255, 255, 1);
+}
+
+.course-bottom .buyed {
+  background: rgba(153, 153, 153, 1);
+}
+
+/* 内容 */
+
+.course-preview, .course-detail {
+  width: 100%;
+  margin-top: 28rpx;
+}
+
+.course-preview .course-preview-title, .course-preview .course-artist,
+.course-preview .course-course {
+  width: 100%;
+  display: block;
+  padding: 10rpx 0;
+  min-height: 160rpx;
+  border-bottom: 2rpx solid #f1f1f1;
+  position: relative;
+}
+
+.course-preview .course-artist, .course-preview .course-course {
+  padding-top: 49rpx;
+}
+
+.course-preview .course-preview-title button::after {
+  border: none;
+}
+
+.share {
+  position: absolute;
+  top: 0;
+  right: 30rpx;
+  font-size: 32rpx;
+  padding: 0;
+  margin: 0;
+  background: white;
+}
+
+.course-preview .course-preview-title .title {
+  /* width: 624rpx; */
+  height: 82rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(72, 72, 72, 1);
+  line-height: 42rpx;
+  margin-left: 32rpx;
+  margin-right: 32rpx;
+  font-weight: 900;
+}
+
+.course-preview .course-artist .artist-intr,
+.course-preview .course-course .course-intr {
+  width: 200rpx;
+  padding-left: 32rpx;
+  height: 48rpx;
+  font-size: 36rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(72, 72, 72, 1);
+  border-left: 4rpx solid #00B4B9;
+  line-height: 48rpx;
+  text-align: start;
+  font-weight: 400;
+  margin-bottom: 31rpx;
+  padding-bottom: 6rpx;
+}
+
+.course-preview .course-artist .artist-info {
+  padding-left: 32rpx;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 47rpx;
+}
+
+.course-preview .course-artist .artist-info .pic,
+.course-preview .course-artist .artist-info .info {
+  display: block;
+  border-radius: 50%;
+}
+
+.course-preview .course-artist .artist-info .pic image {
+  display: flex;
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+}
+
+.course-preview .course-artist .artist-info .username {
+  height: 48rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(72, 72, 72, 1);
+  line-height: 44rpx;
+  margin-left: 32rpx;
+  margin-bottom: 14rpx;
+}
+
+.course-preview .course-artist .artist-info .intr {
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(102, 102, 102, 1);
+  line-height: 34rpx;
+  margin-left: 32rpx;
+}
+
+/*简介  */
+
+.course-preview .course-course .course-content {
+  padding-left: 32rpx;
+  padding-right: 30rpx;
+  margin-bottom: 31rpx;
+  box-sizing: border-box;
+}
+
+.course-preview .course-preview-title .course-preview-des {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 32rpx;
+  padding-right: 32rpx;
+  padding-bottom: 40rpx;
+  margin-top: 8rpx;
+}
+
+.course-preview .course-preview-title .course-preview-des .info,
+.course-preview .course-preview-title .course-preview-des .price {
+  width: 33%;
+  vertical-align: top;
+  line-height: 60rpx;
+  height: 60rpx;
+  display: flex;
+  align-content: center;
+}
+
+.course-preview .course-preview-title .course-preview-des .info2 {
+  display: block;
+  height: 50rpx;
+  font-size: 36rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(254, 128, 96, 1);
+  line-height: 50rpx;
+}
+
+.course-preview .course-preview-title .course-preview-des .info icon {
+  display: flex;
+  align-content: center;
+}
+
+.course-preview .course-preview-title .course-preview-des .info {
+  justify-content: flex-start;
+}
+
+.course-preview .course-preview-title .course-preview-des .infomid {
+  justify-content: flex-center;
+}
+
+.course-preview .course-preview-title .course-preview-des .infoqw {
+  justify-content: flex-end;
+}
+
+.course-preview .course-preview-title .course-preview-des .price {
+  justify-content: flex-end;
+}
+
+/*detail  */
+
+.course-directory {
+  font-size: 40rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(72, 72, 72, 1);
+  line-height: 56rpx;
+  font-weight: 900;
+  background-color: white;
+}
+
+.fix-detail {
+  position: fixed !important;
+  top: -1rpx;
+  width: 100%;
+  z-index: 99999;
+}
+
+.directory-intr {
+  border-left: 4rpx solid #00B4B9;
+  padding-left: 32rpx;
+}
+
+.dir-item {
+  padding: 0 32rpx;
+  margin-bottom: 59rpx;
+  box-sizing: border-box;
+}
+
+.course-directory .small-flag {
+  font-weight: 500;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.courseDetail .dir-item-icon {
+  padding: 37rpx 0;
+  display: block;
+  /* box-sizing: border-box; */
+}
+
+.courseDetail .dir-item-icon-lock {
+  padding-top: 52rpx;
+  padding-bottom: 50rpx;
+}
+
+.courseDetail .dir-item-icon-lock image {
+  width: 24rpx;
+  height: 32rpx;
+  display: block;
+}
+
+.courseDetail .dir-item-icon image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.course-directory .inner {
+  width: 100%;
+  /* height: 224rpx; *//* border-radius: 8rpx; *//* border: 2rpx solid rgba(230, 231, 233, 1); */
+  display: flex;
+  /* flex-direction: row; */
+  margin: 10rpx 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-bottom: 2rpx solid #e6e7e9;
+}
+
+.inner-title {
+  height: 36rpx;
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(153, 153, 153, 1);
+  line-height: 36rpx;
+  margin: 22rpx 24rpx 14rpx 32rpx;
+  font-weight: 500;
+}
+
+.inner-content {
+  width: 572rpx;
+  padding: 46rpx 0;
+  padding-left: 20rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(72, 72, 72, 1);
+  line-height: 42rpx;
+  word-break: normal;
+  overflow: hidden;
+}
+
+.active-play {
+  border-color: #00B4B9 !important;
+}
+
+.active-word {
+  color: #00B4B9 !important;
+}
+
+.detail-content {
+  padding: 0 28rpx 20rpx 32rpx;
+  box-sizing: border-box;
+}
+
+.detail-content rich-text {
+  width: 100%;
+  display: block;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/*action-sheet  */
+
+.i-class .i-as-action-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-indent: 20rpx;
+}
+
+.bottom-item_img {
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.bottom-item {
+  padding-top: 4rpx;
+  color: rgba(102, 102, 102, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.share_bt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.share-rules {
+  padding: 0 32rpx 32rpx 32rpx;
+  overflow: hidden;
+}
+
+.share-rules .sharefree {
+  width: 150rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  background: rgba(255, 245, 243, 1);
+  border-radius: 29rpx;
+  text-align: center;
+  color: #fe8060;
+  float: left;
+  margin-right: 26rpx;
+  font-size: 24rpx;
+}
+
+.share-rules .shareruleBtn {
+  height: 36rpx;
+  line-height: 36rpx;
+  font-size: 24rpx;
+  font-weight: 400;
+  color: #6CDDC7;
+  float: left;
+}
+
+.share-rules .sharedate {
+  float: right;
+  height: 34rpx;
+  line-height: 34rpx;
+  font-size: 24rpx;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+}
+
+.infoqw .shareImg {
+  width: 24rpx;
+  height: 25rpx;
+  vertical-align: middle;
+  margin-top: 9px;
+  margin-right: 4rpx;
+}
+
+.infoqw .shareText {
+  display: inline;
+}
+
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+.commodity_attr_box {
+  width: 100%;
+  overflow: hidden;
+  height: 450rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  padding-top: 20rpx;
+}
+
+.commodity_attr_box .attr_box_text {
+  text-align: center;
+  padding: 10rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.weixinIcon {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.weui-btnz {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  border-radius: 0 !important;
+  background-color: #fff !important;
+  border-top: 1rpx solid rgba(214, 214, 210, 1);
+  font-size: 36rpx;
+  font-weight: 400;
+  color: rgba(72, 72, 72, 1);
+}
+
+button::after {
+  border: none;
+  border-radius: 0 !important;
+  font-size: 36rpx;
+  font-weight: 400;
+  color: rgba(72, 72, 72, 1);
+}
+
+.commodity_attr_box button.closePop::after {
+  border: none;
+}
+
+.commodity_attr_box button.closePop {
+  width: 100rpx;
+  margin: 0;
+  padding: 0;
+  background: none;
+  height: 100rpx;
+}
+
+.commodity_attr_box button.closePop .bottom-item_img {
+  width: 100%;
+  height: 100%;
+}
+.icon_box{
+  padding:30rpx 60rpx;
+}
+.ios_text{
+  font-size: 38rpx;
+  text-align: center;
+  line-height: 100rpx;
+}

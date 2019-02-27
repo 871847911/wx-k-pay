@@ -1,0 +1,29 @@
+<!--pages/income/income.wxml-->
+<view class='tab'>
+  <view class='tab_title' wx:for="{{tab}}">
+    <view class="tab_title_text {{index == tabIndex ? 'change':''}}" data-id='{{index}}' bindtap='changeTab'>{{item}}</view>
+    <view class='line' wx:if="{{tabIndex==index }}"></view>
+  </view>
+</view>
+
+<view class="container">
+  <!-- <view class='tab'>
+    <view class="tab_item {{tabIndex==index ? 'change' :''}}" wx:for="{{tab}}" data-id='{{index}}' bindtap='changeTab'>{{item}}
+      
+    </view>
+  </view> -->
+<view class='income' wx:for="{{income}}" wx:key="*this">
+  <view class='name_price'>
+    <view class='whobuy'>
+
+      <view class='class_name'>{{item.productName}} </view>
+    </view>
+    <view class='price'>+{{item.amount}}元</view>
+  </view>
+  <view class='date_service'>
+    {{item.createTime }}
+  </view>
+</view>
+</view>
+<import src="../common/emptyView" />
+<template is="emptyView" wx:if="{{ income.length==0}}" data="{{...emptyJson}}" />

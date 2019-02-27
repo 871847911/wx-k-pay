@@ -1,0 +1,24 @@
+<!--pages/integralCenter/integralCenter.wxml-->
+<view class='container'>
+  <view class='description'>
+    <view class='description_title'>成长值说明</view>
+    <view class='description_content'>成长值是店铺用户通过完成新手任务、日常任务、主线任务后获 得的数值，对应数值影响用户等级。</view>
+  </view>
+  <view class='tasks_title'>
+    会员等级对应成长值
+  </view>
+  <view class='tasks_tap'>
+    <view class='tasks_name'>
+      等级
+    </view>
+    <view class='getPoints'>会员名称</view>
+    <view class='todyFinsh'>所需成长值</view>
+  </view>
+  <view class='tasks' wx:for="{{listLev}}">
+    <view class='tasks_content'>{{item.level}}</view>
+    <view class='tasks_lev'>{{item.levelName}}</view>
+    <view class='points'>{{item.growMin}}</view>
+    
+  </view>
+
+</view>

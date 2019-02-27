@@ -1,0 +1,93 @@
+/* pages/contentAudit/contentAudit.wxss */
+/* .auditNav{
+  height: 96rpx;
+  border-bottom:2rpx solid #F1F1F1;
+  display: flex;
+} */
+.auditNav .navItem{
+  flex: 1;
+  height: 96rpx;
+  line-height: 96rpx;
+  text-align: center;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  position:relative;
+}
+.auditNav .navActive{
+  color:#6CDDC7;
+  font-size:36rpx;
+}
+.auditNav .navActive .line{
+  width:48rpx;
+  height:4rpx;
+  background:rgba(108,221,199,1);
+  border-radius:4rpx;
+  position: absolute;
+  bottom:2rpx;
+  left:50%;
+  margin-left:-24rpx;
+}
+/* 内容审核的内容 */
+.contentBox{
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  
+}
+.contentItem{
+  padding:32rpx 30rpx 0 30rpx;
+  display: flex;
+}
+.contentBox .contentItem:last-child{
+  margin-bottom:32rpx;
+}
+.contentItem .itemLeft{
+  margin-right:32rpx;
+}
+.contentItem .itemLeft image{
+  width:256rpx;
+  height:162rpx;
+  border-radius:8rpx;
+  display: block;
+}
+.itemRight{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.itemRight .title{
+  width:400rpx;
+  font-size:30rpx;
+  font-family:PingFangSC-Medium;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.itemRight .des{
+  color:#9B9B9B;
+  font-size:22rpx;
+  margin-top:22rpx;
+}
+.itemRight .des text{
+  color:#666666;
+}
+.itemRight .auditResult{
+  color:#6CDDC7;
+  font-size:24rpx;
+}
+.itemRight .auditResult2{
+  color:#FE8060;
+  font-size:24rpx;
+}
+.time{
+  font-size:20rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(155,155,155,1);
+}

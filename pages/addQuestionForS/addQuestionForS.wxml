@@ -1,0 +1,18 @@
+<import src="../common/emptyView" />
+
+<view class='questions'>
+  <view class='question-list'  wx:for='{{questionList}}' bindtap='toQuestionDetail' data-index='{{index}}' wx:key='*this'>
+    <view class='quesTitle'>{{ item.title }}</view>
+    <view class='quesDet'>
+      <view>{{ item.lecturerName }}</view>
+      <view wx:if='{{ item.questionStatus == 1 }}'>回复：{{ item.answerTime }}</view>
+      <view>{{ item.questionStatus == 0 ? '待解答' : '已解答' }}</view>
+    </view>
+  </view>
+</view>
+
+<template is="emptyView" data="{{...emptyJson}}" wx:if='{{questionList.length == 0}}'/>
+
+<view class='add-question'>
+  <image bindtap='toAddQuestion' src='/images/add_question.png'></image>
+</view>

@@ -1,0 +1,39 @@
+<!--pages/integralCenter/integralCenter.wxml-->
+<view class='container'>
+  <view class='description'>
+    <view class='description_title'>任务说明</view>
+    <view class='description_content'>成长值是店铺用户通过完成新手任务、日常任务后获得的数值，对 应数值影响用户等级。</view>
+  </view>
+  <view class='tasks_title' wx:if="{{dailyList.length !=0}}">
+    日常任务
+  </view>
+  <view class='tasks_tap' wx:if="{{dailyList.length !=0}}">
+    <view class='tasks_name'>
+      任务名称
+    </view>
+    <view class='getPoints'>获得积分</view>
+    <view class='todyFinsh'>今日完成</view>
+  </view>
+  <view class='tasks' wx:for="{{dailyList}}">
+    <view class='tasks_content'>{{item.name}}</view>
+    <view class='points'>{{item.score}}</view>
+    <image class='ifFinsh' src='../../images/symbols-gouxuan.png' wx:if="{{item.isCompleted}}"></image> 
+     <view class='kong' wx:else></view>
+  </view>
+  <view class='tasks_title' wx:if="{{newbieList.length !=0}}">
+    新手任务
+  </view>
+  <view class='tasks_tap'>
+    <view class='tasks_name'>
+      任务名称
+    </view>
+    <view class='getPoints'>获得积分</view>
+    <view class='todyFinsh'>完成情况</view>
+  </view>
+  <view class='tasks' wx:for="{{newbieList}}">
+    <view class='tasks_content'>{{item.name}}</view>
+    <view class='points'>{{item.score}}</view>
+    <image class='ifFinsh' src='../../images/symbols-gouxuan.png' wx:if="{{item.isCompleted}}"></image>
+    <view class='kong' wx:else></view>
+  </view>
+</view>

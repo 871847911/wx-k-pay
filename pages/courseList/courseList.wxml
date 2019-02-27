@@ -1,0 +1,14 @@
+<!--pages/courseList/courseList.wxml-->
+<view class='resPage-title'>
+  <view class="resPage-title-item {{idx == index ? 'active' : ''}} " wx:for="{{ course}}" wx:key="*this" wx:for-index="idx" bindtap='clickTab' data-idx="{{idx }}">
+    {{ item }}
+    <view class='line' wx:if="{{idx == index }}"></view>
+  </view>
+  
+</view>
+
+<import src="../common/emptyView" />
+<template  wx:if="{{ courseList.length == 0 }}" is="emptyView" data="{{...emptyJson}}" />
+<list wx:else listInfo="{{ '256' }}" courseList="{{ courseList }}" bindgoDetail="goDetail" isIOS ="{{isIOS}}" />
+
+ 

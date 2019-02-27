@@ -1,0 +1,54 @@
+<!--pages/payPage/payPage.wxml-->
+<view class='pay-page'>
+  <view class='order-info'>
+    <view class='title'>{{ title }}</view>
+    <view class='price'>￥{{ price }}</view>
+  </view>
+  <view class='order-pic'>
+    <image src="{{img}}"></image>
+  </view>
+
+  <view class="order-style">
+    <view class='pay'>支付方式</view>
+    <view class='sty'>微信支付</view>
+  </view>
+</view>
+<view class='points'  wx:if="{{isOpen}}">
+  <view class='points_box'>
+    <view class='points_text'>积分</view>
+    <view class='points_text_text'>
+      共{{userTotalScore }}积分，可用{{userTotalScore }}积分，抵扣￥{{dikou}}</view>
+    <switch class='allPoints' style='height=60rpx;width:100rpx' color='#6cddc7' bindchange="switchChange" 
+    checked="{{ifAll}}"></switch>
+  </view>
+  <picker class='point_picker' mode="selector" value="{{index}}" range="{{array}}" wx:if="{{ifAll}}"  bindchange="bindPickerChange" >
+    <view class='points_block'>
+      <view class='chose_points'>
+        <view class='chose_points_text'>{{array[index]}}</view>
+        <image class='down' src='../../images/down@2x.png'></image>
+      </view>
+      <view class='dikou'>
+        积分，抵扣￥
+        <view class='saveMoney'>{{saveMoney}}</view>
+      </view>
+      <image class='what' src='../../images/what.png'></image>
+    </view>
+  </picker>
+</view>
+
+
+
+<!-- bottom  -->
+<view class='course-bottom'>
+  <view class='course-bottom-item'>
+    <view>应付：
+      <text> {{shouldPay}}</text>
+    </view>
+  </view>
+  <button bindtap='pay' >去付款</button>
+</view>
+
+
+<i-modal visible="{{ visible3 }}" actions="{{ actions3 }}" bind:click="handleClick3">
+  <view class='buy-succeed'>恭喜您购买成功</view>
+</i-modal>

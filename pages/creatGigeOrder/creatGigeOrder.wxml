@@ -1,0 +1,18 @@
+<view class='course'>
+  <view class='course-info'>
+    <view>{{ courseDetail.courseName }}</view>
+    <view>￥{{ courseDetail.price }}</view>
+  </view>
+  <image src='{{ courseDetail.courseUrlFirst }}'></image>
+</view>
+
+<view class='pay'>
+  <view>支付方式</view>
+  <view>微信支付</view>
+</view>
+
+<view class='submit'>
+  <view>应付：<text>{{ courseDetail.price }}</text></view>
+  <button wx:if='{{ showPayButton }}' class='button_color' bindtap='createOrder'>确认支付</button>
+  <button wx:if='{{ !showPayButton }}' class='button_color'>支付中</button>
+</view>

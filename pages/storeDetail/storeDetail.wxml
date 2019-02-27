@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="carousel">
+    <!-- <carousel attrs="{{ attr }}" carouselArray="{{ carouselData }}"/> -->
+    <swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000" indicator-active-color="#FFFFFF" indicator-color="rgba(255,255,255,0.5)" style='height: 200rpx' circular="true">
+      <swiper-item wx:for="{{ carouselData }}" wx:key="*this" bindtap='go_lunbo' data-linkType='{{item.linkType}}' data-linkValue='{{item.linkValue}}'>
+        <image src="{{ item.sourceUrl }}" style="border-radius: {{ attrs.bor }}rpx;" mode="aspectFill" />
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <view class='store-content'>
+      <view class='title'>{{ name }} </view>
+      <view class='content {{isMore ? "ellplice": ""}}'>
+        {{ showData }}
+        <!-- <text class="read-more" bindtap='read'>{{ readMore ? '收起' : '阅读更多'}}</text> -->
+      </view>
+      <text class="read-more2" bindtap='read2' wx:if="{{contentH>63}}">{{readMore ? '收起':'阅读更多'}}</text>
+  </view>
+
+  <view class="course">
+    <view class='course-title'>
+      <view class="course-subtitle">讲师</view>
+      <!-- <view class="course-more">查看更多</view> -->
+    </view>
+    <list listInfo="{{ '208' }}" lecturerList="{{ lecturerList.list}}" bindgoDetail="goDetail"/>
+  </view>
+</view>

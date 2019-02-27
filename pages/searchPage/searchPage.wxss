@@ -1,0 +1,86 @@
+
+
+.search-header{
+  width: 660rpx;
+  height: 100rpx;
+  display: inline-block;
+   vertical-align: top; 
+}
+.cancel{
+  /* width: 50rpx; */
+  height: 100rpx;
+  display: inline-block;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  color: #6cddc7;
+  vertical-align: top; 
+  margin: auto;
+  margin-top: 12rpx;
+ 
+}
+
+.searchPage-content{
+  width: 100%;
+  margin: 20rpx 32rpx;
+}
+.searchPage-content .title{
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 36rpx;
+  font-weight: 800;
+  
+}
+
+.searchPage-content .title .clear-his{
+  float: right;
+  margin-right: 40rpx;
+  margin-top: 4rpx;
+  color: #999999;
+  font-size: 28rpx;
+  font-weight: 500;
+}
+
+.searchPage-content .content-list{
+  width: 100%;
+  /* display: flex;
+  flex-wrap: wrap;  */
+}
+.searchPage-content .content-list .content-list-subtitle{
+  height: 40rpx;
+  padding: 34rpx 0rpx 24rpx 0rpx;
+  color: #484848;
+  font-size: 28rpx;
+  display: inline-block;
+  vertical-align: top;
+  width: 150rpx;
+}
+
+.searchPage-content .content-list .content-list-content{
+  color: #666666;
+  display: inline-block;
+  vertical-align: top;
+  width: 560rpx;
+}
+
+.searchPage-content .content-list .content-list-content .content-list-content-item{
+  margin: 34rpx 24rpx 24rpx 0rpx;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.empty{
+  width: 100%;
+  text-align: center;
+  font-size: 30rpx;
+  color: #999999;
+}
+.empty image{
+  width: 400rpx;
+  height: 160rpx;
+  display: block;
+  margin: 0 auto;
+  padding-top: 152rpx;
+}
+
+
+@import './res.wxss'

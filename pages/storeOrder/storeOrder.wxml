@@ -1,0 +1,29 @@
+<view class='resPage-title'>
+  <view class="resPage-title-item {{idx == index ? 'active' : ''}} " wx:for="{{ ['普通订单','分享订单','拼团订单','赠送订单'] }}" wx:key="*this" wx:for-index="idx" bindtap='clickTab' data-idx="{{ idx }}">
+    {{ item }}
+    <view class='line' wx:if="{{idx == index}}"></view>
+  </view>
+</view>
+<view wx:if="{{isOk}}">
+  <view class='order' wx:for="{{order}}" wx:key="jj" bindtap='goDetails' data-id='{{index}}'>
+
+    <view class='orderStastus'>
+      <view class='orderTime'>下单时间：{{item.createDate}}</view>
+      <view class='orderPayStatus' wx:if="{{item.status ==1 }}">待支付</view>
+      <view class='orderPayStatus' wx:if="{{item.status ==2}}">已支付</view>
+      <view class='orderPayStatus' wx:if="{{item.status ==3 }}">已失效</view>
+    </view>
+    <view class='orderMsg'>
+      <view class='orderImg'>
+        <image class='orderImg_img' src='{{item.productImage}}'></image>
+      </view>
+      <view class='orderTitleAndName'>
+        <view class="ordertitle">{{item.productName }}</view>
+        <view class='orderName'>购买人：{{item.buyerName}}</view>
+      </view>
+      <view class="orderPrice">￥{{item.payPrice}}</view>
+    </view>
+  </view>
+  <import src="../common/emptyView" />
+<template is="emptyView" wx:if="{{ order.length == 0 }}" data="{{...emptyJson}}" />
+</view>

@@ -1,0 +1,23 @@
+
+.upload {
+  width: 300rpx;
+  height: 500rpx;
+  border: 1rpx solid black;
+}
+
+.upload .add {
+  margin-top: 150rpx;
+  font-size: 50rpx;
+  font-weight: 1000;
+  text-align: center;
+}
+
+.upload text {
+  text-align: center;
+  display: block;
+}
+
+.upload image {
+  width: 100%;
+  height: 100%;
+}

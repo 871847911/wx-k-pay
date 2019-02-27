@@ -1,0 +1,9 @@
+{
+
+    "navigationBarTitleText": "Demo",
+    "navigationBarTextStyle" : "black",
+    "usingComponents": {
+        "secondKill": "../courseDetail/secondKill/secondKill"
+    }
+
+}

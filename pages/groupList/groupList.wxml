@@ -1,0 +1,34 @@
+<!--pages/groupList/groupList.wxml-->
+<view class='bigTitle'>拼团中</view>
+<view class='groupListBox' wx:for="{{list}}" wx:key="*this">
+  <view class='courseName'>{{item.courseName}}</view>
+  <view class='groupList'>
+    <view class='grouprImg'>
+      <image src='{{item.userImg}}'></image>
+    </view>
+    <view class='grouprName'>{{item.userNickName}}</view>
+    <view class='grouprtime'>
+      <view class='cha'>还差
+        <text>{{item.surplusNum}}</text>人成团</view>
+      <view class='price'>￥{{item.price}}</view>
+    </view>
+    <view class='{{item.isState==0?"grouprBtn":"ngrouprBtn"}}' bindtap='gogroupPin' data-index='{{index}}'>去参团</view>
+  </view>
+</view>
+
+<view class='bigTitle'>相关拼团</view>
+<view class='groupListBox' wx:for="{{list2}}" wx:key="*this">
+  <view class='courseName'>{{item.courseName}}</view>
+  <view class='groupList'>
+    <view class='grouprImg'>
+      <image src='{{item.userImg}}'></image>
+    </view>
+    <view class='grouprName'>{{item.userNickName}}</view>
+    <view class='grouprtime'>
+      <view class='cha'>还差
+        <text>{{item.surplusNum}}</text>人成团</view>
+      <view class='price'>￥{{item.price}}</view>
+    </view>
+    <view class='{{item.isState==0?"grouprBtn":"ngrouprBtn"}}' bindtap='gogroupPin2' data-index='{{index}}'>去参团</view>
+  </view>
+</view>

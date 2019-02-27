@@ -1,0 +1,52 @@
+<view class="message2-page" wx:if="{{ index == 'message_1'}}" >
+
+  <view class='title'>
+   {{title}}
+  </view>
+  <view class='time'>
+    {{messageDetail.createDate}}
+    <view class="yes" wx:if="{{ messageDetail.type  == 11 || messageDetail.type  == 21}}">通过</view>
+    <view class="yes {{ (messageDetail.type  == 12 || messageDetail.type  == 22) ? 'no' : ''}}" wx:elif="{{ messageDetail.type  == 12 || messageDetail.type  == 22}}">拒绝</view>
+  </view>
+  <view>
+    {{ messageDetail.reason == null ? "" : messageDetail.reason }}
+  </view>
+</view>
+
+<button class='bottom-btn' wx:if="{{ index == 'message_1' && messageDetail.type  == 12 }}">重新申请</button>
+<button class='bottom-btn' bindtap='goCourseDetail' wx:elif="{{ index == 'message_1' && messageDetail.type != 11  }}">查看课程</button>
+
+
+<view wx:if="{{ index == 'message_0'}}" class="message1-page" id='react'>
+  <view class='consult'>
+    {{date}}
+  </view>
+  <view class='message1-page-title'>
+    <list listInfo="message_0_0" consultHeadData="{{ courseDetail }}" bindgoDetail="goDetail" />
+  </view>
+  <view class='consult' style='width:200rpx;'>
+    24小时答疑
+  </view>
+  <view class='messageBox'  style="flex-direction:row">
+    <image class='head me' src='{{headUrl}}'></image>
+    <view class='messageBox-content other'>
+      您好，我是爱学习的大白杨，请问 有什么需要帮助到您呢？（您可以 发送关键词，比如“入驻帮助”、“ 发票”、等，大白杨会尽力帮您解 答）哦~
+    </view>
+  </view>
+  <view class='messageBox' wx:for="{{ consultDetail.chatList}}" wx:key="index" style="flex-direction: {{ item.type != 1 ? 'row' : 'row-reverse' }}">
+    <view class='head'>
+      <image src="{{item.type == 1 ? consultDetail.student.headUrl : consultDetail.lecturer.headUrl}}"></image>
+    </view>
+    <view class="messageBox-content other {{ item.type == 1 ? 'me' : '' }}">
+      {{ item.content}}
+    </view>
+  </view>
+  <!-- <view class='kongbai'></view> -->
+ 
+  <view class="inputBox">
+    <form bindsubmit="sendMes" bindreset="reset">
+      <input name="input" value="{{ inputValue }}"></input>
+      <button class='submit' formType="submit">发送</button>
+    </form>
+  </view>
+</view>

@@ -1,0 +1,23 @@
+<import src="../common/emptyView" />
+<template is="emptyView" wx:if="{{ courseDetail==0|| courseDetail=='' }}" data="{{...emptyJson}}" />
+ 
+<view class='shareList' wx:for="{{courseDetail}}"  bindtap='goDetail' data-courseid="{{ item.id }}">
+  <view class='share_left'>
+    <image class='share_img' src='{{item.courseUrlFirst}}'></image>
+    <view class='share_left_icon'>
+        <image wx:if="{{item.courseType == '3'}}" src="/images/video_icon@2x.png" mode="aspectFill"  style='height:40rpx;width:40rpx'/>
+        <image wx:elif="{{item.courseType == '1'}}" src="/images/Article_icon@2x.png" mode="aspectFill"  style='height:40rpx;width:40rpx'/>
+        <image wx:elif="{{item.courseType == '2'}}" src="/images/audio_icon@2x.png" mode="aspectFill" style='height:40rpx;width:40rpx' />
+      </view>
+  </view>
+  <view class='share_right'>
+    <view class='share_title'>{{item.courseName}}</view>
+    <view class='share_tip'>分享</view>
+    <view class='share_content'>
+      {{item.buyNumber}}人学习
+      <view class='share_price'>¥{{item.price}}</view>
+    </view>
+  </view>
+</view>
+
+

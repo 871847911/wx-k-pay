@@ -1,0 +1,115 @@
+
+/* pages/growthValue/growthValue.wxss */
+
+.container{
+padding: 30rpx 30rpx 30rpx 30rpx;
+
+}
+.moneay_all {
+  position: relative;
+  height: 340rpx;
+  width: 100%;
+  border-radius: 8px;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  padding-top: 88rpx;
+  padding-bottom: 40rpx;
+}
+
+.today_money {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 60rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.7);
+}
+.vip_tasks{
+  position: absolute;
+  right: 20rpx;
+  top: 30rpx;
+}
+.allImage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 340rpx;
+  z-index:-1;
+}
+.num{
+  width: 200rpx;
+  text-align: center;
+  font-size:60rpx;
+font-family:PingFangSC-Medium;
+font-weight:500;
+color:rgba(72,72,72,1);
+}
+.text{
+  font-size:28rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(102,102,102,1);
+line-height:40px;
+}
+.vip_tasks{
+  font-size:24rpx;
+font-family:PingFangSC-Light;
+font-weight:300;
+color:rgba(102,102,102,1);
+}
+.kong{
+  height: 20rpx;
+  width: 100%;
+  background: #f8f8f8;
+}
+.mid{
+   background: #fff;
+  width: 100%;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+.tip {
+  padding-top: 32rpx;
+  padding-bottom: 32rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 24rpx;
+  font-family: PingFangSC-Light;
+  font-weight: 300;
+  color: rgba(102, 102, 102, 1);
+  background: #f8f8f8;
+}
+
+.integra_item {
+  padding-top: 28rpx;
+  padding-bottom: 24rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(72, 72, 72, 1);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+.time{
+  margin-top: 16rpx;
+  font-size:24rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(153,153,153,1);
+}
+.integral_add{
+  margin-top: 8rpx;
+}
+.hui{
+  height: 600rpx;
+  width: 100%;
+  background: #F8F8F8;
+}

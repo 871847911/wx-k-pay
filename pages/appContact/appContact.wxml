@@ -1,0 +1,34 @@
+<view class="info">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class='info-item'>
+      <view class='title'>手机号码
+        <text style='color:red'>*</text>
+      </view>
+      <input placeholder="请输入您的手机号" type='number'  bindinput="getPhone" />
+    </view>
+    <view class='info-item'>
+      <view class='title'>验证码
+        <text style='color:red'>*</text>
+      </view>
+      <input name="checkNumber" style='width:280rpx;' placeholder="请输入您的验证码" type='number'  />
+      <button size='mini' style='dispaly:inline-block' class='checkNumber {{ !isSend ? "active" : "wait" }}'  bindtap='check'>
+        <block wx:if="{{ isSend }}">{{t}}</block>
+        {{ !isSend ? "发送验证码" : "s" }}
+      </button>
+    </view>
+    <view class='info-item'>
+      <view class='title'>电子邮箱
+        <text style='color:red'>*</text>
+      </view>
+      <input name="email" placeholder="请输入您的电子邮箱" type='text'   />
+    </view>
+    <view class='info-item'>
+      <view class='title'>QQ
+      </view>
+      <input name="qq" placeholder="请输入您的QQ号码" type='number'  />
+    </view>
+    <view class='course-bottom'>
+      <button formType="submit">提交申请</button>
+    </view>
+  </form>
+</view>

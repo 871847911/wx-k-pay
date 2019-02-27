@@ -1,0 +1,27 @@
+<!--pages/newBank/newBank.wxml-->
+<view class='container'>
+  <view class='title'>
+  姓名
+    <input class='content' value='' placeholder="请输入姓名" bindinput='bindUserName' value='{{userName}}'></input>
+  </view>
+  <view class='goto'>
+  <view class='title'>
+  银行
+    <input class='content' placeholder="请输入银行" bindinput='bindBankName' value='{{bankName}}'></input> 
+    
+  </view>
+ 
+  </view>
+   <view class='title'>
+  卡号
+    <input class='content' value='' placeholder="请输入卡号" bindinput='bindCardNumber' value='{{cardNumber}}' type='number'  ></input>
+  </view>
+  <view class='address'>
+    <view class='name'>开户行</view>
+    <textarea class='bankAddr' value='' auto-height="true" placeholder="请输入开户行" bindinput='bindOpenBankName' value='{{openBankName}}'></textarea>
+  </view>
+ 
+</view>
+<button class='save' bindtap='saveBank'>保存</button>
+<button class='del_bt' hidden='{{newbank}}' bindtap='delBank'>删除</button>
+

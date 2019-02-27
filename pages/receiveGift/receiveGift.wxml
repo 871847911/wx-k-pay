@@ -1,0 +1,23 @@
+<view class='authorization' wx:if='{{ hasToken }}'>
+<text class='tip'>您的好友希望把这个课程赠送给你</text>
+  <view class='gift-box'>
+    <view class='sender'>
+      <image src='{{ giftInfo.headUrl }}'></image>
+      <text>{{ giftInfo.nickName }}</text>
+    </view>
+    <view class='tip-text'>
+      <image src='/images/dialogbox_bg@3x.png'></image>
+      <text>这个课程非常实用，希望你能够受益</text>
+    </view>
+    <text class='course-name'>{{ giftInfo.courseName }}</text>
+    <image class='course-img' src='{{ giftInfo.courseUrl }}'></image>
+  </view>
+  <button bindtap='receiveCourse' class="{{ giftInfo.status == 0 ? 'can-rective' : 'cant' }}">{{ giftInfo.message }}</button>  
+   <view class='to-home'>
+    <image bindtap='toIndex' src='/images/Home@3x(2).png'></image>  
+  </view>
+</view>
+
+<view class='unauthorization' wx:if='{{ hasToken == false }}'>
+  <button wx:if='{{ hasToken == false }}' open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+</view>

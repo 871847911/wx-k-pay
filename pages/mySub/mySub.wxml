@@ -1,0 +1,6 @@
+<!-- 讲师 -->
+
+<import src="../common/emptyView" />
+
+<template is="emptyView" wx:if="{{ subDetail.list.length == 0 }}" data="{{...emptyJson}}" />
+<list wx:else listInfo="{{ '208' }}" lecturerList="{{ subDetail.list }}" bindgoDetail="goDetail" />

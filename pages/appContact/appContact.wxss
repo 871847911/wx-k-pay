@@ -1,0 +1,107 @@
+.info {
+  padding: 0rpx 32rpx 120rpx 30rpx;
+  color: #666;
+}
+
+.info .info-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 46rpx 0;
+  border-bottom: 2rpx solid rgba(241, 241, 241, 1);
+}
+
+.info .info-item .title, .info .info-item text, .info .info-item .input {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 50rpx;
+  height: 50rpx;
+  font-size: 32rpx;
+}
+
+.info .info-item .title {
+  width: 200rpx;
+}
+
+.info .info-item .detail {
+  width: 480rpx;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.info .info-item .pic-box {
+  width: 160rpx;
+  height: 208rpx;
+  background: rgba(247, 247, 247, 1);
+}
+
+.info .info-item .pic-box .pic-box-plus {
+  color: #666;
+  padding-top: 60rpx;
+}
+
+.info .info-item .pic-box .showPic {
+  width: 100%;
+  height: 100%;
+}
+
+.info .info-item .pic-box .showPic image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.info .info-item .pic-box .pic-box-plus .plus {
+  font-size: 60rpx;
+  text-align: center;
+}
+
+.info .info-item .pic-box .pic-box-plus .txt {
+  font-size: 22rpx;
+  text-align: center;
+}
+
+.info .info-item .flag {
+  width: 310rpx;
+  height: 96rpx;
+  font-size: 22rpx;
+  color: rgba(153, 153, 153, 1);
+  line-height: 32rpx;
+  margin-top: 20rpx;
+}
+
+.info input {
+  width: 480rpx;
+  display: inline-block;
+  color: black;
+}
+
+.agreement .agreement-content::-webkit-scrollbar-thumb {
+  width: 8rpx;
+  height: 10rpx;
+  border-radius: 10px;
+  background-color: #6cddc7;
+}
+
+.checkNumber {
+  width: 208rpx;
+  height: 64rpx;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(255, 255, 255, 1);
+  line-height: 64rpx !important;
+  padding: 0 !important;
+}
+
+.active {
+  display: flex;
+  text-align: center !important;
+  align-items: center !important;
+  background: #6cddc7;
+}
+
+.wait {
+  background: rgba(153, 153, 153, 1);
+}
+@import './btn.wxss'

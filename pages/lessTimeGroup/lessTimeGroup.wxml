@@ -1,0 +1,6 @@
+<!--pages/lessTimeGroup/lessTimeGroup.wxml-->
+<view class='carousel'>
+  <list listInfo="{{ '259' }}" courseList="{{ freeList }}" isIOS="{{isIOS}}" aaa="aaa" bindgoDetail="goDetail" />
+</view>
+<import src="../common/emptyView" />
+<template wx:if="{{ freeList.length == 0 }}" is="emptyView" data="{{...emptyJson}}" />

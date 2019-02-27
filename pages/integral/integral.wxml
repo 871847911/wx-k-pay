@@ -1,0 +1,33 @@
+<!--pages/integral/integral.wxml-->
+<view class='container'>
+  <view class='integral_all'>
+    <image class='allImage' src='../../images/symbols-bg-jifen.png'></image>
+    <view class='integral_tip' bindtap='goTastList'>积分说明</view>
+    <view class='integral_num'>{{integral.availableScore}}
+      <view class='integral_now'>当前积分</view>
+    </view>
+
+  </view>
+  <view class='tab'>
+    <view class='tabcss' wx:for="{{tab}}">
+      <view class="tab_item {{tabId==index? 'green':''}}" data-id='{{index}}' wx:key="*this" bindtap='changeTab'>{{item}}</view>
+      <view class='line' wx:if="{{tabId==index}}"></view>
+    </view>
+  </view>
+
+</view>
+<view class='tip'>
+  您共获得{{integral.totalScore}}积分，消费使用{{integral.consumeScore }}积分，累计为您节省
+  <view class='save' style='color:red'>￥{{integral.saveMoney }}</view>
+
+</view>
+<view class='mid'>
+  <view class='integra_item' wx:for="{{list}}" wx:key="*this">
+    <view class='name_time'>
+      <view class='name'>{{item.remark}}</view>
+      <view class='time'>{{item.createDate}}</view>
+    </view>
+    <view class='integral_add' wx:if="{{item.type ==1||item.type ==3}}">+{{item.scoreChange}}</view>
+    <view class='integral_add' wx:else>-{{item.scoreChange}}</view>
+  </view>
+</view>

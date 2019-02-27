@@ -1,0 +1,30 @@
+<view class="info">
+    <view class='info-item'>
+        <view class='title'>真实姓名
+            <text style='color:red'>*</text>
+        </view>
+        <input placeholder="与身份证名字一致" type='text' value='{{ realName }}' bindinput='updateInput' />
+    </view>
+    <view class='info-item'>
+        <view class='title'>讲师照片
+            <text style='color:red'>*</text>
+        </view>
+        <view class='detail'>
+            <view class='pic-box' bindtap='choosePic'>
+                <view class='pic-box-plus' wx:if="{{!photoUrl}}">
+                    <view class='plus'>+</view>
+                    <view class='txt'>点击上传图片</view>
+                </view>
+                <view wx:else class='showPic'>
+                    <image src="{{photoUrl}}" mode="aspectFill" />
+                </view>
+            </view>
+            <view class='flag'>图片尺寸：80*104px 仅支持jpg、jpeg、bmp、png格式 大小不超过3M</view>
+        </view>
+
+    </view>
+</view>
+
+<view class='course-bottom'>
+    <button bindtap='next'>下一步: 其他信息</button>
+</view>

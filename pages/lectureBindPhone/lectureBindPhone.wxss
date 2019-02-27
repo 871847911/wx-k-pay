@@ -1,0 +1,56 @@
+/* pages/lectureBindPhone/lectureBindPhone.wxss */
+page{
+  font-size:30rpx;
+}
+button::after{
+  border:none;
+}
+
+.active{
+  border:1px solid #6CDDC7;
+  color:#6CDDC7;
+}
+.wait{
+  border:1px solid #999999;
+  color:#484848;
+}
+.info_box{
+  padding:0 30rpx; 
+}
+
+.info_box .flex{
+  display:flex;
+  border-bottom:1px solid #F1F1F1;
+  padding:24rpx 0 22rpx;
+  align-items: center;
+}
+.flex input,.flex label,.flex .checkNumber{
+  height:76rpx;
+  line-height:76rpx;
+}
+
+.flex label{
+  color:#666666;
+}
+.flex input{
+  margin-left:50rpx;
+}
+
+.flex .checkNumber{
+  background:#fff;
+  width:204rpx;
+}
+
+.btn button{
+  margin-top:104rpx;
+  background:#6CDDC7;
+  color:#ffff;
+}
+
+
+
+
+
+
+
+

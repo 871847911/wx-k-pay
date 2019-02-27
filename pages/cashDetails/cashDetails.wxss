@@ -1,0 +1,38 @@
+/* pages/cashDetails/cashDetails.wxss */
+.top{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60rpx;
+  padding-bottom: 60rpx;
+}
+.money{
+  font-size:60rpx;
+  font-weight:500;
+}
+.tip{
+  margin-top: 14rpx;
+font-size:30rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(153,153,153,1);
+}
+.item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 30rpx 30rpx 30rpx;
+}
+.title{
+  font-size:30rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(153,153,153,1);
+}
+.content{
+  font-size:32rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(51,51,51,1);
+}

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "分享进度",
+  "usingComponents": {
+    "i-action-sheet": "../../dist/action-sheet/index",
+    "i-button": "../../dist/button/index",
+    "i-message": "../../dist/message/index",
+    "i-modal": "../../dist/modal/index"
+  }
+}
